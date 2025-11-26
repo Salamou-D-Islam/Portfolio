@@ -1,3 +1,9 @@
-@tailwind base;
-@tailwind components;
 @tailwind utilities;
+@import "tailwindcss";
+
+/* Custom styles can be added here */
+body {
+  background-color: #00064a;
+
+  background-image: url("https://www.transparenttextures.com/patterns/axiom-pattern.png");
+}

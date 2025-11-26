@@ -1,15 +1,17 @@
-import React, { useState } from 'react'
-
+import React, { useState } from "react";
+import Header from "./components/Header.jsx";
+import Footer from "./components/Footer.jsx";
 
 function App() {
-
   return (
-    <>
-      <div className="text-center mt-10">
-        <h1 className="text-4xl font-bold text-blue-600">Mon Portfolio</h1>
-      </div>
-    </>
-  )
+    <div className="min-h-screen flex flex-col">
+      <Header />
+
+      <main className="flex-grow">{/* Contenu */}</main>
+
+      <Footer />
+    </div>
+  );
 }
 
-export default App
+export default App;
