@@ -27,21 +27,21 @@ function Home() {
             {!isSmall && (
               <>
                 <ButtonHome
-                  href="/cv.pdf"
+                  to="/cv.pdf"
                   target="_blank"
                   rel="noopener noreferrer"
                 >
                   Visualisez mon CV
                 </ButtonHome>
-                <ButtonHome href="/profil">Voir mon Profil</ButtonHome>
-                <ButtonHome href="/projects">Voir mes Projets</ButtonHome>
-                <ButtonHome href="/contact">Contactez moi</ButtonHome>
+                <ButtonHome to="/profil">Voir mon Profil</ButtonHome>
+                <ButtonHome to="/projets">Voir mes Projets</ButtonHome>
+                <ButtonHome to="/contact">Contactez moi</ButtonHome>
               </>
             )}
 
             {isSmall && (
               <ButtonHome
-                href="/cv.pdf"
+                to="/cv.pdf"
                 target="_blank"
                 rel="noopener noreferrer"
               >

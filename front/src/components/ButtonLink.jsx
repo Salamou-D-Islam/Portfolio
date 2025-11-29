@@ -1,17 +1,18 @@
 import React, { useState } from "react";
 import MenuIcon from "@mui/icons-material/Menu";
+import { Link } from "react-router-dom";
 
-function ButtonHome({ children, href, download, target, rel }) {
+function ButtonHome({ children, to, download, target, rel }) {
   return (
-    <a
-      href={href}
+    <Link
+      to={to}
       download={download}
       target={target}
       rel={rel}
       className="btnHome"
     >
       {children}
-    </a>
+    </Link>
   );
 }
 

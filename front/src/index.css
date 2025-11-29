@@ -3,7 +3,7 @@
 
 /* Custom styles can be added here */
 body {
-  background-color: #00064a;
+  background-color: #00064a !important;
   background-image: url("https://www.transparenttextures.com/patterns/axiom-pattern.png");
 }
 
@@ -62,4 +62,16 @@ body {
 
 .btnhoverhome {
   @apply hover:scale-105 hover:underline transition-all duration-300;
+}
+
+.contcatHoverDiv {
+  @apply hover:scale-102 transition-all duration-300;
+}
+
+/*------------------------------------------------------------------------------------------*/
+.sectionApply {
+  @apply container mx-auto mt-20 p-6 bg-black/50 rounded-lg outline-2 outline-offset-2 outline-blue-50 m-40 flex flex-col;
+}
+.outlineApply {
+  @apply outline-2 outline-offset-2 outline-blue-50;
 }
