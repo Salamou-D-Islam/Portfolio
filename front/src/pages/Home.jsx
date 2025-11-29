@@ -1,8 +1,14 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import Photo from "../assets/Photo.jpg";
 import ButtonHome from "../components/ButtonLink.jsx";
 
 function Home() {
+  const [isSmall, setIsSmall] = useState(window.innerWidth < 1023);
+  useEffect(() => {
+    const handleResize = () => setIsSmall(window.innerWidth < 1023);
+    window.addEventListener("resize", handleResize);
+    return () => window.removeEventListener("resize", handleResize);
+  }, []);
   return (
     <>
       <section className="sectionHome">
@@ -14,16 +20,34 @@ function Home() {
 
           <div className="divDev">
             <h2 className="subtitleCls">DEVELOPPEUR WEB FULLSTACK</h2>
-            <span className="nameSpan">REACT • PYTHON</span>
+            <span className="nameSpan">REACT • NODE</span>
           </div>
 
           <div className="buttonLink">
-            <ButtonHome href="/cv.pdf" download>
-              Télécharger le CV
-            </ButtonHome>
-            <ButtonHome href="/profil">Voir le Profil</ButtonHome>
-            <ButtonHome href="/contact">Contactez moi</ButtonHome>
-            <ButtonHome href="/projects">Voir mes Projets</ButtonHome>
+            {!isSmall && (
+              <>
+                <ButtonHome
+                  href="/cv.pdf"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  Visualisez mon CV
+                </ButtonHome>
+                <ButtonHome href="/profil">Voir mon Profil</ButtonHome>
+                <ButtonHome href="/projects">Voir mes Projets</ButtonHome>
+                <ButtonHome href="/contact">Contactez moi</ButtonHome>
+              </>
+            )}
+
+            {isSmall && (
+              <ButtonHome
+                href="/cv.pdf"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                Télécharger le CV
+              </ButtonHome>
+            )}
           </div>
         </div>
 

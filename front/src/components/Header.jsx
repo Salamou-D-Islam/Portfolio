@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import MenuIcon from "@mui/icons-material/Menu";
 import HeaderNav from "./HeaderNav.jsx";
 import { ButtonNav } from "./ButtonLink.jsx";
@@ -22,20 +22,19 @@ function Header() {
             <ul className="hidden md:flex gap-6 mr-4">
               <HeaderNav href="/">Accueil</HeaderNav>
               <HeaderNav href="/profil">Profil</HeaderNav>
-              <HeaderNav href="/contact">Contact</HeaderNav>
               <HeaderNav href="/Projets">Projets</HeaderNav>
+              <HeaderNav href="/contact">Contact</HeaderNav>
             </ul>
             <ButtonNav onClick={toggleMenu}></ButtonNav>
           </div>
         </div>
-
         {isOpen && (
           <div className="md:hidden px-4 pb-4">
             <ul className="flex flex-col gap-3">
               <HeaderNav href="/">Accueil</HeaderNav>
               <HeaderNav href="/profil">Profil</HeaderNav>
-              <HeaderNav href="/contact">Contact</HeaderNav>
               <HeaderNav href="/Projets">Projets</HeaderNav>
+              <HeaderNav href="/contact">Contact</HeaderNav>
             </ul>
           </div>
         )}

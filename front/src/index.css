@@ -13,11 +13,11 @@ body {
 }
 
 .sectionHome {
-  @apply container bg-black/50 w-350 h-150 max-sm:w-full max-xl:h-250 max-lg:h-250 mx-auto mt-20 rounded-lg outline-2 outline-offset-2 outline-blue-50 m-40 p-9 flex flex-col max-sm:flex-col lg:flex-row items-start justify-between gap-6;
+  @apply container bg-black/50 w-350 h-150 max-sm:w-full max-sm:h-220 max-xl:h-250 max-lg:h-250 mx-auto mt-20 rounded-lg outline-2 outline-offset-2 outline-blue-50 m-40 p-9 flex flex-col max-sm:flex-col lg:flex-row  justify-between;
 }
 
 .divText {
-  @apply flex flex-col gap-6 max-w-full lg:max-w-[60%];
+  @apply flex flex-col gap-6 max-sm:gap-0 max-w-full lg:max-w-[60%];
 }
 
 .divSalamou {
@@ -25,7 +25,7 @@ body {
 }
 
 .titleSalamou {
-  @apply text-9xl max-md:text-8xl max-sm:text-6xl font-bold text-left;
+  @apply text-9xl max-md:text-8xl max-sm:text-6xl font-bold;
 }
 
 .nameSpan {
@@ -33,15 +33,15 @@ body {
 }
 
 .divDev {
-  @apply mt-3 max-sm:mt-20 w-full items-center flex flex-col;
+  @apply mt-3 max-sm:mt-20 w-full items-center flex flex-col max-lg:text-center;
 }
 
 .subtitleCls {
-  @apply text-white text-5xl max-sm:text-3xl text-left;
+  @apply text-white text-5xl;
 }
 
 .imageAvatar {
-  @apply bg-amber-50 w-80 h-80 max-sm:w-48 max-sm:h-48 rounded-full mx-auto lg:mx-0 mt-15 max-lg:-mt-30 max-sm:-mt-40 max-xl:translate-y-50;
+  @apply bg-amber-50 w-80 h-80 max-sm:w-48 max-sm:h-48 rounded-full mx-auto lg:mx-0 mt-15 max-lg:-translate-y-10 max-sm:-mt-40 max-xl:translate-y-50;
 }
 
 .avatarImg {
@@ -49,9 +49,17 @@ body {
 }
 
 .buttonLink {
-  @apply flex flex-wrap justify-center gap-6 mt-10;
+  @apply flex flex-wrap justify-center gap-6 mt-30;
 }
 
 .btnHome {
-  @apply text-white bg-indigo-500 px-6 py-3 rounded-lg hover:bg-indigo-400 text-center;
+  @apply text-white w-43 h-13 rounded-lg max-sm:mt-0  max-xl:w-70 max-sm:w-40 items-center flex justify-center hover:bg-blue-700/70 outline-2 outline-offset-2 outline-blue-50 opacity-50 hover:opacity-100 hover:scale-105 transition-all duration-300;
+}
+
+.btnnav {
+  @apply md:hidden bg-white p-2 rounded-md hover:bg-gray-400 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-gray-800 focus:ring-white;
+}
+
+.btnhoverhome {
+  @apply hover:scale-105 hover:underline transition-all duration-300;
 }
