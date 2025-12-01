@@ -25,6 +25,7 @@ function Header() {
               <HeaderNav to="/profil">Profil</HeaderNav>
               <HeaderNav to="/projets">Projets</HeaderNav>
               <HeaderNav to="/contact">Contact</HeaderNav>
+              <HeaderNav to="/admin">Admin</HeaderNav>
             </ul>
             <ButtonNav onClick={toggleMenu}></ButtonNav>
           </div>

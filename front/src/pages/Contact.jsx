@@ -1,6 +1,6 @@
-import React from "react";
-import FormContact from "../components/Form.jsx";
-import ContactInfo from "../components/ContactInfo.jsx";
+import React, { useState } from "react";
+import FormText from "../components/Form.jsx";
+import { FormTextrea, ButtonForm } from "../components/Form.jsx";
 import ContactLink from "../components/ContactLink.jsx";
 import WhatsAppIcon from "@mui/icons-material/WhatsApp";
 import AlternateEmailIcon from "@mui/icons-material/AlternateEmail";
@@ -8,55 +8,104 @@ import InstagramIcon from "@mui/icons-material/Instagram";
 import LinkedInIcon from "@mui/icons-material/LinkedIn";
 
 function Contact() {
+  const [form, setForm] = useState({
+    nom: "",
+    email: "",
+    title: "",
+    description: "",
+  });
+  const [box, setBox] = useState(false);
+
+  function handleChange(event) {
+    const { name, value } = event.target;
+    setForm((prev) => ({
+      ...prev, // on garde les anciennes valeurs
+      [name]: value, // on met à jour seulement celle changée
+    }));
+  }
+
+  function handleSubmit(event) {
+    event.preventDefault();
+    alert(
+      `Merci ${form.nom} pour votre message ! Nous vous répondrons à ${form.email}`
+    );
+
+    // Réinitialiser le formulaire
+    setForm({
+      nom: "",
+      email: "",
+      title: "",
+      description: "",
+    });
+    setBox(!box);
+  }
+
   return (
     <>
-      <section className="text-white w-full h-150 max-md:h-500 flex flex-row max-md:flex-wrap items-center justify-center  mb-20 mt-20  ">
-        <div className="bg-transparent hover:bg-blue-900 opacity-50 hover:opacity-100 contcatHoverDiv w-230 h-150 p-6 outlineApply ">
-          <form action="POST">
+      <section className="sectionContact">
+        <div className="divForm contactHoverDiv outlineApply">
+          <form onSubmit={handleSubmit}>
             <h1 className="text-3xl font-bold mb-4">
               Contactez moi par ce formulaire
             </h1>
             <div className="mb-4">
-              <FormContact
+              <FormText
                 htmlFor="name"
                 type="text"
                 id="name"
-                name="name"
+                name="nom"
+                value={form.nom}
+                onChange={handleChange}
                 required
               >
                 Nom:
-              </FormContact>
+              </FormText>
 
-              <FormContact
+              <FormText
                 htmlFor="Email"
                 type="Email"
-                id="Email"
-                name="Email"
+                id="email"
+                name="email"
+                value={form.email}
+                onChange={handleChange}
                 required
               >
                 Email:
-              </FormContact>
+              </FormText>
 
-              <FormContact
+              <FormText
                 htmlFor="title"
                 type="text"
                 id="title"
                 name="title"
+                value={form.title}
+                onChange={handleChange}
                 required
               >
-                Tire du message:
-              </FormContact>
+                L'objet du mail:
+              </FormText>
 
-              <label htmlFor="description">Description</label>
-              <textarea
+              <FormTextrea
+                htmlFor="descriptionContact"
                 name="description"
-                id="description"
-                className="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
+                value={form.description}
+                onChange={handleChange}
+                id="descriptionContact"
                 required
-              ></textarea>
+              >
+                Description
+              </FormTextrea>
 
               <div>
-                <input type="checkbox" name="form-name" value="contact" />
+                <input
+                  type="checkbox"
+                  name="form-name"
+                  value="contact"
+                  onChange={handleChange}
+                  onClick={() => setBox(!box)}
+                  required
+                  checked={box}
+                />
 
                 <label htmlFor="form-name" className="text-sm ml-2" required>
                   Les informations recueillies sont nécessaires pour traiter
@@ -64,17 +113,12 @@ function Contact() {
                 </label>
               </div>
 
-              <button
-                type="submit"
-                className="bg-blue-700 hover:bg-blue-700/90 text-white font-bold py-2 px-4 rounded mt-4"
-              >
-                Envoyer le message
-              </button>
+              <ButtonForm type="submit"> Envoyer le message</ButtonForm>
             </div>
           </form>
         </div>
 
-        <div className="container bg-transparent hover:bg-indigo-800 opacity-50 hover:opacity-100 contcatHoverDiv w-230 h-150 p-6 outlineApply ml-2">
+        <div className="divSocials contactHoverDiv outlineApply">
           <h1 className="text-3xl font-bold mb-4">Contactez moi par:</h1>
 
           <div className="container flex flex-wrap mt-4 gap-6 p-4 rounded-lg justify-center ">
@@ -95,19 +139,19 @@ function Contact() {
             </ContactLink>
 
             <ContactLink
-              href="https://www.instagram.com/"
-              target="_blank"
-              title="Mon Instagram"
-            >
-              <InstagramIcon sx={{ fontSize: 90 }} />
-            </ContactLink>
-
-            <ContactLink
               href="https://www.linkedin.com/in/islam-derrouiche-7a69a8368/"
               target="_blank"
               title="Mon LinkedIn"
             >
               <LinkedInIcon sx={{ fontSize: 90 }} />
+            </ContactLink>
+
+            <ContactLink
+              href="https://www.instagram.com/"
+              target="_blank"
+              title="Mon Instagram"
+            >
+              <InstagramIcon sx={{ fontSize: 90 }} />
             </ContactLink>
           </div>
         </div>

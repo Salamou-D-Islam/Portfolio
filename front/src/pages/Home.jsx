@@ -45,7 +45,7 @@ function Home() {
                 target="_blank"
                 rel="noopener noreferrer"
               >
-                Télécharger le CV
+                Visualisez le CV
               </ButtonHome>
             )}
           </div>

@@ -6,6 +6,7 @@ import Home from "./pages/Home.jsx";
 import Contact from "./pages/Contact.jsx";
 import Projects from "./pages/Projects.jsx";
 import Profil from "./pages/Profil.jsx";
+import Admin from "./pages/AdminProfil.jsx";
 
 function App() {
   return (
@@ -19,6 +20,7 @@ function App() {
             <Route path="/contact" element={<Contact />} />
             <Route path="/projets" element={<Projects />} />
             <Route path="/profil" element={<Profil />} />
+            <Route path="/admin" element={<Admin />} />
           </Routes>
         </main>
 

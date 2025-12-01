@@ -1,13 +1,46 @@
+// src/pages/Profi.jsx
 import React from "react";
+import SectionProfil from "../components/SectionProfil.jsx";
 
-function Profi() {
+function Profi({ sections }) {
   return (
-    <>
-      <div className="container mx-auto mt-20 p-6 bg-white rounded-lg shadow-md">
-        <h1 className="text-3xl font-bold mb-4">Mon Profil</h1>
-      </div>
-    </>
+    <div className="container mx-auto p-6">
+      <h1 className="text-3xl font-bold text-center text-white mb-6">
+        Mon Profil
+      </h1>
+
+      {sections && sections.length > 0 ? (
+        sections.map((sectionItem, index) => (
+          <SectionProfil
+            key={index}
+            title={sectionItem.profilNom}
+            desc={sectionItem.profilDesc}
+          />
+        ))
+      ) : (
+        <p className="text-white text-center">Aucune section disponible.</p>
+      )}
+    </div>
   );
 }
 
 export default Profi;
+
+{
+  /* <section className="sectionApply text-white p-10 contactHoverDiv hover:bg-gray-800">
+        <div className="mb-6 text-3xl">
+          <h1>{props.title}</h1>
+        </div>
+        <div className="text-lg">
+          <p>{props.desc}</p>
+           <p>
+            Je suis Islam Derrouiche, un jeune développeur web fullstack junior.
+            Passionné par la technologie et le développement web, je développe
+            des applications web en frontend avec du HTML/CSS et JavaScript avec
+            React en framwork, et backend avec NodeJS et Python(FastAPI /
+            Flask). Mon objectif est de créer des applications web innovantes et
+            performantes qui répondent aux besoins des utilisateurs.
+          </p> 
+        </div>
+      </section> */
+}
