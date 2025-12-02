@@ -12,9 +12,9 @@ function FormText({
 }) {
   return (
     <>
-      <lable htmlFor={htmlFor} className="block font-semibold mb-2">
+      <label htmlFor={htmlFor} className="block font-semibold mb-2">
         {children}
-      </lable>
+      </label>
       <input
         type={type}
         id={id}
@@ -40,9 +40,9 @@ function FormTextrea({
   return (
     <>
       <div>
-        <lable htmlFor={id} className="block font-semibold mb-2">
+        <label htmlFor={id} className="block font-semibold mb-2">
           {children}
-        </lable>
+        </label>
 
         <textarea
           name={name}

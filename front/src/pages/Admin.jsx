@@ -1,4 +1,3 @@
-// src/pages/Admin.jsx
 import React, { useState } from "react";
 import AdminProfil from "../components/AdminProfil.jsx";
 import SectionProfil from "../components/SectionProfil.jsx";

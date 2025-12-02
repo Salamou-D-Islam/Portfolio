@@ -1,4 +1,3 @@
-// src/pages/Profi.jsx
 import React from "react";
 import SectionProfil from "../components/SectionProfil.jsx";
 

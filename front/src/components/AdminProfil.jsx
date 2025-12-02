@@ -1,31 +1,31 @@
 import React, { useState } from "react";
-import FormText from "../components/Form.jsx";
-import { FormTextrea, ButtonForm } from "../components/Form.jsx";
+import FormText from "./Form.jsx";
+import { FormTextrea, ButtonForm } from "./Form.jsx";
 
-function AdminProfil(props) {
-  const [section, setSection] = useState({
+function AdminProfil({ onAdd }) {
+  const [inputText, setInputText] = useState({
     profilNom: "",
     profilDesc: "",
   });
 
   function handleChange(event) {
     const { name, value } = event.target;
-    setSection((prevSection) => {
+    setInputText((previnputText) => {
       return {
-        ...prevSection,
+        ...previnputText,
         [name]: value,
       };
     });
   }
 
   function handleSubmit(event) {
-    props.onAdd(section); // transmet la section à Admin
+    event.preventDefault(); // empêche le refresh de la page
+    if (onAdd) onAdd(inputText);
 
-    setSection({
+    setInputText({
       profilNom: "",
       profilDesc: "",
     }); // reset form
-    event.preventDefault(); // empêche le refresh de la page
   }
 
   return (
@@ -46,7 +46,7 @@ function AdminProfil(props) {
                 type="text"
                 id="profilNom"
                 name="profilNom"
-                value={section.profilNom}
+                value={inputText.profilNom}
                 onChange={handleChange}
               >
                 Nom de la section
@@ -56,9 +56,8 @@ function AdminProfil(props) {
                 htmlFor="profilDesc"
                 id="profilDesc"
                 name="profilDesc"
-                value={section.profilDesc}
+                value={inputText.profilDesc}
                 onChange={handleChange}
-                //onChange={() => {}}
               >
                 Titre de la section
               </FormTextrea>
