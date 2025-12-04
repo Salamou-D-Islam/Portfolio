@@ -12,6 +12,11 @@ function ProfilAdmin({ sections, setSections }) {
     setSections((prev) => prev.filter((_, index) => index !== id));
   }
 
+  function updateSection(id, updateData) {
+    setSections((prev) =>
+      prev.map((section, index) => (index === id ? updateData : section))
+    );
+  }
   return (
     <div className="container mx-auto p-6">
       <div className="container mx-auto p-6 text-white text-center">
@@ -29,6 +34,7 @@ function ProfilAdmin({ sections, setSections }) {
               desc={sectionItem.profilDesc}
               isAdmin={true}
               onDelete={deleteSection}
+              onUpdate={updateSection}
             />
           ))
         ) : (

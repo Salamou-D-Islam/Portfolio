@@ -9,6 +9,7 @@ import Profil from "./pages/Profil.jsx";
 import Admin from "./pages/Admin.jsx";
 import ProfilAdmin from "./pages/ProfilAdmin.jsx";
 import ProjectsAdmin from "./pages/ProjectsAdmin.jsx";
+import ProjectDetail from "./pages/ProjectDetail.jsx";
 
 function App() {
   const [profil, setProfil] = useState([]);
@@ -25,20 +26,21 @@ function App() {
             <Route path="/contact" element={<Contact />} />
             <Route path="/profil" element={<Profil sections={profil} />} />
             <Route path="/projets" element={<Projects sections={projects} />} />
-            <Route path="/admin" element={<Admin />} />
 
-            <Route
-              path="/admin/profilform"
-              element={
-                <ProfilAdmin sections={profil} setSections={setProfil} />
-              }
-            />
             <Route
               path="/admin/projectform"
               element={
                 <ProjectsAdmin sections={projects} setSections={setProjects} />
               }
             />
+            <Route path="/admin" element={<Admin />} />
+
+            <Route
+              path="/project/:nomProjet"
+              element={<ProjectDetail projects={projects} />}
+            />
+
+            <Route path="/projets/:nomProjet" element={<ProjectDetail />} />
           </Routes>
         </main>
 

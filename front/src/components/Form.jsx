@@ -57,11 +57,12 @@ function FormTextrea({
   );
 }
 
-function ButtonForm({ type, children, onClick }) {
+function ButtonForm({ type, children, onClick, className = "", ...props }) {
   return (
     <button
+      {...props}
       type={type}
-      className="bg-blue-700 hover:bg-blue-700/90 text-white font-bold py-2 px-4 rounded mt-4"
+      className={`bg-blue-700 hover:bg-blue-700/90 text-white font-bold py-2 px-4 rounded mt-4  ${className}`}
       onClick={onClick}
     >
       {children}

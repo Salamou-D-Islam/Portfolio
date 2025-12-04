@@ -12,14 +12,22 @@ function Projects({ sections }) {
       </div>
 
       <div className="mt-10">
-        <div className="container mx-auto p-6  border-2">
-          <table className="text-white border-4 w-full h-30">
+        <div className="container mx-auto p-6 border-2 bg-black/50 overflow-x-auto">
+          <table className="text-white border-4 w-370 h-30 border-collapse">
             <thead>
               <tr>
-                <th scope="col">Nom du Projet</th>
-                <th scope="col">Lien affilé au projet</th>
-                <th scope="col">date du projet</th>
-                <th scope="col">Bouton</th>
+                <th scope="col" className="tableProject">
+                  Nom du Projet
+                </th>
+                <th scope="col" className="tableProject">
+                  Lien affilé au projet
+                </th>
+                <th scope="col" className="tableProject">
+                  date du projet
+                </th>
+                <th scope="col" className="tableProject">
+                  Détail du projet
+                </th>
               </tr>
             </thead>
             <tbody className="text-center">

@@ -13,19 +13,25 @@ function ProjectsAdmin({ sections, setSections }) {
     setSections((prev) => prev.filter((_, index) => index !== id));
   }
 
+  function updateSection(id, updateData) {
+    setSections((prev) =>
+      prev.map((section, index) => (index === id ? updateData : section))
+    );
+  }
   return (
     <div className="container mx-auto p-6">
       <InputProject onAdd={addSection} />
 
       <div className="mt-10">
-        <div className="container mx-auto p-6  border-2">
-          <table className="text-white border-4 w-full h-30">
+        <div className="container mx-auto p-6 border-2 bg-gray-600/50 overflow-x-auto">
+          <table className="text-white w-359 border-4 h-30 ">
             <thead>
               <tr>
                 <th scope="col">Nom du Projet</th>
                 <th scope="col">Lien affilé au projet</th>
                 <th scope="col">date du projet</th>
-                <th scope="col">Bouton</th>
+                <th scope="col">Détail du projet</th>
+                <th scope="col">Administraion</th>
               </tr>
             </thead>
             <tbody className="text-center">
@@ -41,6 +47,7 @@ function ProjectsAdmin({ sections, setSections }) {
                     dateProjetFin={sectionItem.projetDateFin}
                     isAdmin={true}
                     onDelete={deleteProject}
+                    onUpdate={updateSection}
                   />
                 ))
               ) : (
