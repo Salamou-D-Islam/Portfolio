@@ -34,6 +34,7 @@ function ProjectsAdmin({ sections, setSections }) {
                     projetLienNom={sectionItem.projetLienNom}
                     dateProjetDebut={sectionItem.projetDateDebut}
                     dateProjetFin={sectionItem.projetDateFin}
+                    isAdmin={true}
                   />
                 ))
               ) : (

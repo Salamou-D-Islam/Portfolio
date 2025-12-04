@@ -8,9 +8,15 @@ function ProfilAdmin({ sections, setSections }) {
   function addSection(newSection) {
     setSections((prev) => [...prev, newSection]);
   }
+  function deleteSection(id) {
+    setSections((prev) => prev.filter((_, index) => index !== id));
+  }
 
   return (
     <div className="container mx-auto p-6">
+      <div className="container mx-auto p-6 text-white text-center">
+        <h1 className="title text-salamou ">Page de profil (Administrateur)</h1>
+      </div>
       <InputProfil onAdd={addSection} />
 
       <div className="mt-10">
@@ -18,8 +24,11 @@ function ProfilAdmin({ sections, setSections }) {
           sections.map((sectionItem, index) => (
             <SectionProfil
               key={index}
+              id={index}
               title={sectionItem.profilNom}
               desc={sectionItem.profilDesc}
+              isAdmin={true}
+              onDelete={deleteSection}
             />
           ))
         ) : (

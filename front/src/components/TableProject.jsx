@@ -7,6 +7,7 @@ function TableProject({
   projetLienNom,
   dateProjetDebut,
   dateProjetFin,
+  isAdmin,
 }) {
   return (
     <>
@@ -25,6 +26,13 @@ function TableProject({
             <ButtonForm type="button">En savoir plus</ButtonForm>
           </a>
         </td>
+        {isAdmin && (
+          <td scope="row">
+            <a href="">
+              <ButtonForm type="button">Supprimer</ButtonForm>
+            </a>
+          </td>
+        )}
       </tr>
     </>
   );

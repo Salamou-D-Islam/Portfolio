@@ -27,10 +27,6 @@ function InputProfil({ onAdd }) {
   }
   return (
     <>
-      <div className="container mx-auto p-6 text-white text-center">
-        <h1 className="title text-salamou">Page de profil (Administrateur)</h1>
-      </div>
-
       <section>
         <div className="sectionApply text-white p-10">
           <form onSubmit={handleSubmit}>

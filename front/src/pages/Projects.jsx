@@ -1,11 +1,12 @@
 import React from "react";
 import TableProject from "../components/TableProject.jsx";
+import { ButtonForm } from "../components/Form";
 
 function Projects({ sections }) {
   return (
     <>
       <div className="container mx-auto p-6">
-        <h1 className="text-3xl font-bold text-center text-white mb-6">
+        <h1 className="text-6xl text-salamou  font-bold text-center text-white mb-6">
           Mes Projets
         </h1>
       </div>
@@ -31,6 +32,7 @@ function Projects({ sections }) {
                     projetLienNom={sectionItem.projetLienNom}
                     dateProjetDebut={sectionItem.projetDateDebut}
                     dateProjetFin={sectionItem.projetDateFin}
+                    isAdmin={false}
                   />
                 ))
               ) : (
