@@ -3,7 +3,7 @@ import SectionProfil from "../components/SectionProfil.jsx";
 
 function Profi({ sections }) {
   return (
-    <div className="container mx-auto p-6">
+    <div className="container mx-auto p-6 border rounded whitespace-pre-wrap">
       <h1 className="text-6xl text-salamou font-bold text-center text-white mb-6">
         Mon Profil
       </h1>

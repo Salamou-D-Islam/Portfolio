@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import FormText from "../components/Form.jsx";
-import { ButtonForm } from "../components/Form.jsx";
+import { FormTextrea, ButtonForm } from "../components/Form.jsx";
 
 function TableProject({
   nomProjet,
@@ -9,6 +9,12 @@ function TableProject({
   projetLienNom,
   dateProjetDebut,
   dateProjetFin,
+
+  GHProjet,
+  PresentationProject,
+  techproject,
+  VDOProjet,
+
   isAdmin,
   onDelete,
   id,
@@ -21,10 +27,17 @@ function TableProject({
     projetLienNom: projetLienNom,
     projetDateDebut: dateProjetDebut,
     projetDateFin: dateProjetFin,
+    GHProjet,
+    PresentationProject,
+    techproject,
+    VDOProjet,
   });
 
   function handleDelete() {
-    onDelete(id);
+    const yes = window.confirm("Voulez-vous vraiment supprimer ce projet ?");
+    if (yes) {
+      onDelete(id);
+    }
   }
 
   function handleSave() {
@@ -39,9 +52,14 @@ function TableProject({
       projetLienNom: projetLienNom,
       projetDateDebut: dateProjetDebut,
       projetDateFin: dateProjetFin,
+      GHProjet,
+      PresentationProject,
+      techproject,
+      VDOProjet,
     });
     setIsEditing(false);
   }
+
   return (
     <>
       {/* section normale */}
@@ -66,6 +84,10 @@ function TableProject({
                   projetLienNom,
                   dateProjetDebut,
                   dateProjetFin,
+                  GHProjet,
+                  PresentationProject,
+                  techproject,
+                  VDOProjet,
                 },
               }}
             >
@@ -95,6 +117,10 @@ function TableProject({
                       projetLienNom: projetLienNom,
                       projetDateDebut: dateProjetDebut,
                       projetDateFin: dateProjetFin,
+                      GHProjet,
+                      PresentationProject,
+                      techproject,
+                      VDOProjet,
                     });
                     setIsEditing(true);
                   }}
@@ -161,6 +187,19 @@ function TableProject({
                 </FormText>
 
                 <FormText
+                  type="text"
+                  value={tempDataProject.GHProjet}
+                  onChange={(e) =>
+                    setTempDataProject({
+                      ...tempDataProject,
+                      GHProjet: e.target.value,
+                    })
+                  }
+                >
+                  GitHub
+                </FormText>
+
+                <FormText
                   type="date"
                   value={tempDataProject.projetDateDebut}
                   onChange={(e) =>
@@ -184,6 +223,43 @@ function TableProject({
                   }
                 >
                   Date de fin
+                </FormText>
+
+                <FormTextrea
+                  value={tempDataProject.PresentationProject}
+                  onChange={(e) =>
+                    setTempDataProject({
+                      ...tempDataProject,
+                      PresentationProject: e.target.value,
+                    })
+                  }
+                >
+                  Présentation du projet
+                </FormTextrea>
+
+                <FormTextrea
+                  value={tempDataProject.techproject}
+                  onChange={(e) =>
+                    setTempDataProject({
+                      ...tempDataProject,
+                      techproject: e.target.value,
+                    })
+                  }
+                >
+                  Techniques du projet
+                </FormTextrea>
+
+                <FormText
+                  type="text"
+                  value={tempDataProject.VDOProjet}
+                  onChange={(e) =>
+                    setTempDataProject({
+                      ...tempDataProject,
+                      VDOProjet: e.target.value,
+                    })
+                  }
+                >
+                  Lien de la vidéo
                 </FormText>
 
                 <div className="flex gap-2 mt-4">

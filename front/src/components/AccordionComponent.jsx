@@ -7,7 +7,6 @@ function AccordionPresentation() {
   return (
     <>
       <AccordionDetails>
-        <hr /> <br />
         <p>
           <b> Lien:</b>{" "}
           <a href={projet.LienProjet} target="_blank">
@@ -16,8 +15,8 @@ function AccordionPresentation() {
         </p>
         <p>
           <b> GitHub:</b>{" "}
-          <a href={projet.LienProjet} target="_blank">
-            {projet.LienProjet}
+          <a href={projet.GHProjet} target="_blank">
+            {projet.GHProjet}
           </a>
         </p>
         <p>
@@ -27,9 +26,30 @@ function AccordionPresentation() {
           <b>Date de fin :</b> {projet.dateProjetFin}
         </p>
         <br /> <hr /> <br />
+        {projet.PresentationProject}
       </AccordionDetails>
     </>
   );
 }
 
+function getEmbedLink(link) {
+  if (!link) return "";
+
+  // Youtu.be
+  if (link.includes("youtu.be")) {
+    const videoId = link.split("/").pop().split("?")[0];
+    return `https://www.youtube.com/embed/${videoId}`;
+  }
+
+  // Youtube watch
+  if (link.includes("youtube.com/watch")) {
+    const url = new URL(link);
+    const videoId = url.searchParams.get("v");
+    return `https://www.youtube.com/embed/${videoId}`;
+  }
+
+  return link; // autre lien vidéo
+}
+
 export default AccordionPresentation;
+export { getEmbedLink };

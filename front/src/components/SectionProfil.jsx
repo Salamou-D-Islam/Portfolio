@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import FormText, { FormTextrea, ButtonForm } from "../components/Form";
+import AccordionSection from "../components/AccordionSection";
 
 function SectionProfil({ title, desc, isAdmin, onDelete, id, onUpdate }) {
   const [isEditing, setIsEditing] = useState(false);
@@ -9,7 +10,12 @@ function SectionProfil({ title, desc, isAdmin, onDelete, id, onUpdate }) {
   });
 
   function handleDelete() {
-    onDelete(id);
+    const yes = window.confirm(
+      "Voulez-vous vraiment supprimer cette section ?"
+    );
+    if (yes) {
+      onDelete(id);
+    }
   }
 
   function handleSave() {
@@ -25,13 +31,19 @@ function SectionProfil({ title, desc, isAdmin, onDelete, id, onUpdate }) {
     setIsEditing(false);
   }
   return (
-    <section className="sectionApply text-white p-10 contactHoverDiv hover:bg-gray-800 rounded-lg gap-4">
+    // <section className="sectionApply text-white p-10 contactHoverDiv hover:bg-gray-800 rounded-lg gap-4">
+    <AccordionSection
+      content={desc}
+      className=" mb-0! contactHoverDiv hover:bg-gray-800! rounded-lg gap-4"
+    >
       {!isEditing ? (
         <>
-          <div className="flex-1">
+          {/* <div className="flex-1">
             <div className="mb-4 text-2xl font-semibold">{title}</div>
             <div className="text-lg">{desc}</div>
-          </div>
+          </div> */}
+
+          {title}
 
           {isAdmin && (
             <div className="container flex gap-2 mt-4">
@@ -117,7 +129,8 @@ function SectionProfil({ title, desc, isAdmin, onDelete, id, onUpdate }) {
           </form>
         </div>
       )}
-    </section>
+      {/* </section> */}
+    </AccordionSection>
   );
 }
 

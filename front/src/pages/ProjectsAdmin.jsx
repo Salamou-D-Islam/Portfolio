@@ -29,7 +29,7 @@ function ProjectsAdmin({ sections, setSections }) {
               <tr>
                 <th scope="col">Nom du Projet</th>
                 <th scope="col">Lien affilé au projet</th>
-                <th scope="col">date du projet</th>
+                <th scope="col">date du projet (Début-Fin)</th>
                 <th scope="col">Détail du projet</th>
                 <th scope="col">Administraion</th>
               </tr>
@@ -45,6 +45,10 @@ function ProjectsAdmin({ sections, setSections }) {
                     projetLienNom={sectionItem.projetLienNom}
                     dateProjetDebut={sectionItem.projetDateDebut}
                     dateProjetFin={sectionItem.projetDateFin}
+                    GHProjet={sectionItem.GHProjet}
+                    PresentationProject={sectionItem.PresentationProject}
+                    techproject={sectionItem.techproject}
+                    VDOProjet={sectionItem.VDOProjet}
                     isAdmin={true}
                     onDelete={deleteProject}
                     onUpdate={updateSection}

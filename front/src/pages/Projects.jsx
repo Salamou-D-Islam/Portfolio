@@ -23,7 +23,7 @@ function Projects({ sections }) {
                   Lien affilé au projet
                 </th>
                 <th scope="col" className="tableProject">
-                  date du projet
+                  date du projet (Début-Fin)
                 </th>
                 <th scope="col" className="tableProject">
                   Détail du projet
@@ -40,6 +40,10 @@ function Projects({ sections }) {
                     projetLienNom={sectionItem.projetLienNom}
                     dateProjetDebut={sectionItem.projetDateDebut}
                     dateProjetFin={sectionItem.projetDateFin}
+                    GHProjet={sectionItem.GHProjet}
+                    PresentationProject={sectionItem.PresentationProject}
+                    techproject={sectionItem.techproject}
+                    VDOProjet={sectionItem.VDOProjet}
                     isAdmin={false}
                   />
                 ))
