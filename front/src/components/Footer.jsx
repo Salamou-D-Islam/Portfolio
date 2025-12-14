@@ -11,7 +11,10 @@ function Footer() {
     <footer className=" outline-2 outline-offset-2 outline-blue-50 mx-auto w-full bg-sky-800">
       <div>
         <div className="flex justify-center gap-6 mt-3 p-10 ">
-          <ContactLink href="https://github.com/Salamou-D-slam" target="_blank">
+          <ContactLink
+            href="https://github.com/Salamou-D-Islam"
+            target="_blank"
+          >
             <GitHubIcon />
           </ContactLink>
 

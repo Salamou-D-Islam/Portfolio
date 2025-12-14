@@ -9,6 +9,8 @@ function FormText({
   onChange,
   required,
   type,
+  ref,
+  className = "",
   ...props
 }) {
   return (
@@ -22,9 +24,10 @@ function FormText({
         name={name}
         value={value}
         onChange={onChange}
-        className="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
+        className={`w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 ${className}`}
         required={required}
         {...props}
+        ref={ref}
       />
     </>
   );
@@ -61,13 +64,23 @@ function FormTextrea({
   );
 }
 
-function ButtonForm({ type, children, onClick, className = "", ...props }) {
+function ButtonForm({
+  type,
+  children,
+  onClick,
+  value,
+  disabled,
+  className = "",
+  ...props
+}) {
   return (
     <button
       {...props}
+      value={value}
       type={type}
       className={`bg-blue-700 hover:bg-blue-700/90 text-white font-bold py-2 px-4 rounded mt-4  ${className}`}
       onClick={onClick}
+      disabled={disabled}
     >
       {children}
     </button>

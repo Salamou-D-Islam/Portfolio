@@ -1,7 +1,7 @@
 from fastapi import FastAPI
 from starlette.middleware.sessions import SessionMiddleware
 from fastapi.middleware.cors import CORSMiddleware
-from routers import auth, create_admin, admin
+from routers import auth, create_admin, admin, contact
 from database.connection import Base, engine
 import os
 from dotenv import load_dotenv
@@ -27,6 +27,7 @@ app.add_middleware(
 app.include_router(auth.router)
 app.include_router(create_admin.router)
 app.include_router(admin.router)
+app.include_router(contact.router)
 
 @app.get("/")
 def home():

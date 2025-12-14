@@ -16,6 +16,33 @@ function Contact() {
   });
   const [box, setBox] = useState(false);
 
+  const SentMail = async (e) => {
+    e.preventDefault();
+
+    try {
+      const res = await fetch("http://localhost:8000/contact", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        credentials: "include", // stockage du cookie
+        body: JSON.stringify(form),
+      });
+      if (!res.ok) throw new Error("Erreur lors de l'envoi");
+
+      const result = await res.json();
+      setForm({
+        nom: "",
+        email: "",
+        title: "",
+        description: "",
+      });
+      setBox(!box);
+      alert(result.message);
+    } catch (err) {
+      console.error(err);
+      alert("Une erreur est survenue !");
+    }
+  };
+
   function handleChange(event) {
     const { name, value } = event.target;
     setForm((prev) => ({
@@ -25,10 +52,10 @@ function Contact() {
   }
 
   function handleSubmit(event) {
-    event.preventDefault();
-    alert(
-      `Merci ${form.nom} pour votre message ! Nous vous répondrons à ${form.email}`
-    );
+    //   event.preventDefault();
+    //   alert(
+    //     `Merci ${form.nom} pour votre message ! Nous vous répondrons à ${form.email}`
+    //   );
 
     // Réinitialiser le formulaire
     setForm({
@@ -44,7 +71,7 @@ function Contact() {
     <>
       <section className="sectionContact">
         <div className="divForm contactHoverDiv outlineApply">
-          <form onSubmit={handleSubmit}>
+          <form onSubmit={SentMail}>
             <h1 className="text-3xl font-bold mb-4">
               Contactez moi par ce formulaire
             </h1>
@@ -113,7 +140,7 @@ function Contact() {
                 </label>
               </div>
 
-              <ButtonForm type="submit"> Envoyer le message</ButtonForm>
+              <ButtonForm type="submit">Envoyer le message</ButtonForm>
             </div>
           </form>
         </div>
