@@ -48,6 +48,8 @@ async def update_item(profil_id: int, profil_update: ProfilForm, db: Session = D
 @router.delete("/{profil_id}")
 async def delete_item(profil_id: int, db: Session = Depends(get_db)):
     db_profil = db.query(Profil).filter(Profil.id == profil_id).first()
+    if not db_profil:
+        raise HTTPException(status_code=404, detail="Section non trouvée")
     db.delete(db_profil)
     db.commit()
-    return {"message": "Section supprimer avec succès"}
+    return {"message": "Section supprimée avec succès"}

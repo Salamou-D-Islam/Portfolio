@@ -28,14 +28,16 @@ function SectionProfil({ title, desc, isAdmin, onDelete, id, onUpdate }) {
     setIsEditing(false);
   }
   return (
-    <AccordionSection
-      content={desc}
-      className=" mb-0! contactHoverDiv hover:bg-gray-800! rounded-lg gap-4"
-    >
+    <>
+      <AccordionSection
+        content={desc}
+        className=" mb-0! contactHoverDiv hover:bg-gray-800! rounded-lg gap-4"
+      >
+        {title}
+      </AccordionSection>
+
       {!isEditing ? (
         <>
-          {title}
-
           {isAdmin && (
             <div className="container flex gap-2 mt-4">
               <ButtonForm
@@ -50,7 +52,7 @@ function SectionProfil({ title, desc, isAdmin, onDelete, id, onUpdate }) {
 
               <ButtonForm
                 type="button"
-                onClick={handleDelete}
+                onClick={() => handleDelete(id)}
                 className="bg-red-700 hover:bg-red-600"
               >
                 Supprimer
@@ -60,12 +62,7 @@ function SectionProfil({ title, desc, isAdmin, onDelete, id, onUpdate }) {
         </>
       ) : (
         <div className="sectionApply text-white p-10">
-          <form
-            onSubmit={(e) => {
-              e.preventDefault();
-              handleSave();
-            }}
-          >
+          <form onSubmit={() => handleSave(id, tempDataProfil)}>
             <h2 className="text-2xl font-bold mb-6">
               Mettre à jour la section
             </h2>
@@ -116,7 +113,7 @@ function SectionProfil({ title, desc, isAdmin, onDelete, id, onUpdate }) {
           </form>
         </div>
       )}
-    </AccordionSection>
+    </>
   );
 }
 

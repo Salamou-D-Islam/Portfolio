@@ -24,7 +24,8 @@ export const updateSection = async (id, data) => {
 };
 
 export const deleteSection = async (id) => {
-  await fetch(`${API_URL}/${id}`, {
+  const res = await fetch(`${API_URL}/${id}`, {
     method: "DELETE",
   });
+  if (!res.ok) throw new Error("Erreur lors de la suppression");
 };

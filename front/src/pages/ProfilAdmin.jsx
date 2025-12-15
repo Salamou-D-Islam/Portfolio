@@ -63,20 +63,18 @@ function ProfilAdmin({ sections, setSections }) {
   };
 
   // Update une section
-  const handleUpdate = async (id, updatedData) => {
-    try {
-      const updated = await updateSection(id, updatedData);
-      setSections((prev) => prev.map((s) => (s.id === id ? updated : s)));
-    } catch (err) {
-      console.error("Erreur update :", err);
-    }
-  };
+  async function handleUpdate(id, updateData) {
+    await updateSection(id, updateData);
+    const data = await getAllSections();
+    setSections(data);
+  }
 
   // Delete une section
   const handleDelete = async (id) => {
     try {
-      await deleteSection(id);
-      setSections((prev) => prev.filter((s) => s.id !== id));
+      await deleteSection(id); // Supprime côté backend
+      const data = await getAllSections(); // Recharger la liste réelle (pas en local)
+      setSections(data); // Mettre à jour le state
     } catch (err) {
       console.error("Erreur suppression :", err);
     }
