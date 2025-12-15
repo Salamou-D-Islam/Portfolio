@@ -1,4 +1,4 @@
-from database.connection import SessionLocal
+from database.connection import get_db
 from models.user import User
 from utils.hash_code import hash_code, verify_code
 from fastapi import APIRouter, HTTPException, Depends, Request, BackgroundTasks
@@ -19,12 +19,6 @@ router = APIRouter(
     tags=["Authentification"]
 )
 
-def get_db():
-    db = SessionLocal()   # Créer la session
-    try:
-        yield db          # Lancer la sessions
-    finally:
-        db.close()        # Fermer la sessions
 
 
 
@@ -64,14 +58,14 @@ class LoginForm(BaseModel):
     email: str
 
 @router.post("/login")
-async def login(form: LoginForm,request: Request, db: Session= Depends(get_db),):
+async def login(form: LoginForm, request: Request, db: Session= Depends(get_db)):
     user = db.query(User).filter(User.email == form.email).first()
     if not user:
         raise HTTPException(status_code=400, detail="Utilisateur introuvable")
     
     code = generate_code()
     user.code_hash = hash_code(code)
-    user.code_expiration = datetime.now(timezone.utc) + timedelta(seconds=10)
+    user.code_expiration = datetime.now(timezone.utc) + timedelta(minutes=10)
 
     db.add(user)
     db.commit()
@@ -84,7 +78,7 @@ async def login(form: LoginForm,request: Request, db: Session= Depends(get_db),)
 
 class VerifyCodeForm(BaseModel):
     email: str
-    code: str     
+    code: str   
 
 @router.post("/verif-code")
 async def verify_code(form: VerifyCodeForm, request: Request, db: Session = Depends(get_db)):

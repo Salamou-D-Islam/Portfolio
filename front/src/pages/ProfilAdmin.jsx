@@ -3,9 +3,14 @@ import { useNavigate } from "react-router-dom";
 import InputProfil from "../components/InputProfil.jsx";
 import SectionProfil from "../components/SectionProfil.jsx";
 import CircularProgress from "@mui/material/CircularProgress";
+import {
+  getAllSections,
+  createSection,
+  updateSection,
+  deleteSection,
+} from "../services/profilApi.js";
 
 function ProfilAdmin({ sections, setSections }) {
-  //const [sections, setSections] = useState([]);
   const navigate = useNavigate();
   const [loading, setLoading] = useState(true);
   const [authorized, setAuthorized] = useState(false);
@@ -33,6 +38,50 @@ function ProfilAdmin({ sections, setSections }) {
     checkSession();
   }, [navigate]);
 
+  // Read les sections
+  const readSections = async () => {
+    try {
+      const data = await getAllSections();
+      setSections(data);
+    } catch (err) {
+      console.error("Erreur récupération sections :", err);
+    }
+  };
+  useEffect(() => {
+    readSections();
+  }, []);
+
+  // Create une section
+
+  const addSection = async (newSection) => {
+    try {
+      const created = await createSection(newSection);
+      setSections((prev) => [...prev, created]);
+    } catch (err) {
+      console.error("Erreur création section :", err);
+    }
+  };
+
+  // Update une section
+  const handleUpdate = async (id, updatedData) => {
+    try {
+      const updated = await updateSection(id, updatedData);
+      setSections((prev) => prev.map((s) => (s.id === id ? updated : s)));
+    } catch (err) {
+      console.error("Erreur update :", err);
+    }
+  };
+
+  // Delete une section
+  const handleDelete = async (id) => {
+    try {
+      await deleteSection(id);
+      setSections((prev) => prev.filter((s) => s.id !== id));
+    } catch (err) {
+      console.error("Erreur suppression :", err);
+    }
+  };
+
   // Tant que la vérification n’est pas finie, rien ne s’affiche
   if (loading)
     return (
@@ -41,19 +90,6 @@ function ProfilAdmin({ sections, setSections }) {
       </div>
     );
   if (!authorized) return null;
-
-  function addSection(newSection) {
-    setSections((prev) => [...prev, newSection]);
-  }
-  function deleteSection(id) {
-    setSections((prev) => prev.filter((_, index) => index !== id));
-  }
-
-  function updateSection(id, updateData) {
-    setSections((prev) =>
-      prev.map((section, index) => (index === id ? updateData : section))
-    );
-  }
   return (
     <div className="container mx-auto p-6 border rounded whitespace-pre-wrap">
       <div className="container mx-auto p-6 text-white text-center">
@@ -63,15 +99,15 @@ function ProfilAdmin({ sections, setSections }) {
 
       <div className="mt-10">
         {sections.length > 0 ? (
-          sections.map((sectionItem, index) => (
+          sections.map((section) => (
             <SectionProfil
-              key={index}
-              id={index}
-              title={sectionItem.profilNom}
-              desc={sectionItem.profilDesc}
+              key={section.id}
+              id={section.id}
+              title={section.nom_section}
+              desc={section.description_section}
               isAdmin={true}
-              onDelete={deleteSection}
-              onUpdate={updateSection}
+              onUpdate={handleUpdate}
+              onDelete={handleDelete}
             />
           ))
         ) : (

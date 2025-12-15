@@ -1,7 +1,22 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import SectionProfil from "../components/SectionProfil.jsx";
+import { getAllSections } from "../services/profilApi.js";
 
-function Profi({ sections }) {
+function Profi() {
+  const [sections, setSections] = useState([]);
+
+  useEffect(() => {
+    const fetchSections = async () => {
+      try {
+        const data = await getAllSections();
+        setSections(data);
+      } catch (err) {
+        console.error(err);
+      }
+    };
+    fetchSections();
+  }, []);
+
   return (
     <div className="container mx-auto p-6 border rounded whitespace-pre-wrap">
       <h1 className="text-6xl text-salamou font-bold text-center text-white mb-6">
@@ -9,11 +24,12 @@ function Profi({ sections }) {
       </h1>
 
       {sections && sections.length > 0 ? (
-        sections.map((sectionItem, index) => (
+        sections.map((section) => (
           <SectionProfil
-            key={index}
-            title={sectionItem.profilNom}
-            desc={sectionItem.profilDesc}
+            key={section.id}
+            id={section.id}
+            title={section.nom_section}
+            desc={section.description_section}
             isAdmin={false}
           />
         ))

@@ -5,15 +5,12 @@ import AccordionSection from "../components/AccordionSection";
 function SectionProfil({ title, desc, isAdmin, onDelete, id, onUpdate }) {
   const [isEditing, setIsEditing] = useState(false);
   const [tempDataProfil, setTempDataProfil] = useState({
-    profilNom: title,
-    profilDesc: desc,
+    nom_section: title,
+    description_section: desc,
   });
 
   function handleDelete() {
-    const yes = window.confirm(
-      "Voulez-vous vraiment supprimer cette section ?"
-    );
-    if (yes) {
+    if (window.confirm("Voulez-vous vraiment supprimer cette section ?")) {
       onDelete(id);
     }
   }
@@ -25,24 +22,18 @@ function SectionProfil({ title, desc, isAdmin, onDelete, id, onUpdate }) {
 
   function handleCancel() {
     setTempDataProfil({
-      profilNom: title,
-      profilDesc: desc,
+      nom_section: title,
+      description_section: desc,
     });
     setIsEditing(false);
   }
   return (
-    // <section className="sectionApply text-white p-10 contactHoverDiv hover:bg-gray-800 rounded-lg gap-4">
     <AccordionSection
       content={desc}
       className=" mb-0! contactHoverDiv hover:bg-gray-800! rounded-lg gap-4"
     >
       {!isEditing ? (
         <>
-          {/* <div className="flex-1">
-            <div className="mb-4 text-2xl font-semibold">{title}</div>
-            <div className="text-lg">{desc}</div>
-          </div> */}
-
           {title}
 
           {isAdmin && (
@@ -50,10 +41,6 @@ function SectionProfil({ title, desc, isAdmin, onDelete, id, onUpdate }) {
               <ButtonForm
                 type="button"
                 onClick={() => {
-                  setTempDataProfil({
-                    profilNom: title,
-                    profilDesc: desc,
-                  });
                   setIsEditing(true);
                 }}
                 className="bg-green-700 hover:bg-green-600"
@@ -86,11 +73,11 @@ function SectionProfil({ title, desc, isAdmin, onDelete, id, onUpdate }) {
             <div className="mb-4">
               <FormText
                 type="text"
-                value={tempDataProfil.profilNom}
+                value={tempDataProfil.nom_section}
                 onChange={(e) =>
                   setTempDataProfil({
                     ...tempDataProfil,
-                    profilNom: e.target.value,
+                    nom_section: e.target.value,
                   })
                 }
               >
@@ -98,11 +85,11 @@ function SectionProfil({ title, desc, isAdmin, onDelete, id, onUpdate }) {
               </FormText>
 
               <FormTextrea
-                value={tempDataProfil.profilDesc}
+                value={tempDataProfil.description_section}
                 onChange={(e) =>
                   setTempDataProfil({
                     ...tempDataProfil,
-                    profilDesc: e.target.value,
+                    description_section: e.target.value,
                   })
                 }
               >
@@ -129,7 +116,6 @@ function SectionProfil({ title, desc, isAdmin, onDelete, id, onUpdate }) {
           </form>
         </div>
       )}
-      {/* </section> */}
     </AccordionSection>
   );
 }

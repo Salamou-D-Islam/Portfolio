@@ -1,11 +1,20 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import FormText, { FormTextrea, ButtonForm } from "./Form.jsx";
 
-function InputProfil({ onAdd }) {
+function InputProfil({ section, onAdd }) {
   const [inputText, setInputText] = useState({
-    profilNom: "",
-    profilDesc: "",
+    nom_section: "",
+    description_section: "",
   });
+
+  useEffect(() => {
+    if (section) {
+      setInputText({
+        nom_section: section.nom_section,
+        description_section: section.description_section,
+      });
+    }
+  }, [section]);
 
   function handleChange(event) {
     const { name, value } = event.target;
@@ -16,13 +25,14 @@ function InputProfil({ onAdd }) {
       };
     });
   }
+
   function handleSubmit(event) {
     event.preventDefault(); // empêche le refresh de la page
-    if (onAdd) onAdd(inputText);
+    if (onAdd) onAdd(inputText); // envoie les données au parent
 
     setInputText({
-      profilNom: "",
-      profilDesc: "",
+      nom_section: "",
+      description_section: "",
     }); // reset form
   }
   return (
@@ -35,21 +45,21 @@ function InputProfil({ onAdd }) {
             </h2>
             <div className="mb-4">
               <FormText
-                htmlFor="profilNom"
+                htmlFor="nom_section"
                 type="text"
-                id="profilNom"
-                name="profilNom"
-                value={inputText.profilNom}
+                id="nom_section"
+                name="nom_section"
+                value={inputText.nom_section}
                 onChange={handleChange}
               >
                 Nom de la section
               </FormText>
 
               <FormTextrea
-                htmlFor="profilDesc"
-                id="profilDesc"
-                name="profilDesc"
-                value={inputText.profilDesc}
+                htmlFor="description_section"
+                id="description_section"
+                name="description_section"
+                value={inputText.description_section}
                 onChange={handleChange}
               >
                 Titre de la section
