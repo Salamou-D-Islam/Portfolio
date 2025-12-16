@@ -20,8 +20,6 @@ router = APIRouter(
 )
 
 
-
-
 #-------------Envoi de mail---------------
 
 conf = ConnectionConfig(
