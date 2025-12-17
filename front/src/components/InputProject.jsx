@@ -65,7 +65,7 @@ function InputProject({ onAdd }) {
   }
   return (
     <>
-      <div className="container mx-auto p-6 text-white text-center">
+      <div className="container mx-auto p-6 text-white text-center  max-sm:hidden!">
         <h1 className="title text-salamou">Page de projets (Administrateur)</h1>
       </div>
 

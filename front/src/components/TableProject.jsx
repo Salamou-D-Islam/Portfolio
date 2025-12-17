@@ -77,13 +77,13 @@ function TableProject({
       {!isEditing && (
         <tr>
           <td className="tableProject">{nom_projet}</td>
-          <td className="tableProject">{techno}</td>
-          <td className="tableProject">
+          <td className="tableProject max-sm:hidden">{techno}</td>
+          <td className="tableProject max-sm:hidden">
             <a href={lien_url} target="_blank" rel="noreferrer">
               {lien_nom}
             </a>
           </td>
-          <td className="tableProject">
+          <td className="tableProject max-sm:hidden">
             {date_debut} - {date_fin}
           </td>
           <td className="tableProject">

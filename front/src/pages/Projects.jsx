@@ -26,21 +26,21 @@ function Projects() {
         </h1>
       </div>
 
-      <div className="mt-10">
+      <div className="mt-10 mb-10">
         <div className="container mx-auto p-6 border-2 bg-black/50 overflow-x-auto">
-          <table className="text-white border-4 w-370 h-30 border-collapse">
+          <table className="text-white border-4 w-370 max-sm:w-full h-30 border-collapse">
             <thead>
               <tr>
                 <th scope="col" className="tableProject">
                   Nom du Projet
                 </th>
-                <th scope="col" className="tableProject">
+                <th scope="col" className="tableProject max-sm:hidden">
                   Technologies principales
                 </th>
-                <th scope="col" className="tableProject">
+                <th scope="col" className="tableProject max-sm:hidden">
                   Lien affilé au projet
                 </th>
-                <th scope="col" className="tableProject">
+                <th scope="col" className="tableProject max-sm:hidden">
                   date du projet (Début-Fin)
                 </th>
                 <th scope="col" className="tableProject">

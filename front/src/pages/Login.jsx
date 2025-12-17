@@ -74,7 +74,7 @@ function Login() {
 
   return (
     <>
-      <section className="sectionApply text-white w-160!">
+      <section className="sectionApply w-full!  text-white lg:w-160!">
         {step === 1 && (
           <form onSubmit={handleSubmit(sendCode)}>
             <FormText
@@ -99,7 +99,6 @@ function Login() {
               id="code"
               {...register("code", { required: "Code obligatoire" })}
               placeholder="Code"
-              className="w-100!"
             >
               Le code d'authentification
             </FormText>

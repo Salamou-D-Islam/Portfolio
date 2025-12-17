@@ -90,8 +90,8 @@ function ProfilAdmin({ sections, setSections }) {
   if (!authorized) return null;
   return (
     <div className="container mx-auto p-6 border rounded whitespace-pre-wrap">
-      <div className="container mx-auto p-6 text-white text-center">
-        <h1 className="title text-salamou ">Page de profil (Administrateur)</h1>
+      <div className="container mx-auto p-6 text-white text-center lg:w-full! max-sm:hidden!">
+        <h1 className="title text-salamou">Page de profil (Administrateur)</h1>
       </div>
       <InputProfil onAdd={addSection} />
 
