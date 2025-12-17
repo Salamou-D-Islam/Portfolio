@@ -15,18 +15,6 @@ import smtplib
 
 load_dotenv()
 
-server = smtplib.SMTP_SSL("smtp.gmail.com", 465)
-server.login(os.getenv("MAIL_USERNAME"), os.getenv("MAIL_PASSWORD"))
-server.sendmail(
-    os.getenv("MAIL_FROM"),
-    "islamderrouiche@gmail.com",
-    "Subject: Test\n\nCeci est un test depuis render"
-)
-server.quit()
-print("Mail envoyé !")
-
-
-
 router = APIRouter(
     prefix="/auth",
     tags=["Authentification"]
@@ -46,7 +34,6 @@ conf = ConnectionConfig(
     USE_CREDENTIALS=True
 )
 
-fm = FastMail(conf)
 
 # Génération du code 
 def generate_code():
@@ -54,6 +41,7 @@ def generate_code():
 
     
 async def send_mail(email: str, code: str):
+    fm = FastMail(conf)
 
     message = MessageSchema(
         subject=f"Code de connexion : {code}",

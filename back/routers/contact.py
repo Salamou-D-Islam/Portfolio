@@ -34,10 +34,10 @@ conf = ConnectionConfig(
     USE_CREDENTIALS=True
 )
 
-fm = FastMail(conf)
 
     
 async def send_mail_contact(nom, email, title, description):
+    fm = FastMail(conf)
 
     message = MessageSchema(
         subject=f"{nom} - {title}",

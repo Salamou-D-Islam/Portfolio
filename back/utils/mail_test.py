@@ -17,14 +17,11 @@ conf = ConnectionConfig(
     USE_CREDENTIALS = True
 )
 
-
-fm = FastMail(conf)
-
 to_email = "islamderrouiche@gmail.com"
 code="659235"
 
 async def send_test_mail(to_email: str, code: str):
-
+    fm = FastMail(conf)
     message = MessageSchema(
         subject=code,
         recipients=[to_email],  
