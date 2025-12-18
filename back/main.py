@@ -24,7 +24,7 @@ Base.metadata.create_all(bind=engine)
 # CORS pour React
 app.add_middleware(
     CORSMiddleware,
-    allow_origins=["https://islam-derrouiche-salamou.netlify.app/"],
+    allow_origins=["https://islam-derrouiche-salamou.netlify.app"],
     allow_credentials=True,
     allow_methods=["*"],
     allow_headers=["*"],
