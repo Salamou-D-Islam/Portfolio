@@ -19,7 +19,7 @@ function ProfilAdmin({ sections, setSections }) {
     const checkSession = async () => {
       try {
         const res = await fetch(
-          "https://portfolio-ufox.onrender.com/admin/profilform",
+          "https://islam-backend.fly.dev/admin/profilform",
           {
             method: "GET",
             credentials: "include",

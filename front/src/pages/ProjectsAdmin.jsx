@@ -20,7 +20,7 @@ function ProjectsAdmin({ projects, setProjects }) {
     const checkSession = async () => {
       try {
         const res = await fetch(
-          "https://portfolio-ufox.onrender.com/admin/projectform",
+          "https://islam-backend.fly.dev/admin/projectform",
           {
             method: "GET",
             credentials: "include",

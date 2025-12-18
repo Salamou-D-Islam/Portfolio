@@ -12,7 +12,7 @@ function Admin() {
   useEffect(() => {
     const checkSession = async () => {
       try {
-        const res = await fetch("https://portfolio-ufox.onrender.com/admin", {
+        const res = await fetch("https://islam-backend.fly.dev/admin", {
           method: "GET",
           credentials: "include",
         });
@@ -43,7 +43,7 @@ function Admin() {
 
   const handlLogout = async (data) => {
     try {
-      await fetch("https://portfolio-ufox.onrender.com/auth/logout", {
+      await fetch("https://islam-backend.fly.dev/auth/logout", {
         method: "POST",
         credentials: "include",
       });

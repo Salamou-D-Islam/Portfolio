@@ -85,7 +85,7 @@ async def verify_code(form: VerifyCodeForm, request: Request, db: Session = Depe
     if not user:
         raise HTTPException(status_code=400, detail="Utilisateur introuvable")
     
-    if not verify_code(form.code, user.code_hash):
+    if not await verify_code(form.code, user.code_hash):
         raise HTTPException(status_code=400, detail="Code incorrect")
     
     if  user.code_expiration <  datetime.now(timezone.utc):
