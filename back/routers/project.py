@@ -39,13 +39,13 @@ class ProjectResponse(ProjectCreate):
         from_attributes = True
 
 # Read tout les projet
-@router.get("/", response_model=list[ProjectResponse])
+@router.get("", response_model=list[ProjectResponse])
 def read_section(db: Session = Depends(get_db)):
     projects = db.query(Project).all()
     return projects
 
 # Create un projet
-@router.post("/", response_model=ProjectResponse)
+@router.post("", response_model=ProjectResponse)
 def create_section(project: ProjectCreate, db: Session = Depends(get_db)):
     db_project = Project(**project.model_dump())
     db.add(db_project)
