@@ -33,7 +33,7 @@ body {
 }
 
 .buttonLink {
-  @apply flex flex-wrap justify-center gap-6 mt-30;
+  @apply flex flex-wrap justify-center gap-6 mt-10;
 }
 
 .tableProject {
