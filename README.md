@@ -5,7 +5,7 @@ Il s’agit à la fois de mon projet personnel et de mon tout premier projet Rea
 Ce projet marque une étape importante dans mon apprentissage de React et du développement full stack.
 
 lien de l'application hébérgé:
-[Salamou JS]([https://support.google.com/mail/answer/185833?hl=fr](https://islam-derrouiche-salamou.netlify.app/))
+[Salamou JS](https://islam-derrouiche-salamou.netlify.app/)
 ---
 ## Fonctionnalités
 
