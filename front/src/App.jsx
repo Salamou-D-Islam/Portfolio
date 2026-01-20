@@ -22,26 +22,20 @@ function App() {
 
   return (
     <Router>
-      <div className="min-h-screen flex flex-col">
-        {/* <Header /> */}
+      <div className="min-h-screen flex flex-col mt-20">
+        <Header />
 
-        <div className={darkMode ? "dark" : ""}>
-          <div className="p-4 ">
+        {/* <div className={darkMode ? "dark" : ""}>
+          <div className="p-4 mt-20 ">
             <button className="btn-primary mb-4" onClick={toggleDarkMode}>
               {darkMode ? "Light Mode" : "Dark Mode"}
             </button>
 
             <Style />
           </div>
-        </div>
+        </div> */}
 
-        <div className="p-8 bg-primary">
-          <h1 className="text-h1 text-primary font-sans mb-4">Mon Portfolio</h1>
-          <button className="btn-primary mr-2">Contact</button>
-          <button className="btn-secondary">Voir Projet</button>
-        </div>
-
-        {/* <main className="flex-grow">
+        <main className="flex-grow">
           <Routes>
             <Route path="/" element={<Home />} />
             <Route path="/contact" element={<Contact />} />
@@ -66,9 +60,9 @@ function App() {
 
             <Route path="/projets/:id" element={<ProjectDetail />} />
           </Routes>
-        </main> */}
+        </main>
 
-        {/* <Footer /> */}
+        <Footer />
       </div>
     </Router>
   );

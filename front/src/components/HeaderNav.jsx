@@ -4,7 +4,10 @@ import { Link } from "react-router-dom";
 function HeaderNav({ children, to }) {
   return (
     <li>
-      <Link to={to} className="text-white hover:text-indigo-400">
+      <Link
+        className="font-sans hover:text-[var(--color-primary)] underline-left relative pb-1 border-b-2 border-transparent hover:after:scale-x-100"
+        to={to}
+      >
         {children}
       </Link>
     </li>

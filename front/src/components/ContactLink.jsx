@@ -7,7 +7,7 @@ function ContactLink({ children, href, target, title }) {
       href={href}
       target={target}
       title={title}
-      className="text-white text-2xl hover:text-indigo-400"
+      className="hover:scale-120 transition-all"
     >
       {children}
     </a>

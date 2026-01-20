@@ -5,6 +5,6 @@ import "./css/index.css";
 
 createRoot(document.getElementById("root")).render(
   <React.StrictMode>
-    <App />
+    <App className="bg-radial-primary" />
   </React.StrictMode>,
 );

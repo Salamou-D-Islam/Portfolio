@@ -9,16 +9,24 @@ function ButtonHome({ children, to, download, target, rel }) {
       download={download}
       target={target}
       rel={rel}
-      className="btnHome"
+      className="btn-primary text-center w-60"
     >
       {children}
     </Link>
   );
 }
 
+// function IconsLink({ children, href }) {
+//   return (
+//     <a href={href} className="hover:scale-120 transition-all">
+//       {children}
+//     </a>
+//   );
+// }
+
 function ButtonNav({ children, onClick }) {
   return (
-    <button className="btnnav" type="button" onClick={onClick}>
+    <button className="btnnav md:hidden" type="button" onClick={onClick}>
       <MenuIcon />
     </button>
   );
