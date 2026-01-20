@@ -13,10 +13,10 @@ function Header() {
 
   return (
     <>
-      <nav className="bg-transparent  outline-2 outline-offset-2 outline-blue-50 sm:w-160 max-sm:w-full mx-auto rounded-b-lg shadow-lg m-6">
+      <nav className="fixed top-0 right-0 left-0">
         <div className="container mx-auto px-4 flex items-center justify-between p-4">
-          <Link to="/" className="text-white text-2xl">
-            Salamou <span className="text-yellow-300">JS</span>
+          <Link to="/" className="text-black text-2xl">
+            Islam <span className="text-secondary">D</span>
           </Link>
 
           <div className="flex items-center">

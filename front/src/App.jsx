@@ -11,17 +11,37 @@ import Admin from "./pages/Admin.jsx";
 import ProfilAdmin from "./pages/ProfilAdmin.jsx";
 import ProjectsAdmin from "./pages/ProjectsAdmin.jsx";
 import ProjectDetail from "./pages/ProjectDetail.jsx";
+import Style from "./pages/Style.jsx";
 
 function App() {
   const [profil, setProfil] = useState([]);
   const [projects, setProjects] = useState([]);
 
+  const [darkMode, setDarkMode] = useState(false);
+  const toggleDarkMode = () => setDarkMode(!darkMode);
+
   return (
     <Router>
       <div className="min-h-screen flex flex-col">
-        <Header />
+        {/* <Header /> */}
 
-        <main className="flex-grow">
+        <div className={darkMode ? "dark" : ""}>
+          <div className="p-4 ">
+            <button className="btn-primary mb-4" onClick={toggleDarkMode}>
+              {darkMode ? "Light Mode" : "Dark Mode"}
+            </button>
+
+            <Style />
+          </div>
+        </div>
+
+        <div className="p-8 bg-primary">
+          <h1 className="text-h1 text-primary font-sans mb-4">Mon Portfolio</h1>
+          <button className="btn-primary mr-2">Contact</button>
+          <button className="btn-secondary">Voir Projet</button>
+        </div>
+
+        {/* <main className="flex-grow">
           <Routes>
             <Route path="/" element={<Home />} />
             <Route path="/contact" element={<Contact />} />
@@ -46,9 +66,9 @@ function App() {
 
             <Route path="/projets/:id" element={<ProjectDetail />} />
           </Routes>
-        </main>
+        </main> */}
 
-        <Footer />
+        {/* <Footer /> */}
       </div>
     </Router>
   );

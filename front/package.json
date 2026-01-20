@@ -21,6 +21,7 @@
     "@tiptap/extension-underline": "^3.13.0",
     "@tiptap/react": "^3.13.0",
     "@tiptap/starter-kit": "^3.13.0",
+    "daisyui": "^5.5.14",
     "dayjs": "^1.11.19",
     "quill": "^2.0.3",
     "react": "^19.2.0",
