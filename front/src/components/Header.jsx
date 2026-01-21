@@ -1,9 +1,10 @@
 import React, { useState, useEffect } from "react";
 import MenuIcon from "@mui/icons-material/Menu";
-import HeaderNav from "./HeaderNav.jsx";
+import HeaderNav, { MobileNav } from "./HeaderNav.jsx";
 import DarkMode from "../components/DarkMode.jsx";
 import { ButtonNav } from "./ButtonLink.jsx";
 import { Link } from "react-router-dom";
+import CloseIcon from "@mui/icons-material/Close";
 
 function Header() {
   const [isOpen, setIsOpen] = useState(false);
@@ -28,7 +29,7 @@ function Header() {
 
   return (
     <>
-      <nav
+      <header
         className={`fixed w-full top-0 left-0 z-50 transition-all duration-300 ${
           scrolled ? "bg-[var(--color-background)] shadow-md" : "bg-transparent"
         }`}
@@ -41,29 +42,21 @@ function Header() {
             Islam <div className="text-primary">DERROUICHE</div>
           </Link>
 
-          <div className="flex">
-            <ul className="hidden md:flex gap-6 mr-4">
-              <HeaderNav to="/">Accueil</HeaderNav>
-              <HeaderNav to="/profil">Profil</HeaderNav>
-              <HeaderNav to="/projets">Projets</HeaderNav>
-              <HeaderNav to="/contact">Contact</HeaderNav>
-              <DarkMode></DarkMode>
-            </ul>
-            <ButtonNav onClick={toggleMenu}></ButtonNav>
-          </div>
+          {/* Desktop nav */}
+          <nav className="hidden  md:flex gap-6 ">
+            <HeaderNav to="/">Accueil</HeaderNav>
+            <HeaderNav to="/profil">Profil</HeaderNav>
+            <HeaderNav to="/Projets">Projets</HeaderNav>
+            <HeaderNav to="/contact">Contact</HeaderNav>
+            <DarkMode />
+          </nav>
+
+          {/* Mobile nav */}
+          <nav className="md:hidden">
+            <MobileNav />
+          </nav>
         </div>
-        {isOpen && (
-          <div className="md:hidden px-4 pb-4">
-            <ul className="flex flex-col gap-3">
-              <HeaderNav to="/">Accueil</HeaderNav>
-              <HeaderNav to="/profil">Profil</HeaderNav>
-              <HeaderNav to="/Projets">Projets</HeaderNav>
-              <HeaderNav to="/contact">Contact</HeaderNav>
-              <DarkMode></DarkMode>
-            </ul>
-          </div>
-        )}
-      </nav>
+      </header>
     </>
   );
 }

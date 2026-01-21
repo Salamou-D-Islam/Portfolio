@@ -93,7 +93,7 @@
   );
   --color-card: #1f2937;
   --color-card-foreground: #f3f4f6;
-  --color-primary: #0d00ff;
+  --color-primary: #00a2ff;
   --color-secondary: #00d9ff;
   --color-accent: #34d399;
   --color-muted: #9ca3af;
@@ -160,6 +160,9 @@ input {
 }
 
 /* Couleur */
+.color-foreground {
+  color: var(--color-card-foreground);
+}
 .text-primary {
   color: var(--color-primary);
 }
