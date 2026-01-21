@@ -60,9 +60,7 @@ function MobileNav() {
   );
   return (
     <div>
-      <Button onClick={toggleDrawer(true)}>
-        <ButtonNav />
-      </Button>
+      <ButtonNav onClick={toggleDrawer(true)} />
       <Drawer open={open} anchor="right" onClose={toggleDrawer(false)}>
         {DrawerList}
       </Drawer>

@@ -23,6 +23,8 @@
     "@tiptap/starter-kit": "^3.13.0",
     "daisyui": "^5.5.14",
     "dayjs": "^1.11.19",
+    "lucide-react": "^0.562.0",
+    "motion": "^12.28.1",
     "quill": "^2.0.3",
     "react": "^19.2.0",
     "react-bootstrap": "^2.10.10",

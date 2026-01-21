@@ -20,3 +20,24 @@
 .underline-left:hover::after {
   transform: scaleX(1);
 }
+
+/*--------------A propos-------------------*/
+.hr {
+  background: var(--color-background-btn);
+}
+
+.img-about {
+  @apply bg-[var(--color-background)] container max-w-100 flex flex-col gap-3 shadow-2xl rounded-3xl p-5 text-left shadow-lg hover:shadow-2xl transition-all transform hover:-translate-y-2 border border-gray-100;
+}
+
+.img-front {
+  background: var(--color-background-frontend);
+}
+
+.img-back {
+  background: var(--color-background-backend);
+}
+
+.img-outils {
+  background: var(--color-background-outils);
+}

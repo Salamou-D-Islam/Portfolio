@@ -16,14 +16,6 @@ function ButtonHome({ children, to, download, target, rel }) {
   );
 }
 
-// function IconsLink({ children, href }) {
-//   return (
-//     <a href={href} className="hover:scale-120 transition-all">
-//       {children}
-//     </a>
-//   );
-// }
-
 function ButtonNav({ children, onClick }) {
   return (
     <button className="btnnav md:hidden" type="button" onClick={onClick}>

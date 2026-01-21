@@ -1,37 +1,3 @@
-/* :root {
-  /* Couleurs */
-/*   --color-primary: #4f46e5; /* violet */
-/*   --color-secondary: #f59e0b; /* orange */
-/*   --color-accent: #10b981; /* vert */
-/*   --color-neutral: #f3f4f6; /* gris clair */
-/*   --color-dark: #111827; /* gris foncé */
-/*   --color-info: #3abff8;
-/*   --color-success: #36d399;
-/*   --color-warning: #fbbd23;
-/*   --color-error: #f87272;
-
-/*   /* Polices */
-/*   --font-sans: "Inter", sans-serif;
-/*   --font-serif: "Merriweather", serif;
-/*   --font-mono: "Fira Code", monospace;
-
-/*   /* Tailles de texte */
-/*   --text-h1: 3rem;
-/*   --text-h2: 2.25rem;
-/*   --text-h3: 1.875rem;
-/*   --text-base: 1rem;
-
-/*   /* Border radius */
-/*   --radius-xl: 1.5rem;
-/*   --radius-2xl: 2rem;
-
-/*   /* Spacing personnalisés */
-/*   --space-128: 32rem;
-/*   --space-144: 36rem;
-}
-*/
-
-/* variables.css */
 :root {
   --color-background: #ffffff;
   --color-foreground: #111827;
@@ -45,11 +11,24 @@
     rgb(86, 134, 255) 0%,
     rgb(64, 86, 139) 100%
   );
+  --color-background-frontend: linear-gradient(
+    rgb(49, 255, 169) 0%,
+    rgb(0, 226, 19) 100%
+  );
+  --color-background-backend: linear-gradient(
+    rgb(255, 49, 49) 0%,
+    rgb(226, 0, 0) 100%
+  );
+  --color-background-outils: linear-gradient(
+    rgb(231, 49, 255) 0%,
+    rgb(226, 0, 207) 100%
+  );
+
   --color-card: #f9f9fb;
   --color-card-foreground: #111827;
   --color-primary: #0d00ff;
   --color-secondary: #00d9ff;
-  --color-accent: #10b981;
+  --color-accent: #8acff731;
   --color-muted: #717182;
   --color-destructive: #d4183d;
   --color-border: rgba(0, 0, 0, 0.1);
@@ -91,11 +70,23 @@
     rgba(28, 88, 238, 1) 0%,
     rgba(0, 39, 137, 1) 100%
   );
+  --color-background-frontend: linear-gradient(
+    rgb(17, 109, 71) 0%,
+    rgb(1, 102, 9) 100%
+  );
+  --color-background-backend: linear-gradient(
+    rgb(104, 25, 25) 0%,
+    rgb(100, 0, 0) 100%
+  );
+  --color-background-outils: linear-gradient(
+    rgb(131, 28, 145) 0%,
+    rgb(129, 0, 119) 100%
+  );
   --color-card: #1f2937;
   --color-card-foreground: #f3f4f6;
   --color-primary: #00a2ff;
   --color-secondary: #00d9ff;
-  --color-accent: #34d399;
+  --color-accent: #26608131;
   --color-muted: #9ca3af;
   --color-destructive: #f87171;
   --color-border: rgba(255, 255, 255, 0.1);
@@ -220,7 +211,7 @@ input {
 }
 
 .btn-primary:hover {
-  scale: 1.2;
+  scale: 1.08;
 }
 
 .btn-secondary {
@@ -239,8 +230,8 @@ input {
 
 /* Cartes */
 .card {
-  background-color: var(--color-card);
-  color: var(--color-card-foreground);
+  background-color: var(--color-accent);
+  color: var(--color-card);
   padding: var(--space-md);
   border-radius: var(--radius-lg);
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.05);
@@ -284,8 +275,5 @@ input {
     --text-base: 0.875rem;
     --space-lg: 1rem;
     --space-xl: 2rem;
-  }
-  .btn-primary:hover {
-    scale: 1.1;
   }
 }
