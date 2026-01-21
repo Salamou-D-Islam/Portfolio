@@ -5,6 +5,8 @@ import Reveal from "../components/Reveal.jsx";
 import ContactLink from "../components/ContactLink.jsx";
 import LinkedInIcon from "@mui/icons-material/LinkedIn";
 import GitHubIcon from "@mui/icons-material/GitHub";
+import ContactsIcon from "@mui/icons-material/Contacts";
+import ArrowDownwardIcon from "@mui/icons-material/ArrowDownward";
 
 function Home() {
   const [isSmall, setIsSmall] = useState(window.innerWidth < 1023);
@@ -18,7 +20,7 @@ function Home() {
 
   return (
     <>
-      <section className="p-5 reveal">
+      <section className="flex justify-center p-5" id="hero">
         <Reveal>
           <div className="container text-center flex flex-col gap-5 p-3">
             <h1 className="mx-auto">
@@ -28,7 +30,7 @@ function Home() {
 
             <h3 className="text-muted">DEVELOPPEUR WEB FULLSTACK</h3>
 
-            <p className="">
+            <p className="p-7">
               Je conçois des applications web modernes, performantes et
               maintenables, du front au back. <br />
               Disponible pour missions freelance ou opportunités.
@@ -38,18 +40,23 @@ function Home() {
           <div className="container flex flex-col p-3 gap-5 items-center">
             <div className="flex gap-5">
               <ContactLink href="instagram.com">
-                <GitHubIcon
-                  className="color-foreground"
+                <LinkedInIcon
+                  className="color-background bg-[var(--color-foreground)] p-1 rounded-3xl"
                   sx={{ fontSize: 40 }}
                 />
               </ContactLink>
 
               <ContactLink href="instagram.com">
-                <LinkedInIcon className="text-primary" sx={{ fontSize: 40 }} />
+                <GitHubIcon
+                  className="color-background bg-[var(--color-foreground)] p-1 rounded-3xl"
+                  sx={{ fontSize: 40 }}
+                />
               </ContactLink>
-
               <ContactLink href="instagram.com">
-                <LinkedInIcon color="primary" sx={{ fontSize: 40 }} />
+                <ContactsIcon
+                  className="color-background bg-[var(--color-foreground)] p-1 rounded-3xl"
+                  sx={{ fontSize: 40 }}
+                />
               </ContactLink>
             </div>
 
@@ -59,40 +66,18 @@ function Home() {
 
             <ButtonHome to="/projets">Voir mes Projets</ButtonHome>
           </div>
+
+          <button className="flex mx-auto mt-10">
+            <a href="#test">
+              <ArrowDownwardIcon
+                className=" color-foreground animate-bounce"
+                sx={{ fontSize: 30 }}
+              />
+            </a>
+          </button>
         </Reveal>
-
-        {/* <div className="buttonLink">
-            {!isSmall && (
-              <>
-                <ButtonHome
-                  to="/cv.pdf"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                >
-                  Visualisez mon CV
-                </ButtonHome>
-                <ButtonHome to="/profil">Voir mon Profil</ButtonHome>
-                <ButtonHome to="/projets">Voir mes Projets</ButtonHome>
-                <ButtonHome to="/contact">Contactez moi</ButtonHome>
-              </>
-            )}
-
-            {isSmall && (
-              <ButtonHome
-                to="/cv.pdf"
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                Visualisez le CV
-              </ButtonHome>
-            )}
-          </div>
-        </div>
-
-        <div className="imageAvatar">
-          <img src={Photo} alt="Photo" className="avatarImg" />
-        </div> */}
       </section>
+      <section id="test" className=""></section>
     </>
   );
 }

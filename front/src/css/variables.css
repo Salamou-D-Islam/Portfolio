@@ -105,6 +105,10 @@
     color 0.3s;
 }
 
+html {
+  scroll-behavior: smooth;
+}
+
 /* Textes / titres */
 h1 {
   font-size: var(--text-h1);
@@ -160,9 +164,14 @@ input {
 }
 
 /* Couleur */
-.color-foreground {
-  color: var(--color-card-foreground);
+.color-background {
+  color: var(--color-background);
 }
+
+.color-foreground {
+  color: var(--color-foreground);
+}
+
 .text-primary {
   color: var(--color-primary);
 }
@@ -245,7 +254,7 @@ input {
 }
 
 /* Responsive */
-@media (min-width: 1280px) {
+@media (max-width: 1280px) {
   :root {
     --text-h1: 2.5rem;
     --text-h2: 2rem;
@@ -254,7 +263,7 @@ input {
   }
 }
 
-@media (min-width: 800px) {
+@media (max-width: 800px) {
   :root {
     --text-h1: 2rem;
     --text-h2: 1.75rem;
@@ -266,7 +275,7 @@ input {
   }
 }
 
-@media (min-width: 375px) {
+@media (max-width: 375px) {
   :root {
     --text-h1: 1.75rem;
     --text-h2: 1.5rem;
