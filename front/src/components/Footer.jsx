@@ -1,46 +1,47 @@
 import React, { useState } from "react";
 import GitHubIcon from "@mui/icons-material/GitHub";
 import LinkedInIcon from "@mui/icons-material/LinkedIn";
-import ContactMailIcon from "@mui/icons-material/ContactMail";
+import ContactsIcon from "@mui/icons-material/Contacts";
 import ContactLink from "./ContactLink.jsx";
 import { Link } from "react-router-dom";
 function Footer() {
   const [year] = useState(new Date().getFullYear());
 
   return (
-    <footer className=" outline-2 outline-offset-2 outline-blue-50 mx-auto w-full bg-sky-800">
-      <div>
-        <div className="flex justify-center gap-6 mt-3 p-10 ">
-          <ContactLink
-            href="https://github.com/Salamou-D-Islam"
-            target="_blank"
-          >
-            <GitHubIcon />
-          </ContactLink>
-
-          <ContactLink
-            href="https://www.linkedin.com/in/islam-derrouiche-7a69a8368/"
-            target="_blank"
-          >
-            <LinkedInIcon />
-          </ContactLink>
-
+    <footer className=" w-full bg-sky-800 dark">
+      <div className>
+        <div className="flex flex-col items-center p-5 gap-5">
           <Link
-            to="/contact"
-            className="text-white text-2xl hover:text-indigo-400"
+            to="/"
+            className=" text-3xl max-md:text-2xl md:font-mono flex gap-2 text-mode"
           >
-            <ContactMailIcon />
+            Islam <div className="text-primary">DERROUICHE</div>
           </Link>
+
+          <div className="flex gap-5">
+            <ContactLink href="https://www.linkedin.com/in/islam-derrouiche-7a69a8368/">
+              <LinkedInIcon
+                className="color-background bg-[var(--color-foreground)] p-1 rounded-3xl"
+                sx={{ fontSize: 40 }}
+              />
+            </ContactLink>
+
+            <ContactLink href="https://github.com/Salamou-D-Islam">
+              <GitHubIcon
+                className="color-background bg-[var(--color-foreground)] p-1 rounded-3xl"
+                sx={{ fontSize: 40 }}
+              />
+            </ContactLink>
+          </div>
         </div>
-        <div className="container mx-auto px-4 py-6 text-center">
-          <p className="text-white">
+
+        <hr className="mr-5 ml-5 text-white " />
+
+        <div className="container mx-auto px-4 py-6 text-center ">
+          <p className="text-white!">
             &copy; {year} Salamou JS. Tous droits réservés.
           </p>
         </div>
-
-        <p className="text-xs text-gray-400 mt-4 text-center pb-4">
-          Développeur Web FullStack — React • NodeJS
-        </p>
       </div>
     </footer>
   );

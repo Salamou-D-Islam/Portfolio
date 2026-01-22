@@ -75,7 +75,10 @@ function Contact() {
 
   return (
     <>
-      <section className="flex flex-col p-5 text-center mt-20 mb-20">
+      <section
+        id="contact"
+        className="flex flex-col p-5 text-center mt-20 mb-20"
+      >
         <div>
           <h1>Contactez moi</h1>
           <hr className="w-35 max-lg:w-25 h-1 hr border-0 mx-auto mb-3 mt-1" />

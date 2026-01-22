@@ -11,6 +11,7 @@ import LinkedInIcon from "@mui/icons-material/LinkedIn";
 import GitHubIcon from "@mui/icons-material/GitHub";
 import ContactsIcon from "@mui/icons-material/Contacts";
 import ArrowDownwardIcon from "@mui/icons-material/ArrowDownward";
+import ArrowForwardIcon from "@mui/icons-material/ArrowForward";
 import { Code, Database, Layout } from "lucide-react";
 
 function Home() {
@@ -58,7 +59,7 @@ function Home() {
                   sx={{ fontSize: 40 }}
                 />
               </ContactLink>
-              <ContactLink to="/contact">
+              <ContactLink href="#contact">
                 <ContactsIcon
                   className="color-background bg-[var(--color-foreground)] p-1 rounded-3xl"
                   sx={{ fontSize: 40 }}
@@ -82,7 +83,7 @@ function Home() {
           <button className="flex mx-auto mt-20 md:mt-30">
             <a href="#about">
               <ArrowDownwardIcon
-                className=" color-foreground animate-bounce"
+                className="color-foreground animate-bounce"
                 sx={{ fontSize: 30 }}
               />
             </a>
@@ -147,7 +148,7 @@ function Home() {
 
       {/*---------------------------------PROJECTS--------------------------------*/}
       <Reveal>
-        <section className="flex flex-col p-5 text-center mt-20 bg-[var(--color-gray-muted)]">
+        <section className="flex flex-col p-10 text-center mt-20 bg-[var(--color-gray-muted)]">
           <div>
             <h1 className="">Mes Projets</h1>
             <hr className="w-35 max-lg:w-25 h-1 hr border-0 mx-auto mb-3 mt-1" />
@@ -157,6 +158,12 @@ function Home() {
             </p>
           </div>
           <CardProjects />
+          <div className="flex mx-auto mt-10">
+            <ButtonHome to="/projets" className="w-66">
+              Voir tout mes Projets{" "}
+              <ArrowDownwardIcon className="rotate-270 ml-2 animate-bounce" />
+            </ButtonHome>
+          </div>
         </section>
       </Reveal>
 
