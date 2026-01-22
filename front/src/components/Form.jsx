@@ -78,7 +78,6 @@ function ButtonForm({
       {...props}
       value={value}
       type={type}
-      className={`bg-blue-700 hover:bg-blue-700/90 text-white font-bold py-2 px-4 rounded mt-4  ${className}`}
       onClick={onClick}
       disabled={disabled}
     >

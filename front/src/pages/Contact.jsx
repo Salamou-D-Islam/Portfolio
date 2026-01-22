@@ -7,6 +7,8 @@ import AlternateEmailIcon from "@mui/icons-material/AlternateEmail";
 import InstagramIcon from "@mui/icons-material/Instagram";
 import LinkedInIcon from "@mui/icons-material/LinkedIn";
 
+import { Mail, MapPin, Phone, Send } from "lucide-react";
+
 function Contact() {
   const [form, setForm] = useState({
     nom: "",
@@ -50,14 +52,57 @@ function Contact() {
     }));
   }
 
+  const contactInfo = [
+    {
+      icon: <Mail size={24} />,
+      title: "Email",
+      value: "islamderrouiche@gmail.com",
+      color: "from-blue-500 to-cyan-500",
+    },
+    {
+      icon: <Phone size={24} />,
+      title: "Téléphone",
+      value: "+33 7 62 46 70 65",
+      color: "from-purple-500 to-pink-500",
+    },
+    {
+      icon: <MapPin size={24} />,
+      title: "Localisation",
+      value: "Lyon (69), France",
+      color: "from-orange-500 to-red-500",
+    },
+  ];
+
   return (
     <>
-      <section className="">
-        <div className="divForm contactHoverDiv outlineApply">
-          <form onSubmit={SentMail}>
-            <h1 className="text-3xl font-bold mb-4">
-              Contactez moi par ce formulaire
-            </h1>
+      <section className="flex flex-col p-5 text-center mt-20 mb-20">
+        <div>
+          <h1>Contactez moi</h1>
+          <hr className="w-35 max-lg:w-25 h-1 hr border-0 mx-auto mb-3 mt-1" />
+          <p className="max-w-250 p-3 mx-auto">
+            Des idées, un projet ou une opportunité de recrutement ?
+            Contactez-moi dès maintenant !{" "}
+          </p>
+        </div>
+
+        <div className="grid grid-cols-1 lg:flex lg:flex-row justify-center gap-8 mt-10 mb-10">
+          {contactInfo.map((contact) => (
+            <div className="flex items-center gap-4 p-4 bg-primary rounded-xl hover:shadow-lg transition-shadow">
+              <div
+                className={`w-12 h-12 rounded-xl bg-gradient-to-br ${contact.color} flex items-center justify-center text-white`}
+              >
+                {contact.icon}
+              </div>
+              <div className="text-left">
+                <p>{contact.title}</p>
+                <p>{contact.value}</p>
+              </div>
+            </div>
+          ))}
+        </div>
+
+        <div className="flex mx-auto">
+          <form onSubmit={SentMail} className="bg-primary rounded-2xl p-8">
             <div className="mb-4">
               <FormText
                 htmlFor="name"
@@ -106,7 +151,7 @@ function Contact() {
                 Description
               </FormTextrea>
 
-              <div>
+              <div className="mt-5 mb-5">
                 <input
                   type="checkbox"
                   name="form-name"
@@ -117,53 +162,17 @@ function Contact() {
                   checked={box}
                 />
 
-                <label htmlFor="form-name" className="text-sm ml-2" required>
+                <label htmlFor="form-name" className="ml-2" required>
                   Les informations recueillies sont nécessaires pour traiter
                   votre message et ne seront pas utilisées à d'autres fins.
                 </label>
               </div>
 
-              <ButtonForm type="submit">Envoyer le message</ButtonForm>
+              <button type="submit" className="btn-primary">
+                Envoyer le message
+              </button>
             </div>
           </form>
-        </div>
-
-        <div className="divSocials contactHoverDiv outlineApply">
-          <h1 className="text-3xl font-bold mb-4">Contactez moi par:</h1>
-
-          <div className="container flex flex-wrap mt-4 gap-6 p-4 rounded-lg justify-center ">
-            <ContactLink
-              href="mailto:islamderrouiche@gmail.com"
-              target="_blank"
-              title="Mon email"
-            >
-              <AlternateEmailIcon sx={{ fontSize: 90 }} />
-            </ContactLink>
-
-            <ContactLink
-              href="https://wa.me/0762467065?text=Bonjour%2C%20je%20viens%20de%20votre%20portfolio%20!"
-              target="_blank"
-              title="Mon WhatsApp"
-            >
-              <WhatsAppIcon sx={{ fontSize: 90 }} />
-            </ContactLink>
-
-            <ContactLink
-              href="https://www.linkedin.com/in/islam-derrouiche-7a69a8368/"
-              target="_blank"
-              title="Mon LinkedIn"
-            >
-              <LinkedInIcon sx={{ fontSize: 90 }} />
-            </ContactLink>
-
-            <ContactLink
-              href="https://www.instagram.com/salamou_js/"
-              target="_blank"
-              title="Mon Instagram"
-            >
-              <InstagramIcon sx={{ fontSize: 90 }} />
-            </ContactLink>
-          </div>
         </div>
       </section>
     </>

@@ -53,7 +53,7 @@ function CardProjects() {
   return (
     <>
       <div className="container grid grid-cols-1 md:grid-cols-2 gap-8 mx-auto container mt-10">
-        {projects.map((project, index) => (
+        {projects.map((project) => (
           <div className="group bg-primary rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl transition-all transform hover:-translate-y-2">
             <div className="relative overflow-hidden h-64">
               <img
