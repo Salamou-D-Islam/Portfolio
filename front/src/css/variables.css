@@ -30,6 +30,7 @@
   --color-secondary: #00d9ff;
   --color-accent: #8acff731;
   --color-muted: #717182;
+  --color-gray-muted: #71718225;
   --color-destructive: #d4183d;
   --color-border: rgba(0, 0, 0, 0.1);
 
@@ -88,6 +89,7 @@
   --color-secondary: #00d9ff;
   --color-accent: #26608131;
   --color-muted: #9ca3af;
+  --color-gray-muted: #7171828e;
   --color-destructive: #f87171;
   --color-border: rgba(255, 255, 255, 0.1);
 
@@ -131,7 +133,6 @@ h4 {
 }
 
 p,
-span,
 li,
 label,
 button,
@@ -193,6 +194,10 @@ input {
 
 .bg-primary {
   background-color: var(--color-background);
+}
+
+.bg-secondary {
+  background-color: var(--color-foreground);
 }
 
 .bg-radial-primary {

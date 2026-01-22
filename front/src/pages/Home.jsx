@@ -4,6 +4,8 @@ import ButtonHome from "../components/ButtonLink.jsx";
 import Reveal from "../components/Reveal.jsx";
 import ContactLink from "../components/ContactLink.jsx";
 import CardAbout, { TechAbout } from "../components/CardAbout.jsx";
+import CardProjects from "../components/CardProjects.jsx";
+import Contact from ".//Contact.jsx";
 
 import LinkedInIcon from "@mui/icons-material/LinkedIn";
 import GitHubIcon from "@mui/icons-material/GitHub";
@@ -43,20 +45,20 @@ function Home() {
 
           <div className="container flex flex-col p-3 gap-10 items-center">
             <div className="flex gap-5">
-              <ContactLink href="instagram.com">
+              <ContactLink href="https://www.linkedin.com/in/islam-derrouiche-7a69a8368/">
                 <LinkedInIcon
                   className="color-background bg-[var(--color-foreground)] p-1 rounded-3xl"
                   sx={{ fontSize: 40 }}
                 />
               </ContactLink>
 
-              <ContactLink href="instagram.com">
+              <ContactLink href="https://github.com/Salamou-D-Islam">
                 <GitHubIcon
                   className="color-background bg-[var(--color-foreground)] p-1 rounded-3xl"
                   sx={{ fontSize: 40 }}
                 />
               </ContactLink>
-              <ContactLink href="instagram.com">
+              <ContactLink to="/contact">
                 <ContactsIcon
                   className="color-background bg-[var(--color-foreground)] p-1 rounded-3xl"
                   sx={{ fontSize: 40 }}
@@ -92,7 +94,7 @@ function Home() {
       <Reveal>
         <section id="about" className="flex flex-col p-5 text-center mt-20">
           <div className="flex flex-col gap-3">
-            <h1 className="">A propos de moi</h1>
+            <h1>A propos de moi</h1>
             <hr className="w-25 h-1 hr border-0 mx-auto mb-3" />
             <p className="max-w-250 p-3 mx-auto">
               Je suis Islam Derrouiche, développeur web full stack passionné par
@@ -134,13 +136,32 @@ function Home() {
               desc_card="GitHub - Docker - VisualCode Studio - Postman - Figma"
             />
           </div>
-          <div className=" mt-20 mx-auto p-5 flex flex-col justify-center gap-5 card max-w-200">
+          <div className=" mt-20 mx-auto p-5 flex flex-col justify-center gap-5 card max-w-350">
             <h2>Technologies & Outils</h2>
             <div className="flex flex-wrap gap-3 justify-center">
               <TechAbout />
             </div>
           </div>
         </section>
+      </Reveal>
+
+      {/*---------------------------------PROJECTS--------------------------------*/}
+      <Reveal>
+        <section className="flex flex-col p-5 text-center mt-20 bg-[var(--color-gray-muted)]">
+          <div>
+            <h1 className="">Mes Projets</h1>
+            <hr className="w-35 max-lg:w-25 h-1 hr border-0 mx-auto mb-3 mt-1" />
+            <p className="max-w-250 p-3 mx-auto">
+              Voici quelques projets illustrant mes compétences et mon
+              expérience en développement web.
+            </p>
+          </div>
+          <CardProjects />
+        </section>
+      </Reveal>
+
+      <Reveal>
+        <Contact />
       </Reveal>
     </>
   );

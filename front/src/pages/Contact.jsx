@@ -52,7 +52,7 @@ function Contact() {
 
   return (
     <>
-      <section className="sectionContact">
+      <section className="">
         <div className="divForm contactHoverDiv outlineApply">
           <form onSubmit={SentMail}>
             <h1 className="text-3xl font-bold mb-4">
