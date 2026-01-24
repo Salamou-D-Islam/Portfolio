@@ -21,12 +21,12 @@ function DarkMode() {
   return (
     <button
       onClick={() => setDarkMode((prev) => !prev)}
-      className="max-md:hover:bg-neutral-300/50 p-1"
+      className="max-lg:hover:bg-neutral-300/50 p-1 max-lg:w-full text-center transition-all duration-200 ease-in-out"
     >
       {darkMode ? (
-        <DarkModeIcon className="md:hover:text-[var(--color-primary)]"></DarkModeIcon>
+        <DarkModeIcon className="md:hover:text-(--color-primary)"></DarkModeIcon>
       ) : (
-        <SunnyIcon className="text-amber-400 md:hover:text-[var(--color-secondary)] " />
+        <SunnyIcon className="text-amber-400 md:hover:text-(--color-secondary) " />
       )}
     </button>
   );

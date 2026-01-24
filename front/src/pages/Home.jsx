@@ -5,7 +5,8 @@ import Reveal from "../components/Reveal.jsx";
 import ContactLink from "../components/ContactLink.jsx";
 import CardAbout, { TechAbout } from "../components/CardAbout.jsx";
 import CardProjects from "../components/CardProjects.jsx";
-import Contact from ".//Contact.jsx";
+import Contact from "./Contact.jsx";
+import { NavSection } from "../components/HeaderNav.jsx";
 
 import LinkedInIcon from "@mui/icons-material/LinkedIn";
 import GitHubIcon from "@mui/icons-material/GitHub";
@@ -27,7 +28,7 @@ function Home() {
   return (
     <>
       {/*--------------------------------HERO------------------------------------*/}
-      <section className="flex justify-center p-5" id="hero">
+      <section className="flex justify-center p-5 scroll-mt-24" id="hero">
         <Reveal>
           <div className="container text-center flex flex-col gap-5 p-3 lg:mt-20">
             <h1 className="mx-auto">
@@ -48,20 +49,26 @@ function Home() {
             <div className="flex gap-5">
               <ContactLink href="https://www.linkedin.com/in/islam-derrouiche-7a69a8368/">
                 <LinkedInIcon
-                  className="color-background bg-[var(--color-foreground)] p-1 rounded-3xl"
+                  className="color-background bg-(--color-foreground) p-1 rounded-3xl"
                   sx={{ fontSize: 40 }}
                 />
               </ContactLink>
 
               <ContactLink href="https://github.com/Salamou-D-Islam">
                 <GitHubIcon
-                  className="color-background bg-[var(--color-foreground)] p-1 rounded-3xl"
+                  className="color-background bg-(--color-foreground) p-1 rounded-3xl"
                   sx={{ fontSize: 40 }}
                 />
               </ContactLink>
-              <ContactLink href="#contact">
+              <ContactLink
+                onClick={() =>
+                  document
+                    .getElementById("contact")
+                    .scrollIntoView({ behavior: "smooth" })
+                }
+              >
                 <ContactsIcon
-                  className="color-background bg-[var(--color-foreground)] p-1 rounded-3xl"
+                  className="color-background bg-(--color-foreground) p-1 rounded-3xl"
                   sx={{ fontSize: 40 }}
                 />
               </ContactLink>
@@ -80,20 +87,27 @@ function Home() {
             </div>
           </div>
 
-          <button className="flex mx-auto mt-20 md:mt-30">
-            <a href="#about">
-              <ArrowDownwardIcon
-                className="color-foreground animate-bounce"
-                sx={{ fontSize: 30 }}
-              />
-            </a>
+          <button
+            className="flex mx-auto mt-20 md:mt-30"
+            onClick={() =>
+              document
+                .getElementById("about")
+                .scrollIntoView({ behavior: "smooth" })
+            }
+          >
+            <ArrowDownwardIcon
+              className="color-foreground animate-bounce"
+              sx={{ fontSize: 30 }}
+            />
           </button>
         </Reveal>
       </section>
-
       {/*--------------------------------A PROPOS------------------------------------*/}
       <Reveal>
-        <section id="about" className="flex flex-col p-5 text-center mt-20">
+        <section
+          id="about"
+          className="flex flex-col p-5 text-center mt-20 scroll-mt-20"
+        >
           <div className="flex flex-col gap-3">
             <h1>A propos de moi</h1>
             <hr className="w-25 h-1 hr border-0 mx-auto mb-3" />
@@ -143,14 +157,22 @@ function Home() {
               <TechAbout />
             </div>
           </div>
+          <div className="flex mx-auto mt-10">
+            <ButtonHome to="/profil" className="w-80">
+              Voir tout en détail mon Profil{" "}
+              <ArrowDownwardIcon className="rotate-270 ml-2 animate-bounce" />
+            </ButtonHome>
+          </div>
         </section>
       </Reveal>
-
       {/*---------------------------------PROJECTS--------------------------------*/}
       <Reveal>
-        <section className="flex flex-col p-10 text-center mt-20 bg-[var(--color-gray-muted)]">
+        <section
+          id="projets"
+          className="flex flex-col p-10 text-center mt-20 bg-(--color-gray-muted) scroll-mt-19"
+        >
           <div>
-            <h1 className="">Mes Projets</h1>
+            <h1>Mes Projets</h1>
             <hr className="w-35 max-lg:w-25 h-1 hr border-0 mx-auto mb-3 mt-1" />
             <p className="max-w-250 p-3 mx-auto">
               Voici quelques projets illustrant mes compétences et mon
@@ -166,7 +188,7 @@ function Home() {
           </div>
         </section>
       </Reveal>
-
+      {/*----------------------------------------------CONTACT---------------------------------------------------------------*/}
       <Reveal>
         <Contact />
       </Reveal>

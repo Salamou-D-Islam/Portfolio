@@ -18,7 +18,7 @@ function ButtonHome({ children, to, download, target, rel, className }) {
 
 function ButtonNav({ children, onClick }) {
   return (
-    <button className="btnnav md:hidden" type="button" onClick={onClick}>
+    <button className="btnnav lg:hidden" type="button" onClick={onClick}>
       <MenuIcon />
     </button>
   );

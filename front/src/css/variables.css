@@ -20,7 +20,7 @@
     rgb(226, 0, 0) 100%
   );
   --color-background-outils: linear-gradient(
-    rgb(231, 49, 255) 0%,
+    transition-all rgb(231, 49, 255) 0%,
     rgb(226, 0, 207) 100%
   );
 
@@ -260,7 +260,7 @@ textarea {
   }
 }
 
-@media (max-width: 800px) {
+@media (max-width: 768px) {
   :root {
     --text-h1: 2rem;
     --text-h2: 1.75rem;

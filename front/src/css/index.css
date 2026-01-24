@@ -27,7 +27,7 @@
 }
 
 .img-about {
-  @apply bg-[var(--color-background)] container max-w-100 flex flex-col gap-3 shadow-2xl rounded-3xl p-5 text-left shadow-lg hover:shadow-2xl transition-all transform hover:-translate-y-2 border border-gray-100;
+  @apply bg-(--color-background) container max-w-100 flex flex-col gap-3 rounded-3xl p-5 text-left shadow-lg hover:shadow-2xl transition-all transform hover:-translate-y-2 border border-gray-100;
 }
 
 .img-front {
@@ -40,4 +40,8 @@
 
 .img-outils {
   background: var(--color-background-outils);
+}
+
+.navSectionHeader {
+  @apply p-4 border-blue-400 border-2;
 }

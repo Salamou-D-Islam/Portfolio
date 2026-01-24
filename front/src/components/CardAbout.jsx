@@ -17,7 +17,7 @@ function CardAbout({ title_card, desc_card, img }) {
 function TechAbout() {
   const technologies = [
     "React",
-    "JavaeScript",
+    "JavaScript",
     "Node.js",
     "Express",
     "Python",
@@ -36,7 +36,10 @@ function TechAbout() {
   return (
     <>
       {technologies.map((tech, index) => (
-        <div className="px-4 py-2 bg-primary text-[var(--color-foreground)] rounded-full shadow-md hover:shadow-lg transform hover:scale-105 transition-all">
+        <div
+          key={tech}
+          className="px-4 py-2 bg-primary text-(--color-foreground) rounded-full shadow-md hover:shadow-lg transform hover:scale-105 transition-all"
+        >
           {tech}
         </div>
       ))}

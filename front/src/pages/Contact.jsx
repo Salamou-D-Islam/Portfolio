@@ -77,22 +77,25 @@ function Contact() {
     <>
       <section
         id="contact"
-        className="flex flex-col p-5 text-center mt-20 mb-20"
+        className="flex flex-col p-5 text-center mt-20 mb-20 scroll-mt-20"
       >
         <div>
           <h1>Contactez moi</h1>
           <hr className="w-35 max-lg:w-25 h-1 hr border-0 mx-auto mb-3 mt-1" />
           <p className="max-w-250 p-3 mx-auto">
             Des idées, un projet ou une opportunité de recrutement ?
-            Contactez-moi dès maintenant !{" "}
+            Contactez-moi dès maintenant !
           </p>
         </div>
 
         <div className="grid grid-cols-1 lg:flex lg:flex-row justify-center gap-8 mt-10 mb-10">
           {contactInfo.map((contact) => (
-            <div className="flex items-center gap-4 p-4 bg-primary rounded-xl hover:shadow-lg transition-shadow">
+            <div
+              key={contact.title}
+              className="flex items-center gap-4 p-4 bg-primary rounded-xl hover:shadow-lg transition-shadow"
+            >
               <div
-                className={`w-12 h-12 rounded-xl bg-gradient-to-br ${contact.color} flex items-center justify-center text-white`}
+                className={`w-12 h-12 rounded-xl bg-linear-to-br ${contact.color} flex items-center justify-center text-white`}
               >
                 {contact.icon}
               </div>

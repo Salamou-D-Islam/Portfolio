@@ -21,14 +21,14 @@ function Footer() {
           <div className="flex gap-5">
             <ContactLink href="https://www.linkedin.com/in/islam-derrouiche-7a69a8368/">
               <LinkedInIcon
-                className="color-background bg-[var(--color-foreground)] p-1 rounded-3xl"
+                className="color-background bg-(--color-foreground) p-1 rounded-3xl"
                 sx={{ fontSize: 40 }}
               />
             </ContactLink>
 
             <ContactLink href="https://github.com/Salamou-D-Islam">
               <GitHubIcon
-                className="color-background bg-[var(--color-foreground)] p-1 rounded-3xl"
+                className="color-background bg-(--color-foreground) p-1 rounded-3xl"
                 sx={{ fontSize: 40 }}
               />
             </ContactLink>
@@ -39,7 +39,7 @@ function Footer() {
 
         <div className="container mx-auto px-4 py-6 text-center ">
           <p className="text-white!">
-            &copy; {year} Salamou JS. Tous droits réservés.
+            &copy; {year} Islam Derrouiche. Tous droits réservés.
           </p>
         </div>
       </div>
