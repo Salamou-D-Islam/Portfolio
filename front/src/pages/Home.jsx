@@ -1,18 +1,15 @@
 import React, { useState, useEffect } from "react";
-import Photo from "../assets/PP.png";
 import ButtonHome from "../components/ButtonLink.jsx";
 import Reveal from "../components/Reveal.jsx";
 import ContactLink from "../components/ContactLink.jsx";
 import CardAbout, { TechAbout } from "../components/CardAbout.jsx";
 import CardProjects from "../components/CardProjects.jsx";
 import Contact from "./Contact.jsx";
-import { NavSection } from "../components/HeaderNav.jsx";
 
 import LinkedInIcon from "@mui/icons-material/LinkedIn";
 import GitHubIcon from "@mui/icons-material/GitHub";
 import ContactsIcon from "@mui/icons-material/Contacts";
 import ArrowDownwardIcon from "@mui/icons-material/ArrowDownward";
-import ArrowForwardIcon from "@mui/icons-material/ArrowForward";
 import { Code, Database, Layout } from "lucide-react";
 
 function Home() {

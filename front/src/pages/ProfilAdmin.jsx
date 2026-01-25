@@ -23,7 +23,7 @@ function ProfilAdmin({ sections, setSections }) {
           {
             method: "GET",
             credentials: "include",
-          }
+          },
         );
 
         if (res.status === 401) {

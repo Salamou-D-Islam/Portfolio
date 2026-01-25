@@ -1,9 +1,15 @@
-import React from "react";
+import React, { useState } from "react";
 import Accordion from "@mui/material/Accordion";
 import AccordionSummary from "@mui/material/AccordionSummary";
 import AccordionDetails from "@mui/material/AccordionDetails";
 import ExpandMoreIcon from "@mui/icons-material/ExpandMore";
 import { pink } from "@mui/material/colors";
+
+import Box from "@mui/material/Box";
+import Tab from "@mui/material/Tab";
+import TabContext from "@mui/lab/TabContext";
+import TabList from "@mui/lab/TabList";
+import TabPanel from "@mui/lab/TabPanel";
 
 function AccordionSection({ children, content, className = "", ...props }) {
   return (
@@ -34,4 +40,21 @@ function AccordionSection({ children, content, className = "", ...props }) {
   );
 }
 
+function TabsSection({ children, content, className = "", label, ...props }) {
+  const [value, setValue] = useState("1");
+
+  const handleChange = (event, newValue) => {
+    setValue(newValue);
+  };
+
+  return (
+    <section className="bg-amber-700">
+      <Tab className="text-white!" label={label} value="1" />
+      <TabPanel className="text-white!" value="1">
+        {children}
+      </TabPanel>
+    </section>
+  );
+}
 export default AccordionSection;
+export { TabsSection };

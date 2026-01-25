@@ -1,7 +1,11 @@
 import React, { useState, useEffect } from "react";
-import SectionProfil from "../components/SectionProfil.jsx";
+import SectionProfil, {
+  TabSectionProfil,
+} from "../components/SectionProfil.jsx";
 import { getAllSections } from "../services/profilApi.js";
 import CircularProgress from "@mui/material/CircularProgress";
+import Photo from "../assets/Photo.png";
+import Reveal from "../components/Reveal.jsx";
 
 function Profi() {
   const [sections, setSections] = useState([]);
@@ -31,14 +35,39 @@ function Profi() {
 
   return (
     <>
-      <div className="container mx-auto p-6 border rounded whitespace-pre-wrap">
-        <h1 className="text-6xl text-salamou font-bold text-center text-white mb-6">
-          Mon Profil
-        </h1>
+      <Reveal>
+        <section className="img-profil border-b-2 border-(--color-foreground) p-5 mb-10 -translate-y-20 pt-20 :pt-30">
+          <div className="flex flex-col-reverse md:flex-row text-center container p-4 mx-auto gap-20 justify-center">
+            <div className="flex flex-col ">
+              <h1 className="text-white!">Mon Profil</h1>
+              <p className="  items-center flex p-10 max-w-200 text-white!">
+                Je suis Islam Derrouiche, développeur web full stack passionné
+                par le développement d’applications modernes et concrètes.
+                J’interviens aussi bien sur le frontend avec React que sur le
+                backend avec Node.js et Python (FastAPI, Flask), en développant
+                des solutions complètes et structurées, avec PostgreSQL et
+                MongoDB pour la gestion des données. À travers mes projets, j’ai
+                appris à travailler sur l’ensemble du cycle de vie d’une
+                application : analyse du besoin, conception, développement,
+                tests et déploiement. J’accorde une importance particulière à la
+                logique métier et à l’expérience utilisateur.
+              </p>
+            </div>
 
-        {sections && sections.length > 0 ? (
+            <div className="group ">
+              <img
+                src={Photo}
+                alt="Illustration de moi"
+                className="w-80 max-md:w-60 border-2 border-white rounded-4xl flex mx-auto hover:bg-(--color-secondary)/50! transform-all duration-400 ease-in"
+              />
+            </div>
+          </div>
+        </section>
+      </Reveal>
+      <div className="container mx-auto p-6 border rounded whitespace-pre-wrap">
+        {/* {sections && sections.length > 0 ? (
           sections.map((section) => (
-            <SectionProfil
+            <TabSectionProfil
               key={section.id}
               id={section.id}
               title={section.nom_section}
@@ -48,7 +77,8 @@ function Profi() {
           ))
         ) : (
           <p className="text-white text-center">Aucune section disponible.</p>
-        )}
+        )} */}
+        <TabSectionProfil />
       </div>
     </>
   );

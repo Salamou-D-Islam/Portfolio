@@ -42,6 +42,10 @@
   background: var(--color-background-outils);
 }
 
+.img-profil {
+  background: var(--color-background-profil);
+}
+
 .navSectionHeader {
   @apply p-4 border-blue-400 border-2;
 }
