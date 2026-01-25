@@ -74,9 +74,12 @@ function Login() {
 
   return (
     <>
-      <section className="sectionApply w-full!  text-white lg:w-160!">
+      <section className="flex flex-col p-5 text-center mt-20 mb-20 scroll-mt-20 ">
         {step === 1 && (
-          <form onSubmit={handleSubmit(sendCode)}>
+          <form
+            onSubmit={handleSubmit(sendCode)}
+            className="bg-primary rounded-2xl p-8 mx-auto"
+          >
             <FormText
               type="email"
               id="email"
@@ -86,14 +89,17 @@ function Login() {
               Adresse mail
             </FormText>
 
-            <ButtonForm type="submit" className="w-40 disabled:bg-gray-700">
-              Envoyer le code
-            </ButtonForm>
+            <button type="submit" className="btn-primary mt-4">
+              Envoyer le code{" "}
+            </button>
           </form>
         )}
         <br /> <br />
         {step === 2 && (
-          <form onSubmit={handleSubmit(verifyCode)}>
+          <form
+            onSubmit={handleSubmit(verifyCode)}
+            className="bg-primary rounded-2xl p-8"
+          >
             <FormText
               type="text"
               id="code"
@@ -102,7 +108,9 @@ function Login() {
             >
               Le code d'authentification
             </FormText>
-            <ButtonForm type="submit"> Se connecter</ButtonForm>
+            <button type="submit" className="btn-primary mt-4">
+              Se connecter
+            </button>
 
             {disabled && (
               <span className="block mt-2 text-sm text-gray-500">
