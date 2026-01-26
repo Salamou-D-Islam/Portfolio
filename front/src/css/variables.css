@@ -27,7 +27,10 @@
     rgb(71, 152, 228) 0%,
     rgb(15, 0, 226) 100%
   );
-
+  --color-background-profil: linear-gradient(
+    rgba(139, 156, 250, 0.308) 0%,
+    rgb(6, 10, 207) 100%
+  );
   --color-card: #f9f9fb;
   --color-card-foreground: #111827;
   --color-primary: #0d00ff;
@@ -88,7 +91,7 @@
     rgb(129, 0, 119) 100%
   );
   --color-background-profil: linear-gradient(
-    rgb(42, 55, 129) 0%,
+    rgba(42, 55, 129, 0.308) 0%,
     rgb(0, 2, 102) 100%
   );
   --color-card: #1f2937;

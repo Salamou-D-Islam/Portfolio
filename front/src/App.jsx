@@ -24,17 +24,6 @@ function App() {
     <Router>
       <div className="min-h-screen flex flex-col mt-20">
         <Header />
-
-        {/* <div className={darkMode ? "dark" : ""}>
-          <div className="p-4 mt-20 ">
-            <button className="btn-primary mb-4" onClick={toggleDarkMode}>
-              {darkMode ? "Light Mode" : "Dark Mode"}
-            </button>
-
-            <Style />
-          </div>
-        </div> */}
-
         <main className="flex-grow">
           <Routes>
             <Route path="/" element={<Home />} />

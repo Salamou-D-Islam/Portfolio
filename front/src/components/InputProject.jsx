@@ -100,7 +100,7 @@ function InputProject({ onAdd }) {
                   value={inputText.desc_projet}
                   onChange={handleChange}
                 >
-                  Nom du projet
+                  Description du projet
                 </FormText>
 
                 <FormText
@@ -121,7 +121,7 @@ function InputProject({ onAdd }) {
                   value={inputText.lien_img}
                   onChange={handleChange}
                 >
-                  Nom de l'image
+                  lien de l'image
                 </FormText>
 
                 <FormText
@@ -177,9 +177,9 @@ function InputProject({ onAdd }) {
                   Techniques du projet
                 </FormTextrea>
 
-                <ButtonForm type="submit" className="btn-primary mt-4">
+                <button type="submit" className="btn-primary mt-4">
                   Ajouter le projet
-                </ButtonForm>
+                </button>
               </div>
             </form>
           </div>

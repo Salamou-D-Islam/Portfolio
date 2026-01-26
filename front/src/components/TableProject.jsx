@@ -100,7 +100,7 @@ function TableProject({
                 },
               }}
             >
-              <ButtonForm type="button">En savoir plus</ButtonForm>
+              <button type="btn-primary">En savoir plus</button>
             </Link>
           </td>
 
@@ -111,13 +111,13 @@ function TableProject({
                 <ButtonForm
                   type="button"
                   onClick={handleDelete}
-                  className="bg-red-600 hover:bg-red-600/90"
+                  className="btn-primary bg-(--color-destructive)!"
                 >
                   Supprimer
                 </ButtonForm>
               </td>
               <td className="tableProject">
-                <ButtonForm
+                <button
                   type="button"
                   onClick={() => {
                     setTempDataProject({
@@ -134,10 +134,10 @@ function TableProject({
                     });
                     setIsEditing(true);
                   }}
-                  className="bg-green-800 hover:bg-green-800/90"
+                  className="btn-primary bg-(--color-secondary)!"
                 >
                   Modifier
-                </ButtonForm>
+                </button>
               </td>
             </>
           )}
@@ -276,19 +276,19 @@ function TableProject({
                 </FormText>
 
                 <div className="flex gap-2 mt-4">
-                  <ButtonForm
+                  <button
                     type="submit"
-                    className="bg-green-800 hover:bg-green-800/90"
+                    className="btn-primary bg-(--color-secondary)!"
                   >
                     Enregistrer
-                  </ButtonForm>
-                  <ButtonForm
+                  </button>
+                  <button
                     type="button"
                     onClick={handleCancel}
-                    className="bg-gray-500 hover:bg-gray-500/90"
+                    className="btn-primary bg-(--color-accent)!"
                   >
                     Annuler
-                  </ButtonForm>
+                  </button>
                 </div>
               </form>
             </div>
