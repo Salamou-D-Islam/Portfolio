@@ -6,6 +6,14 @@ import Photo from "../assets/Photo.png";
 import Reveal from "../components/Reveal.jsx";
 import { Allprofil } from "../services/dataProfilTest.js";
 
+import Box from "@mui/material/Box";
+import Tab from "@mui/material/Tab";
+import Tabs, { tabsClasses } from "@mui/material/Tabs";
+
+import TabContext from "@mui/lab/TabContext";
+import TabList from "@mui/lab/TabList";
+import TabPanel from "@mui/lab/TabPanel";
+
 function Profi() {
   const [sections, setSections] = useState([]);
   const [loading, setLoading] = useState(true);
