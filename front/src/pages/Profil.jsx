@@ -66,7 +66,7 @@ function Profi() {
 
       <Reveal>
         <div className="container bg-(--color-background) mx-auto mb-10">
-          {/* {sections && sections.length > 0 ? (
+          {sections && sections.length > 0 ? (
             sections.map((section) => (
               <TabSectionProfil
                 key={section.id}
@@ -80,7 +80,7 @@ function Profi() {
             <p className="text-white text-center bg-">
               Aucune section disponible pour le moment .
             </p>
-          )} */}
+          )}
           {/* {Allprofil && Allprofil.length > 0 ? (
             Allprofil.map((section) => (
               <TabSectionProfil
@@ -96,7 +96,7 @@ function Profi() {
               Aucune section disponible pour le moment .
             </p>
           )} */}
-          <TabSectionProfil />
+          {/* <TabSectionProfil /> */}
         </div>
       </Reveal>
     </>

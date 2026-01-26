@@ -127,10 +127,7 @@ function SectionProfil({ title, desc, isAdmin, onDelete, id, onUpdate }) {
   );
 }
 
-function TabSectionProfil({ title, desc, isAdmin, onDelete, id, onUpdate }) {
-  const [sections, setSections] = useState([]);
-
-  const [isEditing, setIsEditing] = useState(false);
+function TabSectionProfil({ title, desc, id }) {
   const [tempDataProfil, setTempDataProfil] = useState({
     nom_section: title,
     description_section: desc,
@@ -195,43 +192,35 @@ function TabSectionProfil({ title, desc, isAdmin, onDelete, id, onUpdate }) {
 
       <Box sx={{ width: "100%", typography: "body1" }}>
         <TabContext value={value}>
-          <>
-            <Box sx={{ borderBottom: 1, borderColor: "divider" }}>
-              <Tabs
-                value={value}
-                variant="scrollable"
-                scrollButtons
-                onChange={handleChange}
-                aria-label="visible arrows tabs example"
+          <Box sx={{ borderBottom: 1, borderColor: "divider" }}>
+            <Tabs
+              value={value}
+              variant="scrollable"
+              scrollButtons
+              onChange={handleChange}
+              aria-label="profile tab example"
+              sx={{
+                [`& .${tabsClasses.scrollButtons}`]: {
+                  "&.Mui-disabled": { opacity: 0.3 },
+                },
+              }}
+            >
+              <Tab
+                label={title}
+                value={id.toString()}
                 sx={{
-                  [`& .${tabsClasses.scrollButtons}`]: {
-                    "&.Mui-disabled": { opacity: 0.3 },
+                  "&.Mui-selected": {
+                    fontWeight: "bold",
+                    color: "text.primary",
                   },
                 }}
-              >
-                {sections.map((section) => (
-                  <Tab
-                    className="text-(--color-primary)! max-w-16 mx-auto flex"
-                    label={section.nom_section}
-                    value={section.id}
-                    sx={{
-                      "&.Mui-selected": {
-                        fontWeight: "bold",
-                      },
-                    }}
-                  />
-                ))}
-              </Tabs>
-            </Box>
-            {Allprofil.map((section) => (
-              <TabPanel
-                className="text-(--color-foreground)!"
-                value={section.id}
-              >
-                {section.description_section}
-              </TabPanel>
-            ))}
-          </>
+              />
+            </Tabs>
+          </Box>
+
+          <TabPanel value={id.toString()} sx={{ color: "text.secondary" }}>
+            {desc}
+          </TabPanel>
         </TabContext>
       </Box>
     </>
