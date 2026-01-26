@@ -33,6 +33,7 @@ function InputProject({ onAdd }) {
 
   function handleSubmit(event) {
     event.preventDefault(); // empêche le refresh de la page
+    if (onAdd) onAdd(inputText); // envoie les données au parent
 
     setInputText({
       nom_projet: "",

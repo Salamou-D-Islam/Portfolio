@@ -57,19 +57,19 @@ function Admin() {
     <>
       <section className="flex flex-col items-center justify-center!">
         <div className="buttonLink mt-0! text-center">
-          <ButtonHome to="/admin/profilform">
+          <button className="btn-primary" to="/admin/profilform">
             Page de profil (Administrateur)
-          </ButtonHome>
-          <ButtonHome to="/admin/projectform">
+          </button>
+          <button className="btn-primary" to="/admin/projectform">
             Page de projets (Administrateur)
-          </ButtonHome>
-          <ButtonForm
+          </button>
+          <button
             type="button"
             onClick={handlLogout}
-            className="bg-red-900 hover:bg-red-700"
+            className="btn-primary text-(--color-destructive)!"
           >
             Se déconnecter
-          </ButtonForm>
+          </button>
         </div>
       </section>
     </>
