@@ -57,16 +57,16 @@ function Admin() {
     <>
       <section className="flex flex-col items-center justify-center!">
         <div className="buttonLink mt-0! text-center">
-          <button className="btn-primary" to="/admin/profilform">
+          <ButtonHome to="/admin/profilform">
             Page de profil (Administrateur)
-          </button>
-          <button className="btn-primary" to="/admin/projectform">
+          </ButtonHome>
+          <ButtonHome to="/admin/projectform">
             Page de projets (Administrateur)
-          </button>
+          </ButtonHome>
           <button
-            type="button"
+            type="submit"
             onClick={handlLogout}
-            className="btn-primary text-(--color-destructive)!"
+            className="bg-(--color-destructive)"
           >
             Se déconnecter
           </button>
