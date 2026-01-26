@@ -9,15 +9,13 @@ import { pink } from "@mui/material/colors";
 function InputProject({ onAdd }) {
   const [inputText, setInputText] = useState({
     nom_projet: "",
+    desc_projet: "",
     techno: "",
 
+    lien_img: "",
     lien_url: "",
-    lien_nom: "",
     lien_gh: "",
     lien_vdo: "",
-
-    date_debut: "",
-    date_fin: "",
 
     presentation_projet: "",
     technique_projet: "",
@@ -35,29 +33,16 @@ function InputProject({ onAdd }) {
 
   function handleSubmit(event) {
     event.preventDefault(); // empêche le refresh de la page
-    const payload = {
-      ...inputText,
-      date_debut: inputText.date_debut
-        ? new Date(inputText.date_debut).toISOString()
-        : null,
-      date_fin: inputText.date_fin
-        ? new Date(inputText.date_fin).toISOString()
-        : null,
-    };
-
-    if (onAdd) onAdd(payload);
 
     setInputText({
       nom_projet: "",
+      desc_projet: "",
       techno: "",
 
+      lien_img: "",
       lien_url: "",
-      lien_nom: "",
       lien_gh: "",
       lien_vdo: "",
-
-      date_debut: "",
-      date_fin: "",
 
       presentation_projet: "",
       technique_projet: "",
@@ -91,7 +76,10 @@ function InputProject({ onAdd }) {
         <AccordionDetails>
           <hr />
           <div className="sectionApply text-white p-10">
-            <form onSubmit={handleSubmit}>
+            <form
+              onSubmit={handleSubmit}
+              className="bg-primary rounded-2xl p-8"
+            >
               <div className="mb-4 space-y-3 ">
                 <FormText
                   htmlFor="nom_projet"
@@ -99,6 +87,17 @@ function InputProject({ onAdd }) {
                   id="nom_projet"
                   name="nom_projet"
                   value={inputText.nom_projet}
+                  onChange={handleChange}
+                >
+                  Nom du projet
+                </FormText>
+
+                <FormText
+                  htmlFor="desc_projet"
+                  type="text"
+                  id="desc_projet"
+                  name="desc_projet"
+                  value={inputText.desc_projet}
                   onChange={handleChange}
                 >
                   Nom du projet
@@ -115,6 +114,17 @@ function InputProject({ onAdd }) {
                   Technologies princpale
                 </FormText>
                 <FormText
+                  htmlFor="lien_img"
+                  type="text"
+                  id="lien_img"
+                  name="lien_img"
+                  value={inputText.lien_img}
+                  onChange={handleChange}
+                >
+                  Nom de l'image
+                </FormText>
+
+                <FormText
                   htmlFor="lien_url"
                   type="text"
                   id="lien_url"
@@ -124,16 +134,7 @@ function InputProject({ onAdd }) {
                 >
                   Lien affilé au projet
                 </FormText>
-                <FormText
-                  htmlFor="lien_nom"
-                  type="text"
-                  id="lien_nom"
-                  name="lien_nom"
-                  value={inputText.lien_nom}
-                  onChange={handleChange}
-                >
-                  Nom du lien
-                </FormText>
+
                 <FormText
                   htmlFor="lien_gh"
                   type="text"
@@ -156,33 +157,6 @@ function InputProject({ onAdd }) {
                   Lien de la vidéo
                 </FormText>
 
-                <div className="bg-blue-900 w-120 p-4 flex flex-row gap-10 justify-center">
-                  <div>
-                    <FormText
-                      htmlFor="date_debut"
-                      type="date"
-                      id="date_debut"
-                      name="date_debut"
-                      value={inputText.date_debut}
-                      onChange={handleChange}
-                    >
-                      date de début du projet
-                    </FormText>
-                  </div>
-                  <div>
-                    <FormText
-                      htmlFor="date_fin"
-                      type="date"
-                      id="date_fin"
-                      name="date_fin"
-                      value={inputText.date_fin}
-                      onChange={handleChange}
-                    >
-                      date de la fin du projet
-                    </FormText>
-                  </div>
-                </div>
-
                 <FormTextrea
                   htmlFor="presentation_projet"
                   id="presentation_projet"
@@ -203,7 +177,9 @@ function InputProject({ onAdd }) {
                   Techniques du projet
                 </FormTextrea>
 
-                <ButtonForm type="submit"> Ajouter le projet</ButtonForm>
+                <ButtonForm type="submit" className="btn-primary mt-4">
+                  Ajouter le projet
+                </ButtonForm>
               </div>
             </form>
           </div>

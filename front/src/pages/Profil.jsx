@@ -4,6 +4,7 @@ import { getAllSections } from "../services/profilApi.js";
 import CircularProgress from "@mui/material/CircularProgress";
 import Photo from "../assets/Photo.png";
 import Reveal from "../components/Reveal.jsx";
+import { Allprofil } from "../services/dataProfilTest.js";
 
 function Profi() {
   const [sections, setSections] = useState([]);
@@ -62,24 +63,42 @@ function Profi() {
           </div>
         </section>
       </Reveal>
-      <div className="container bg-(--color-background) mx-auto mb-10">
-        {sections && sections.length > 0 ? (
-          sections.map((section) => (
-            <TabSectionProfil
-              key={section.id}
-              id={section.id}
-              title={section.nom_section}
-              desc={section.description_section}
-              isAdmin={false}
-            />
-          ))
-        ) : (
-          <p className="text-white text-center bg-">
-            Aucune section disponible pour le moment .
-          </p>
-        )}
-        {/* <TabSectionProfil /> */}
-      </div>
+
+      <Reveal>
+        <div className="container bg-(--color-background) mx-auto mb-10">
+          {/* {sections && sections.length > 0 ? (
+            sections.map((section) => (
+              <TabSectionProfil
+                key={section.id}
+                id={section.id}
+                title={section.nom_section}
+                desc={section.description_section}
+                isAdmin={false}
+              />
+            ))
+          ) : (
+            <p className="text-white text-center bg-">
+              Aucune section disponible pour le moment .
+            </p>
+          )} */}
+          {/* {Allprofil && Allprofil.length > 0 ? (
+            Allprofil.map((section) => (
+              <TabSectionProfil
+                key={section.id}
+                id={section.id}
+                title={section.nom_section}
+                desc={section.description_section}
+                isAdmin={false}
+              />
+            ))
+          ) : (
+            <p className="text-white text-center bg-">
+              Aucune section disponible pour le moment .
+            </p>
+          )} */}
+          <TabSectionProfil />
+        </div>
+      </Reveal>
     </>
   );
 }

@@ -24,7 +24,7 @@ function ProjectsAdmin({ projects, setProjects }) {
           {
             method: "GET",
             credentials: "include",
-          }
+          },
         );
 
         if (res.status === 401) {
@@ -70,7 +70,9 @@ function ProjectsAdmin({ projects, setProjects }) {
     try {
       await updateProjet(id, updateData);
       setProjects((prev) =>
-        prev.map((proj) => (proj.id === id ? { ...proj, ...updateData } : proj))
+        prev.map((proj) =>
+          proj.id === id ? { ...proj, ...updateData } : proj,
+        ),
       );
     } catch (err) {
       console.error("Erreur mise à jour :", err);
@@ -108,7 +110,6 @@ function ProjectsAdmin({ projects, setProjects }) {
                 <th scope="col">Nom du Projet</th>
                 <th scope="col">Technologies principales</th>
                 <th scope="col">Lien affilé au projet</th>
-                <th scope="col">date du projet (Début-Fin)</th>
                 <th scope="col">Détail du projet</th>
                 <th scope="col">Administraion</th>
               </tr>
@@ -120,9 +121,10 @@ function ProjectsAdmin({ projects, setProjects }) {
                     key={project.id}
                     id={project.id}
                     nom_projet={project.nom_projet}
+                    desc_projet={project.desc_projet}
                     techno={project.techno}
+                    lien_img={project.lien_img}
                     lien_url={project.lien_url}
-                    lien_nom={project.lien_nom}
                     lien_gh={project.lien_gh}
                     lien_vdo={project.lien_vdo}
                     date_debut={project.date_debut}

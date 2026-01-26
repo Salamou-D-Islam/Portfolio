@@ -5,15 +5,13 @@ import { FormTextrea, ButtonForm } from "../components/Form.jsx";
 
 function TableProject({
   nom_projet,
+  desc_projet,
   techno,
 
+  lien_img,
   lien_url,
-  lien_nom,
   lien_gh,
   lien_vdo,
-
-  date_debut,
-  date_fin,
 
   presentation_projet,
   technique_projet,
@@ -28,13 +26,10 @@ function TableProject({
     nom_projet,
     techno,
 
+    lien_img,
     lien_url,
-    lien_nom,
     lien_gh,
     lien_vdo,
-
-    date_debut,
-    date_fin,
 
     presentation_projet,
     technique_projet,
@@ -57,13 +52,10 @@ function TableProject({
       nom_projet,
       techno,
 
+      lien_img,
       lien_url,
-      lien_nom,
       lien_gh,
       lien_vdo,
-
-      date_debut,
-      date_fin,
 
       presentation_projet,
       technique_projet,
@@ -71,10 +63,10 @@ function TableProject({
     setIsEditing(false);
   }
 
-  const formatDateForInput = (dateString) => {
-    if (!dateString) return "";
-    return dateString.split("T")[0]; // garde seulement YYYY-MM-DD
-  };
+  // const formatDateForInput = (dateString) => {
+  //   if (!dateString) return "";
+  //   return dateString.split("T")[0]; // garde seulement YYYY-MM-DD
+  // };
 
   return (
     <>
@@ -82,14 +74,12 @@ function TableProject({
       {!isEditing && (
         <tr>
           <td className="tableProject">{nom_projet}</td>
+          <td className="tableProject">{desc_projet}</td>
           <td className="tableProject max-sm:hidden">{techno}</td>
           <td className="tableProject max-sm:hidden">
             <a href={lien_url} target="_blank" rel="noreferrer">
-              {lien_nom}
+              {lien_url}
             </a>
-          </td>
-          <td className="tableProject max-sm:hidden">
-            {date_debut} - {date_fin}
           </td>
           <td className="tableProject">
             <Link
@@ -97,15 +87,13 @@ function TableProject({
               state={{
                 projet: {
                   nom_projet,
+                  desc_projet,
                   techno,
 
+                  lien_img,
                   lien_url,
-                  lien_nom,
                   lien_gh,
                   lien_vdo,
-
-                  date_debut,
-                  date_fin,
 
                   presentation_projet,
                   technique_projet,
@@ -136,13 +124,10 @@ function TableProject({
                       nom_projet,
                       techno,
 
+                      lien_img,
                       lien_url,
-                      lien_nom,
                       lien_gh,
                       lien_vdo,
-
-                      date_debut,
-                      date_fin,
 
                       presentation_projet,
                       technique_projet,
@@ -169,8 +154,11 @@ function TableProject({
                   e.preventDefault();
                   handleSave();
                 }}
+                className="bg-primary rounded-2xl p-8"
               >
-                <h2 className="text-2xl font-bold mb-4">Modifier le projet</h2>
+                <h2 className="bg-(--color-secondary) mb-4">
+                  Modifier le projet
+                </h2>
 
                 <FormText
                   type="text"
@@ -187,6 +175,19 @@ function TableProject({
 
                 <FormText
                   type="text"
+                  value={tempDataProject.desc_projet}
+                  onChange={(e) =>
+                    setTempDataProject({
+                      ...tempDataProject,
+                      desc_projet: e.target.value,
+                    })
+                  }
+                >
+                  Description du projet
+                </FormText>
+
+                <FormText
+                  type="text"
                   value={tempDataProject.techno}
                   onChange={(e) =>
                     setTempDataProject({
@@ -195,7 +196,20 @@ function TableProject({
                     })
                   }
                 >
-                  Technologies princpale
+                  Tags des Technologies
+                </FormText>
+
+                <FormText
+                  type="text"
+                  value={tempDataProject.lien_img}
+                  onChange={(e) =>
+                    setTempDataProject({
+                      ...tempDataProject,
+                      lien_img: e.target.value,
+                    })
+                  }
+                >
+                  Lien de l'image projet
                 </FormText>
 
                 <FormText
@@ -213,19 +227,6 @@ function TableProject({
 
                 <FormText
                   type="text"
-                  value={tempDataProject.lien_nom}
-                  onChange={(e) =>
-                    setTempDataProject({
-                      ...tempDataProject,
-                      lien_nom: e.target.value,
-                    })
-                  }
-                >
-                  Nom du lien
-                </FormText>
-
-                <FormText
-                  type="text"
                   value={tempDataProject.lien_gh}
                   onChange={(e) =>
                     setTempDataProject({
@@ -237,37 +238,6 @@ function TableProject({
                   GitHub
                 </FormText>
 
-                <div className="bg-blue-900 w-120 p-4 mt-6 flex flex-row gap-10 justify-center">
-                  <div>
-                    <FormText
-                      type="date"
-                      value={formatDateForInput(tempDataProject.date_debut)}
-                      onChange={(e) =>
-                        setTempDataProject({
-                          ...tempDataProject,
-                          date_debut: e.target.value,
-                        })
-                      }
-                    >
-                      Date de début
-                    </FormText>
-                  </div>
-
-                  <div>
-                    <FormText
-                      type="date"
-                      value={formatDateForInput(tempDataProject.date_fin)}
-                      onChange={(e) =>
-                        setTempDataProject({
-                          ...tempDataProject,
-                          date_fin: e.target.value,
-                        })
-                      }
-                    >
-                      Date de fin
-                    </FormText>
-                  </div>
-                </div>
                 <FormTextrea
                   value={tempDataProject.presentation_projet}
                   onChange={(e) =>
