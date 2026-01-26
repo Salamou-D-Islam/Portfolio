@@ -49,3 +49,7 @@
 .navSectionHeader {
   @apply p-4 border-blue-400 border-2;
 }
+
+.MuiDivider-root {
+  border-color: #f00;
+}

@@ -40,7 +40,7 @@ function Profi() {
           <div className="flex flex-col-reverse md:flex-row text-center container p-4 mx-auto gap-20 justify-center">
             <div className="flex flex-col ">
               <h1 className="text-white!">Mon Profil</h1>
-              <p className="  items-center flex p-10 max-w-200 text-white!">
+              <p className="items-center flex p-10 max-w-200 text-white!">
                 Je suis Islam Derrouiche, développeur web full stack passionné
                 par le développement d’applications modernes et concrètes.
                 J’interviens aussi bien sur le frontend avec React que sur le
@@ -58,14 +58,14 @@ function Profi() {
               <img
                 src={Photo}
                 alt="Illustration de moi"
-                className="w-80 max-md:w-60 border-2 border-white rounded-4xl flex mx-auto hover:bg-(--color-secondary)/50! transform-all duration-400 ease-in"
+                className="w-80 max-md:w-60 border-2 border-white rounded-4xl flex mx-auto hover:bg-(--color-secondary)/50! max-lg:active:bg-(--color-secondary)/50! transform-all duration-400 ease-in"
               />
             </div>
           </div>
         </section>
       </Reveal>
-      <div className="container mx-auto p-6 border rounded whitespace-pre-wrap">
-        {/* {sections && sections.length > 0 ? (
+      <div className="container bg-(--color-background) mx-auto mb-10">
+        {sections && sections.length > 0 ? (
           sections.map((section) => (
             <TabSectionProfil
               key={section.id}
@@ -76,9 +76,11 @@ function Profi() {
             />
           ))
         ) : (
-          <p className="text-white text-center">Aucune section disponible.</p>
-        )} */}
-        <TabSectionProfil />
+          <p className="text-white text-center bg-">
+            Aucune section disponible pour le moment .
+          </p>
+        )}
+        {/* <TabSectionProfil /> */}
       </div>
     </>
   );
