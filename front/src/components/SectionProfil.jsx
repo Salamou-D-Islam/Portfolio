@@ -18,7 +18,6 @@ function SectionProfil({ title, desc, isAdmin, onDelete, id, onUpdate }) {
     nom_section: title,
     description_section: desc,
   });
-  const [sections, setSections] = useState([]);
 
   function handleDelete() {
     if (window.confirm("Voulez-vous vraiment supprimer cette section ?")) {
@@ -129,6 +128,8 @@ function SectionProfil({ title, desc, isAdmin, onDelete, id, onUpdate }) {
 }
 
 function TabSectionProfil({ title, desc, isAdmin, onDelete, id, onUpdate }) {
+  const [sections, setSections] = useState([]);
+
   const [isEditing, setIsEditing] = useState(false);
   const [tempDataProfil, setTempDataProfil] = useState({
     nom_section: title,
