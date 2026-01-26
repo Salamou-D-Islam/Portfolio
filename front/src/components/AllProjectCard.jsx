@@ -1,4 +1,6 @@
 import { ExternalLink, Github } from "lucide-react";
+import ButtonHome from "../components/ButtonLink.jsx";
+import ArrowDownwardIcon from "@mui/icons-material/ArrowDownward";
 
 function AllProjects({
   id,
@@ -35,7 +37,7 @@ function AllProjects({
               href={lien_url}
               target="_blank"
               rel="noopener noreferrer"
-              className="flex-1 flex items-center justify-center gap-2 px-4 py-2 bg-primary text-white rounded-lg hover:bg-blue-700 transition-colors"
+              className="flex-1 flex items-center justify-center gap-2 px-4 py-2 bg-(--color-primary) text-white rounded-lg hover:bg-blue-700 transition-colors"
             >
               <ExternalLink size={18} />
               Demo
@@ -51,11 +53,14 @@ function AllProjects({
           {techno?.map((tech) => (
             <span
               key={tech}
-              className="px-3 py-1 bg-linear-to-r from-blue-50 to-purple-50 rounded-full text-sm"
+              className="px-3 py-1 bg-linear-to-r from-blue-50 to-purple-50 rounded-full shadow-md text-sm hover:shadow-lg transform hover:scale-105 transition-all"
             >
               {tech}
             </span>
           ))}
+        </div>
+        <div className="flex mx-auto mt-8 justify-end">
+          <ButtonHome to={`/projets/${id}`}>Détails du projet</ButtonHome>
         </div>
       </div>
     </div>

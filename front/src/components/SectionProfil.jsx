@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import FormText, { FormTextrea, ButtonForm } from "../components/Form";
-import AccordionSection, { TabsSection } from "../components/AccordionSection";
+import AccordionSection from "../components/AccordionSection";
 
 import Box from "@mui/material/Box";
 import Tab from "@mui/material/Tab";

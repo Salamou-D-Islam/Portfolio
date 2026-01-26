@@ -40,21 +40,21 @@ function AccordionSection({ children, content, className = "", ...props }) {
   );
 }
 
-function TabsSection({ children, content, className = "", label, ...props }) {
-  const [value, setValue] = useState("1");
+// function TabsSection({ children, content, className = "", label, ...props }) {
+//   const [value, setValue] = useState("1");
 
-  const handleChange = (event, newValue) => {
-    setValue(newValue);
-  };
+//   const handleChange = (event, newValue) => {
+//     setValue(newValue);
+//   };
 
-  return (
-    <section className="bg-amber-700">
-      <Tab className="text-white!" label={label} value="1" />
-      <TabPanel className="text-white!" value="1">
-        {children}
-      </TabPanel>
-    </section>
-  );
-}
+//   return (
+//     <section className="bg-amber-700">
+//       <Tab className="text-white!" label={label} value="1" />
+//       <TabPanel className="text-white!" value="1">
+//         {children}
+//       </TabPanel>
+//     </section>
+//   );
+// }
 export default AccordionSection;
-export { TabsSection };
+// export { TabsSection };

@@ -1,7 +1,5 @@
 import React, { useState, useEffect } from "react";
-import SectionProfil, {
-  TabSectionProfil,
-} from "../components/SectionProfil.jsx";
+import { TabSectionProfil } from "../components/SectionProfil.jsx";
 import { getAllSections } from "../services/profilApi.js";
 import CircularProgress from "@mui/material/CircularProgress";
 import Photo from "../assets/Photo.png";

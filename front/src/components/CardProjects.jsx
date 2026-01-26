@@ -96,7 +96,7 @@ function CardProjects() {
                 {project.tags.map((tag) => (
                   <span
                     key={tag}
-                    className="px-3 py-1 bg-linear-to-r from-blue-50 to-purple-50 rounded-full text-sm"
+                    className="px-3 py-1 bg-linear-to-r from-blue-50 to-purple-50 rounded-full text-sm hover:shadow-lg transform hover:scale-105 transition-all"
                   >
                     {tag}
                   </span>

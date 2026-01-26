@@ -2,6 +2,7 @@ import { useLocation, useParams } from "react-router-dom";
 import { useState, useEffect } from "react";
 import { getOneProjet } from "../services/projectApi.js";
 import AccordionDetails from "@mui/material/AccordionDetails";
+import { Allproject } from "../services/dataProjectTest.js";
 
 function AccordionPresentation() {
   const location = useLocation();
@@ -22,30 +23,24 @@ function AccordionPresentation() {
     }
   }, [id, projet]);
 
-  if (!projet) return <p>Chargement du projet...</p>;
+  if (!Allproject) return <p>Chargement du projet...</p>;
   return (
     <>
       <AccordionDetails>
         <p>
           <b> Lien:</b>{" "}
-          <a href={projet.lien_url} target="_blank">
-            {projet.lien_url}
+          <a href={Allproject.lien_url} target="_blank">
+            {Allproject.lien_url}
           </a>
         </p>
         <p>
           <b> GitHub:</b>{" "}
-          <a href={projet.lien_gh} target="_blank">
-            {projet.lien_gh}
+          <a href={Allproject.lien_gh} target="_blank">
+            {Allproject.lien_gh}
           </a>
         </p>
-        <p>
-          <b>Date du début :</b> {projet.date_debut}
-        </p>
-        <p>
-          <b>Date de fin :</b> {projet.date_fin}
-        </p>
         <br /> <hr /> <br />
-        {projet.presentation_projet}
+        {Allproject.presentation_projet}
       </AccordionDetails>
     </>
   );

@@ -1,16 +1,14 @@
 import React, { useState, useEffect } from "react";
-import TableProject from "../components/TableProject.jsx";
-import { ButtonForm } from "../components/Form";
 import { getAllProjets } from "../services/projectApi.js";
 import ContactLink from "../components/ContactLink.jsx";
 import AllProjects from "../components/AllProjectCard.jsx";
+
+import { Allproject } from "../services/dataProjectTest.js";
 
 import YouTubeIcon from "@mui/icons-material/YouTube";
 import GitHubIcon from "@mui/icons-material/GitHub";
 import InstagramIcon from "@mui/icons-material/Instagram";
 import CircularProgress from "@mui/material/CircularProgress";
-
-import { ExternalLink, Github } from "lucide-react";
 
 function Projects() {
   const [projects, setProjects] = useState([]);
@@ -32,70 +30,31 @@ function Projects() {
 
   if (loading)
     return (
-      <div className="mt-20 flex flex-col items-center text-white">
+      <div className="mt-20 flex flex-col items-center justify-center">
         <CircularProgress />
-        <span>Chargement en cours… Veuillez patienter</span>
+        <span className="text-(--color-foreground)">
+          Chargement en cours… Veuillez patienter
+        </span>
       </div>
     );
 
-  const allProject = [
-    {
-      id: 1,
-      nom_projet: "Portfolio",
-      desc_projet: "Mon site perso",
-      techno: ["React", "Tailwind", "FastAPI"],
-      lien_img:
-        "https://s3-figma-hubfile-images-production.figma.com/hub/file/carousel/img/47cb162520a5cb6c736e65362526ab9b55082f74/e73c5cc3ec9ce4c8d6e28652542b6875753a226b",
-      lien_url: "https://islam-derrouiche-salamou.netlify.app/",
-      lien_gh: "https://github.com/Salamou-D-Islam/Portfolio",
-    },
-    {
-      id: 2,
-      nom_projet: "Portfolio",
-      desc_projet: "Mon site perso",
-      techno: ["React", "Tailwind", "FastAPI"],
-      lien_img:
-        "https://s3-figma-hubfile-images-production.figma.com/hub/file/carousel/img/47cb162520a5cb6c736e65362526ab9b55082f74/e73c5cc3ec9ce4c8d6e28652542b6875753a226b",
-      lien_url: "https://islam-derrouiche-salamou.netlify.app/",
-      lien_gh: "https://github.com/Salamou-D-Islam/Portfolio",
-    },
-    {
-      id: 3,
-      nom_projet: "Portfolio",
-      desc_projet: "Mon site perso",
-      techno: ["React", "Tailwind", "FastAPI"],
-      lien_img:
-        "https://s3-figma-hubfile-images-production.figma.com/hub/file/carousel/img/47cb162520a5cb6c736e65362526ab9b55082f74/e73c5cc3ec9ce4c8d6e28652542b6875753a226b",
-      lien_url: "https://islam-derrouiche-salamou.netlify.app/",
-      lien_gh: "https://github.com/Salamou-D-Islam/Portfolio",
-    },
-    {
-      id: 4,
-      nom_projet: "Portfolio",
-      desc_projet: "Mon site perso",
-      techno: ["React", "Tailwind", "FastAPI"],
-      lien_img:
-        "https://s3-figma-hubfile-images-production.figma.com/hub/file/carousel/img/47cb162520a5cb6c736e65362526ab9b55082f74/e73c5cc3ec9ce4c8d6e28652542b6875753a226b",
-      lien_url: "https://islam-derrouiche-salamou.netlify.app/",
-      lien_gh: "https://github.com/Salamou-D-Islam/Portfolio",
-    },
-  ];
-
   return (
     <>
-      <div className="container mx-auto p-6">
-        <h1 className="text-6xl text-salamou  font-bold text-center text-white mb-6">
-          Mes Projets
-        </h1>
-      </div>
-
       <section
         id="projets"
-        className="flex flex-col p-10 text-center mt-20 bg-(--color-gray-muted) scroll-mt-19"
+        className="flex flex-col p-10 text-center mt-10 bg-(--color-gray-muted) scroll-mt-19"
       >
-        <div className="container grid grid-cols-1 md:grid-cols-2 gap-8 mx-auto mt-10">
-          {allProject && allProject.length > 0 ? (
-            allProject.map((project) => (
+        <div>
+          <h1>Mes Projets</h1>
+          <hr className="w-35 max-lg:w-25 h-1 hr border-0 mx-auto mb-3 mt-1" />
+          <p className="max-w-250 p-3 mx-auto">
+            Vous trouverai ici tous mes projets illustrant mes compétences et
+            mon expérience en développement web.
+          </p>
+        </div>
+        <div className="container grid grid-cols-1  md:grid-cols-2 gap-8 mx-auto mt-10">
+          {Allproject && Allproject.length > 0 ? (
+            Allproject.map((project) => (
               <AllProjects
                 key={project.id}
                 id={project.id}
@@ -116,22 +75,19 @@ function Projects() {
         </div>
       </section>
 
-      {/* <section>
-        <AllProjects project={project} />
-      </section> */}
-
-      <div className="sectionApply contactHoverDiv outlineApply text-white">
+      <div className="flex flex-col text-(--color-foreground) bg-(--color-background) p-5 mt-10 mb-10 mx-auto border-2">
         <h1 className="text-3xl font-bold mb-4 text-center">
           Voir mes petits projet
         </h1>
+        <hr className="w-35 max-lg:w-25 h-1 hr border-0 mx-auto mb-3 mt-1" />
 
-        <div className="container flex flex-wrap mt-4 gap-6 p-4 rounded-lg justify-center ">
+        <div className=" flex flex-wrap mt-4 gap-6 p-4 rounded-lg justify-center items-center">
           <ContactLink
             href="https://github.com/Salamou-D-Islam"
             target="_blank"
             title="Mon GitHub"
           >
-            <GitHubIcon sx={{ fontSize: 90 }} />
+            <GitHubIcon sx={{ fontSize: 70 }} />
           </ContactLink>
 
           <ContactLink
@@ -139,7 +95,7 @@ function Projects() {
             target="_blank"
             title="Ma chaîne Youtube"
           >
-            <YouTubeIcon sx={{ fontSize: 90 }} />
+            <YouTubeIcon sx={{ fontSize: 70 }} />
           </ContactLink>
 
           <ContactLink
@@ -147,7 +103,7 @@ function Projects() {
             target="_blank"
             title="Mon Instagram"
           >
-            <InstagramIcon sx={{ fontSize: 90 }} />
+            <InstagramIcon sx={{ fontSize: 70 }} />
           </ContactLink>
         </div>
       </div>
