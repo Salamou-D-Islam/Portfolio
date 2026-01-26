@@ -41,7 +41,7 @@ function ProjectDetail() {
     }
   }, [id, projet]);
 
-  if (!oneproject)
+  if (!projet)
     return (
       <div className="mt-20 flex flex-col items-center justify-center">
         <CircularProgress />
@@ -56,16 +56,16 @@ function ProjectDetail() {
       <section className="bg-fuchsia-700 border-b-2 border-(--color-foreground) p-5 mb-10 -translate-y-20 pt-20 md:pt-30">
         <div className="flex flex-col-reverse md:flex-row text-center container p-4 mx-auto gap-20 justify-center">
           <div className="flex flex-col ">
-            <h1 className="text-white!">{oneproject.nom_projet}</h1>
+            <h1 className="text-white!">{projet.nom_projet}</h1>
             <p className="items-center flex p-10 max-w-200 text-white!">
-              {oneproject.desc_projet}
+              {projet.desc_projet}
             </p>
           </div>
 
           <div className="group ">
-            <a href={oneproject.lien_img} target="_blank">
+            <a href={projet.lien_img} target="_blank">
               <img
-                src={oneproject.lien_img}
+                src={projet.lien_img}
                 alt="Illustration du projet"
                 className="w-150 max-md:w-60 border-2 border-white rounded-4xl flex mx-auto hover:shadow-lg transform hover:scale-105 transition-all"
               />
@@ -180,16 +180,16 @@ function ProjectDetail() {
               </Tabs>
             </Box>
             <TabPanel className="text-(--color-foreground)!" value="1">
-              {oneproject.presentation_projet}
+              {projet.presentation_projet}
             </TabPanel>
             <TabPanel className="text-(--color-foreground)!" value="2">
-              {oneproject.technique_projet}
+              {projet.technique_projet}
             </TabPanel>
             <TabPanel className="text-(--color-foreground)!" value="3">
               <iframe
                 width="600"
                 height="400"
-                src={getEmbedLink(oneproject.lien_vdo)}
+                src={getEmbedLink(projet.lien_vdo)}
                 title="YouTube video player"
                 frameBorder="0"
                 allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"

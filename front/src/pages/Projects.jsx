@@ -52,9 +52,9 @@ function Projects() {
             mon expérience en développement web.
           </p>
         </div>
-        <div className="container grid grid-cols-1  md:grid-cols-2 gap-8 mx-auto mt-10">
-          {Allproject && Allproject.length > 0 ? (
-            Allproject.map((project) => (
+        <div className="container grid grid-cols-1 md:grid-cols-2 gap-8 mx-auto mt-10">
+          {projects && projects.length > 0 ? (
+            projects.map((project) => (
               <AllProjects
                 key={project.id}
                 id={project.id}
@@ -68,8 +68,8 @@ function Projects() {
               />
             ))
           ) : (
-            <p className="text-white text-center bg-">
-              Aucune section disponible pour le moment .
+            <p className="bg-primary col-span-full">
+              Aucun projet disponible pour le moment .
             </p>
           )}
         </div>
