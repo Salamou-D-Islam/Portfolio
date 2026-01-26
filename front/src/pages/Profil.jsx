@@ -66,7 +66,7 @@ function Profi() {
 
       <Reveal>
         <div className="container bg-(--color-background) mx-auto mb-10">
-          {sections && sections.length > 0 ? (
+          {/* {sections && sections.length > 0 ? (
             sections.map((section) => (
               <TabSectionProfil
                 key={section.id}
@@ -80,23 +80,48 @@ function Profi() {
             <p className="text-white text-center bg-">
               Aucune section disponible pour le moment .
             </p>
-          )}
-          {/* {Allprofil && Allprofil.length > 0 ? (
-            Allprofil.map((section) => (
-              <TabSectionProfil
-                key={section.id}
-                id={section.id}
-                title={section.nom_section}
-                desc={section.description_section}
-                isAdmin={false}
-              />
-            ))
-          ) : (
-            <p className="text-white text-center bg-">
-              Aucune section disponible pour le moment .
-            </p>
           )} */}
-          {/* <TabSectionProfil /> */}
+          <>
+            <Box sx={{ width: "100%", typography: "body1" }}>
+              <TabContext value={value.toString()}>
+                <Box sx={{ borderBottom: 1, borderColor: "divider" }}>
+                  <Tabs
+                    value={value.toString()}
+                    variant="scrollable"
+                    scrollButtons
+                    onChange={handleChange}
+                    aria-label="visible arrows tabs example"
+                    sx={{
+                      [`& .${tabsClasses.scrollButtons}`]: {
+                        "&.Mui-disabled": { opacity: 0.3 },
+                      },
+                    }}
+                  >
+                    {sections.map((section) => (
+                      <Tab
+                        className="text-(--color-primary)! max-w-16 mx-auto flex"
+                        label={section.nom_section}
+                        value={section.id.toString()}
+                        sx={{
+                          "&.Mui-selected": {
+                            fontWeight: "bold",
+                          },
+                        }}
+                      />
+                    ))}
+                  </Tabs>
+                </Box>
+                {sections.map((section) => (
+                  <TabPanel
+                    className="text-(--color-foreground)!"
+                    value={section.id.toString()}
+                  >
+                    {section.description_section}
+                  </TabPanel>
+                ))}
+              </TabContext>
+            </Box>
+          </>
         </div>
       </Reveal>
     </>

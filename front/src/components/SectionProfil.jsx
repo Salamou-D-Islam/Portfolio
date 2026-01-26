@@ -127,37 +127,29 @@ function SectionProfil({ title, desc, isAdmin, onDelete, id, onUpdate }) {
   );
 }
 
-function TabSectionProfil({ title, desc, id }) {
-  const [tempDataProfil, setTempDataProfil] = useState({
-    nom_section: title,
-    description_section: desc,
-  });
+function TabSectionProfil({
+  nom_section,
+  description_section,
+  isAdmin,
+  onDelete,
+  id,
+  onUpdate,
+}) {
+  const [isEditing, setIsEditing] = useState(false);
+
   const [value, setValue] = useState("1");
 
   const handleChange = (event, newValue) => {
     setValue(newValue);
   };
 
-  // const tabs = [
-  //   { id: "1", title: "frgt", content: "gtgtg" },
-  //   {
-  //     id: "2",
-  //     title: "jjj",
-  //     content:
-  //       "La guerre d'Hiver est un conflit militaire entre l'Union des républiques socialistes soviétiques (URSS) et la Finlande qui commence par l'invasion de cette dernière par son voisin soviétique le 30 novembre 1939, trois mois après le début de la Seconde Guerre mondiale, et se termine trois mois et demi plus tard avec le traité de paix de Moscou le 13 mars 1940. Malgré une supériorité militaire sur tous les plans, l'URSS subit de lourdes pertes et obtient des résultats moins importants qu'espérés. La Société des Nations déclare l'attaque illégale et expulse l'URSS.",
-  //   },
-  //   { id: "3", title: "kkkk", content: "jjjkkk" },
-  //   { id: "4", title: "frgt", content: "gtgtg" },
-  //   { id: "5", title: "jjj", content: "jjj" },
-  // ];
-
   return (
     <>
-      {/* <Box sx={{ width: "100%", typography: "body1" }}>
-        <TabContext value={value}>
+      <Box sx={{ width: "100%", typography: "body1" }}>
+        <TabContext value={value.toString()}>
           <Box sx={{ borderBottom: 1, borderColor: "divider" }}>
             <Tabs
-              value={value}
+              value={value.toString()}
               variant="scrollable"
               scrollButtons
               onChange={handleChange}
@@ -168,11 +160,11 @@ function TabSectionProfil({ title, desc, id }) {
                 },
               }}
             >
-              {tabs.map((tab) => (
+              {sections.map((section) => (
                 <Tab
                   className="text-(--color-primary)! max-w-16 mx-auto flex"
-                  label={tab.title}
-                  value={tab.id}
+                  label={section.nom_section}
+                  value={section.id.toString()}
                   sx={{
                     "&.Mui-selected": {
                       fontWeight: "bold",
@@ -182,45 +174,14 @@ function TabSectionProfil({ title, desc, id }) {
               ))}
             </Tabs>
           </Box>
-          {tabs.map((tab) => (
-            <TabPanel className="text-(--color-foreground)!" value={tab.id}>
-              {tab.content}
+          {sections.map((section) => (
+            <TabPanel
+              className="text-(--color-foreground)!"
+              value={section.id.toString()}
+            >
+              {section.description_section}
             </TabPanel>
           ))}
-        </TabContext>
-      </Box> */}
-
-      <Box sx={{ width: "100%", typography: "body1" }}>
-        <TabContext value={value}>
-          <Box sx={{ borderBottom: 1, borderColor: "divider" }}>
-            <Tabs
-              value={value}
-              variant="scrollable"
-              scrollButtons
-              onChange={handleChange}
-              aria-label="profile tab example"
-              sx={{
-                [`& .${tabsClasses.scrollButtons}`]: {
-                  "&.Mui-disabled": { opacity: 0.3 },
-                },
-              }}
-            >
-              <Tab
-                label={title}
-                value={id.toString()}
-                sx={{
-                  "&.Mui-selected": {
-                    fontWeight: "bold",
-                    color: "text.primary",
-                  },
-                }}
-              />
-            </Tabs>
-          </Box>
-
-          <TabPanel value={id.toString()} sx={{ color: "text.secondary" }}>
-            {desc}
-          </TabPanel>
         </TabContext>
       </Box>
     </>
