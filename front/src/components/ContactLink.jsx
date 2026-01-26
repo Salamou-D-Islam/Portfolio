@@ -6,9 +6,9 @@ function ContactLink({ children, href, target, title, onClick }) {
     <a
       href={href}
       onClick={onClick}
-      target={target}
       title={title}
       className="hover:scale-120 transition-all"
+      target="_blank"
     >
       {children}
     </a>

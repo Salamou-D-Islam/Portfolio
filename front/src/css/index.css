@@ -2,8 +2,6 @@
 @tailwind utilities;
 @import "./variables.css";
 
-@tailwind utilities;
-
 .underline-left::after {
   content: "";
   position: absolute;

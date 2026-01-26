@@ -4,7 +4,7 @@ from pydantic import BaseModel
 from database.connection import get_db
 from models.projectTable import Project
 from datetime import datetime
-from typing import Optional, Union
+from typing import Optional, List
 from datetime import date
 
 router = APIRouter(
@@ -14,35 +14,26 @@ router = APIRouter(
 
 class ProjectCreate(BaseModel):
     nom_projet: str
-    techno: Optional[str] = None
+    desc_projet: Optional[str] = None
+    techno: Optional[List[str]]
 
+    lien_img: Optional[str] = None
     lien_url: Optional[str] = None
-    lien_nom: Optional[str] = None
     lien_gh: Optional[str] = None
     lien_vdo: Optional[str] = None
-
-    date_debut: Optional[datetime] = None
-    date_fin: Optional[datetime] = None
-
-    class Config:
-        json_encoders = {
-            date: lambda v: v.strftime("%d/%m/%Y") # Changer le format de la date
-        }
 
     presentation_projet: Optional[str] = None
     technique_projet: Optional[str] = None
 
 class ProjectUpdate(BaseModel):
     nom_projet: str | None = None
-    techno: str | None = None
+    desc_projet: str | None = None
+    techno: List[str] | None = None
 
+    lien_img: str | None = None
     lien_url: str | None = None
-    lien_nom: str | None = None
     lien_gh: str | None = None
     lien_vdo: str | None = None
-
-    date_debut: datetime | None = None
-    date_fin: datetime | None = None
 
     presentation_projet: str | None = None
     technique_projet: str | None = None
