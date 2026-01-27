@@ -57,7 +57,7 @@ function ProjectsAdmin({ projects, setProjects }) {
 
   // Create un projet
   const addProject = async (newProject) => {
-    console.log("DATA ENVOYÉE :", data);
+    console.log("DATA ENVOYÉE :", newProject);
 
     try {
       const created = await createProjet(newProject);
