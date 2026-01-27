@@ -134,7 +134,7 @@ function TabSectionProfil({}) {
   return (
     <>
       <Box sx={{ width: "100%", typography: "body1" }}>
-        <TabContext value={value.toString()}>
+        <TabContext value={value.toString()} lazy={false}>
           <Box sx={{ borderBottom: 1, borderColor: "divider" }}>
             <Tabs
               value={value.toString()}
