@@ -72,10 +72,21 @@ function ProjectsAdmin({ projects, setProjects }) {
 
   // Update un projet
   async function handleUpdate(id, updateData) {
+    let technoArray = [];
+
+    if (Array.isArray(updateData.techno)) {
+      // Déjà un tableau → on trim chaque élément
+      technoArray = updateData.techno.map((s) => String(s).trim());
+    } else if (typeof updateData.techno === "string") {
+      // String séparée par des virgules → split et trim
+      technoArray = updateData.techno.split(",").map((s) => s.trim());
+    }
+
     const payload = {
       ...updateData,
-      techno: updateData.techno.split(",").map((s) => s.trim()),
+      techno: technoArray,
     };
+
     try {
       await updateProjet(id, payload);
       setProjects((prev) =>
