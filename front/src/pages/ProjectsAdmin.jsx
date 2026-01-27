@@ -57,6 +57,10 @@ function ProjectsAdmin({ projects, setProjects }) {
 
   // Create un projet
   const addProject = async (newProject) => {
+    const payload = {
+      ...newProject,
+      techno: newProject.techno.split(",").map((s) => s.trim()),
+    };
     console.log("DATA ENVOYÉE :", newProject);
 
     try {
