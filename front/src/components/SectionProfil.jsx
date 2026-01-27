@@ -125,7 +125,7 @@ function SectionProfil({ title, desc, isAdmin, onDelete, id, onUpdate }) {
 }
 
 function TabSectionProfil({}) {
-  const [value, setValue] = useState("1");
+  const [value, setValue] = useState(sections[0]?.id.toString() || "1");
 
   const handleChange = (event, newValue) => {
     setValue(newValue);
