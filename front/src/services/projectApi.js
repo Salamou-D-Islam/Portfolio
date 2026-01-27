@@ -24,7 +24,13 @@ export const createProjet = async (data) => {
     credentials: "include",
   });
 
-  if (!res.ok) throw new Error("Erreur création projet");
+  if (!res.ok) {
+    const errorData = await res.json();
+    throw new Error(
+      `Erreur création projet (${res.status}) : ${errorData.message}`,
+    );
+  }
+
   return res.json();
 };
 
