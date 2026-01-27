@@ -128,15 +128,15 @@ function Profi({ nom_section, description_section, isAdmin }) {
                     className="text-(--color-foreground)!"
                     value={section.id.toString()}
                   >
-                    {projet.presentation_projet
-                      .replace(/\r\n/g, "\n") // normalise les retours de Windows
-                      .split("\n")
+                    {section.description_section
+                      ?.replace(/\r\n/g, "\n") // Windows
+                      .replace(/\r/g, "\n") // Mac ancien
+                      .split("\n") // split en lignes
                       .map((line, idx) => (
-                        <span key={idx}>
-                          {line.replace(/\t/g, "\u00A0\u00A0\u00A0\u00A0")}{" "}
-                          {/* tab → espaces */}
+                        <React.Fragment key={idx}>
+                          {line}
                           <br />
-                        </span>
+                        </React.Fragment>
                       ))}
                   </TabPanel>
                 ))}
