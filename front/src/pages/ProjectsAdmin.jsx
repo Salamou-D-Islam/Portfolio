@@ -61,7 +61,6 @@ function ProjectsAdmin({ projects, setProjects }) {
       ...newProject,
       techno: newProject.techno.split(",").map((s) => s.trim()),
     };
-    console.log("DATA ENVOYÉE :", payload);
 
     try {
       const created = await createProjet(payload);
@@ -73,12 +72,14 @@ function ProjectsAdmin({ projects, setProjects }) {
 
   // Update un projet
   async function handleUpdate(id, updateData) {
+    const payload = {
+      ...updateData,
+      techno: updateData.techno.split(",").map((s) => s.trim()),
+    };
     try {
-      await updateProjet(id, updateData);
+      await updateProjet(id, payload);
       setProjects((prev) =>
-        prev.map((proj) =>
-          proj.id === id ? { ...proj, ...updateData } : proj,
-        ),
+        prev.map((proj) => (proj.id === id ? { ...proj, ...payload } : proj)),
       );
     } catch (err) {
       console.error("Erreur mise à jour :", err);
