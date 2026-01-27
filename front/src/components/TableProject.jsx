@@ -110,13 +110,13 @@ function TableProject({
           {isAdmin && (
             <>
               <td>
-                <ButtonForm
+                <button
                   type="button"
                   onClick={handleDelete}
                   className="btn-primary bg-(--color-destructive)!"
                 >
                   Supprimer
-                </ButtonForm>
+                </button>
               </td>
               <td className="tableProject">
                 <button

@@ -176,7 +176,7 @@ function TabSectionProfil({
           </Box>
           {sections.map((section) => (
             <TabPanel
-              className="text-(--color-foreground)!"
+              className="text-(--color-foreground)! whitespace-pre-wrap"
               value={section.id.toString()}
             >
               {section.description_section}

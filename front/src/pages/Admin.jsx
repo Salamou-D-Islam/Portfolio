@@ -66,7 +66,7 @@ function Admin() {
           <button
             type="submit"
             onClick={handlLogout}
-            className="bg-(--color-destructive)"
+            className="bg-(--color-destructive) p-5"
           >
             Se déconnecter
           </button>

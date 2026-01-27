@@ -46,7 +46,7 @@ function CardProjects() {
       description:
         "Nova Capital est un site vitrine moderne développé avec HTML, CSS et JavaScript. Il présente les services financiers de manière professionnelle et responsive, avec un design moderne et épuré.",
       image: "NovaCapitl.jpg",
-      tags: ["HTML", "CSS", "Tailwind CSS"],
+      tags: ["HTML", "CSS"],
       github: "https://github.com/Salamou-D-Islam/Nova-Capital",
       demo: "https://nova-capital-salamou.netlify.app/",
     },

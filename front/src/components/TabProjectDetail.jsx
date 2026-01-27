@@ -63,13 +63,22 @@ function TabProjectDetail() {
               />
             </Tabs>
           </Box>
-          <TabPanel className="text-(--color-foreground)!" value={id}>
+          <TabPanel
+            className="text-(--color-foreground)! whitespace-pre-wrap"
+            value={id}
+          >
             {presentation_projet}
           </TabPanel>
-          <TabPanel className="text-(--color-foreground)!" value={id}>
+          <TabPanel
+            className="text-(--color-foreground)! whitespace-pre-wrap"
+            value={id}
+          >
             {technique_projet}
           </TabPanel>
-          <TabPanel className="text-(--color-foreground)!" value={id}>
+          <TabPanel
+            className="text-(--color-foreground)! whitespace-pre-wrap"
+            value={id}
+          >
             <iframe
               width="600"
               height="400"
