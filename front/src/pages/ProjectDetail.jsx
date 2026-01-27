@@ -180,11 +180,30 @@ function ProjectDetail() {
               </Tabs>
             </Box>
             <TabPanel className="text-(--color-foreground)!" value="1">
-              {projet.presentation_projet}
+              {projet.presentation_projet
+                .replace(/\r\n/g, "\n") // normalise les retours de Windows
+                .split("\n")
+                .map((line, idx) => (
+                  <span key={idx}>
+                    {line.replace(/\t/g, "\u00A0\u00A0\u00A0\u00A0")}{" "}
+                    {/* tab → espaces */}
+                    <br />
+                  </span>
+                ))}
             </TabPanel>
+
             <TabPanel className="text-(--color-foreground)!" value="2">
-              {projet.technique_projet}
+              {projet.technique_projet
+                .replace(/\r\n/g, "\n")
+                .split("\n")
+                .map((line, idx) => (
+                  <span key={idx}>
+                    {line.replace(/\t/g, "\u00A0\u00A0\u00A0\u00A0")}
+                    <br />
+                  </span>
+                ))}
             </TabPanel>
+
             <TabPanel className="text-(--color-foreground)!" value="3">
               <iframe
                 width="600"
@@ -196,7 +215,7 @@ function ProjectDetail() {
                 allowFullScreen
                 className="mx-auto max-md:w-full"
               />
-            </TabPanel>{" "}
+            </TabPanel>
           </TabContext>
         </Box>
       </div>

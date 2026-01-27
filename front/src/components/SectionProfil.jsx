@@ -169,9 +169,18 @@ function TabSectionProfil({}) {
             <TabPanel
               className="text-(--color-foreground)! whitespace-pre-wrap"
               value={section.id.toString()}
-              sx={{ color: "white", whiteSpace: "pre-wrap" }}
+              sx={{ whiteSpace: "pre-wrap" }}
             >
-              {section.description_section}
+              {section.description_section
+                .replace(/\r\n/g, "\n") // normalize line breaks
+                .split("\n") // split lines
+                .map((line, idx) => (
+                  <span key={idx}>
+                    {line.replace(/\t/g, "\u00A0\u00A0\u00A0\u00A0")}{" "}
+                    {/* convert tab to spaces */}
+                    <br />
+                  </span>
+                ))}
             </TabPanel>
           ))}
         </TabContext>

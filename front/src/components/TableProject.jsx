@@ -76,7 +76,6 @@ function TableProject({
       {!isEditing && (
         <tr>
           <td className="tableProject">{nom_projet}</td>
-          <td className="tableProject">{desc_projet}</td>
           <td className="tableProject max-sm:hidden">{techno}</td>
           <td className="tableProject max-sm:hidden">
             <a href={lien_url} target="_blank" rel="noreferrer">
