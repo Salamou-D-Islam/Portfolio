@@ -50,23 +50,23 @@ function SectionProfil({ title, desc, isAdmin, onDelete, id, onUpdate }) {
         <>
           {isAdmin && (
             <div className="container flex gap-2 mt-4">
-              <ButtonForm
+              <button
                 type="button"
                 onClick={() => {
                   setIsEditing(true);
                 }}
-                className="bg-green-700 hover:bg-green-600"
+                className="btn-primary bg-(--color-secondary)!"
               >
                 Modifier
-              </ButtonForm>
+              </button>
 
-              <ButtonForm
+              <button
                 type="button"
                 onClick={() => handleDelete(id)}
-                className="bg-red-700 hover:bg-red-600"
+                className="btn-primary bg-(--color-destructive)!"
               >
                 Supprimer
-              </ButtonForm>
+              </button>
             </div>
           )}
         </>
@@ -104,20 +104,17 @@ function SectionProfil({ title, desc, isAdmin, onDelete, id, onUpdate }) {
               </FormTextrea>
 
               <div className="flex gap-2 mt-4">
-                <ButtonForm
-                  type="submit"
-                  className="bg-blue-700 hover:bg-blue-600"
-                >
+                <button type="submit" className="btn-primary">
                   Enregistrer
-                </ButtonForm>
+                </button>
 
-                <ButtonForm
+                <button
                   type="button"
                   onClick={handleCancel}
-                  className="bg-gray-600 hover:bg-gray-500"
+                  className="btn-primary bg-(--color-muted)!"
                 >
                   Annuler
-                </ButtonForm>
+                </button>
               </div>
             </div>
           </form>
@@ -171,16 +168,9 @@ function TabSectionProfil({}) {
               value={section.id.toString()}
               sx={{ whiteSpace: "pre-wrap" }}
             >
-              {section.description_section
-                .replace(/\r\n/g, "\n") // normalize line breaks
-                .split("\n") // split lines
-                .map((line, idx) => (
-                  <span key={idx}>
-                    {line.replace(/\t/g, "\u00A0\u00A0\u00A0\u00A0")}{" "}
-                    {/* convert tab to spaces */}
-                    <br />
-                  </span>
-                ))}
+              <pre style={{ whiteSpace: "pre-wrap", margin: 0 }}>
+                {section.description_section}
+              </pre>
             </TabPanel>
           ))}
         </TabContext>
