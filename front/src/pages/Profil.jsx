@@ -17,7 +17,7 @@ import TabPanel from "@mui/lab/TabPanel";
 function Profi({ nom_section, description_section, isAdmin }) {
   const [sections, setSections] = useState([]);
   const [loading, setLoading] = useState(true);
-  const [value, setValue] = useState("1");
+  const [value, setValue] = useState(sections[0]?.id.toString());
 
   const handleChange = (event, newValue) => {
     setValue(newValue);
@@ -128,7 +128,16 @@ function Profi({ nom_section, description_section, isAdmin }) {
                     className="text-(--color-foreground)!"
                     value={section.id.toString()}
                   >
-                    {section.description_section}
+                    {projet.presentation_projet
+                      .replace(/\r\n/g, "\n") // normalise les retours de Windows
+                      .split("\n")
+                      .map((line, idx) => (
+                        <span key={idx}>
+                          {line.replace(/\t/g, "\u00A0\u00A0\u00A0\u00A0")}{" "}
+                          {/* tab → espaces */}
+                          <br />
+                        </span>
+                      ))}
                   </TabPanel>
                 ))}
               </TabContext>

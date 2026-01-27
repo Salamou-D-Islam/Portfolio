@@ -150,6 +150,7 @@ function TabSectionProfil({}) {
             >
               {sections.map((section) => (
                 <Tab
+                  key={section.id}
                   className="text-(--color-primary)! max-w-16 mx-auto flex"
                   label={section.nom_section}
                   value={section.id.toString()}
@@ -164,6 +165,7 @@ function TabSectionProfil({}) {
           </Box>
           {sections.map((section) => (
             <TabPanel
+              key={section.id}
               className="text-(--color-foreground)! whitespace-pre-wrap"
               value={section.id.toString()}
               sx={{ whiteSpace: "pre-wrap" }}
