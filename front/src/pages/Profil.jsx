@@ -17,7 +17,7 @@ import TabPanel from "@mui/lab/TabPanel";
 function Profi({ nom_section, description_section, isAdmin }) {
   const [sections, setSections] = useState([]);
   const [loading, setLoading] = useState(true);
-  const [value, setValue] = useState(sections[0]?.id.toString());
+  const [value, setValue] = useState("1");
 
   const handleChange = (event, newValue) => {
     setValue(newValue);
