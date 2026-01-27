@@ -61,10 +61,10 @@ function ProjectsAdmin({ projects, setProjects }) {
       ...newProject,
       techno: newProject.techno.split(",").map((s) => s.trim()),
     };
-    console.log("DATA ENVOYÉE :", newProject);
+    console.log("DATA ENVOYÉE :", payload);
 
     try {
-      const created = await createProjet(newProject);
+      const created = await createProjet(payload);
       setProjects((prev) => [...prev, created]);
     } catch (err) {
       console.error("Erreur création projet :", err);
