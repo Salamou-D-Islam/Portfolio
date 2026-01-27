@@ -169,15 +169,14 @@ function TabSectionProfil({}) {
               sx={{ whiteSpace: "pre-wrap" }}
             >
               {section.description_section
-                // normalise tous les types de retours à la ligne
-                .replace(/\r\n/g, "\n") // Windows
+                ?.replace(/\r\n/g, "\n") // Windows
                 .replace(/\r/g, "\n") // Mac ancien
-                .split("\n") // split par ligne
+                .split("\n") // split en lignes
                 .map((line, idx) => (
-                  <span key={idx}>
-                    {line.replace(/\t/g, "\u00A0\u00A0\u00A0\u00A0")}
+                  <React.Fragment key={idx}>
+                    {line}
                     <br />
-                  </span>
+                  </React.Fragment>
                 ))}
             </TabPanel>
           ))}
