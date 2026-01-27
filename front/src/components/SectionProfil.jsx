@@ -127,16 +127,7 @@ function SectionProfil({ title, desc, isAdmin, onDelete, id, onUpdate }) {
   );
 }
 
-function TabSectionProfil({
-  nom_section,
-  description_section,
-  isAdmin,
-  onDelete,
-  id,
-  onUpdate,
-}) {
-  const [isEditing, setIsEditing] = useState(false);
-
+function TabSectionProfil({}) {
   const [value, setValue] = useState("1");
 
   const handleChange = (event, newValue) => {
@@ -178,6 +169,7 @@ function TabSectionProfil({
             <TabPanel
               className="text-(--color-foreground)! whitespace-pre-wrap"
               value={section.id.toString()}
+              sx={{ color: "white", whiteSpace: "pre-wrap" }}
             >
               {section.description_section}
             </TabPanel>

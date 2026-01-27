@@ -65,18 +65,21 @@ function TabProjectDetail() {
           </Box>
           <TabPanel
             className="text-(--color-foreground)! whitespace-pre-wrap"
+            sx={{ whiteSpace: "pre-wrap" }}
             value={id}
           >
             {presentation_projet}
           </TabPanel>
           <TabPanel
             className="text-(--color-foreground)! whitespace-pre-wrap"
+            sx={{ whiteSpace: "pre-wrap" }}
             value={id}
           >
             {technique_projet}
           </TabPanel>
           <TabPanel
             className="text-(--color-foreground)! whitespace-pre-wrap"
+            sx={{ whiteSpace: "pre-wrap" }}
             value={id}
           >
             <iframe
