@@ -127,8 +127,6 @@ function ProjectsAdmin({ projects, setProjects }) {
                     lien_url={project.lien_url}
                     lien_gh={project.lien_gh}
                     lien_vdo={project.lien_vdo}
-                    date_debut={project.date_debut}
-                    date_fin={project.date_fin}
                     presentation_projet={project.presentation_projet}
                     technique_projet={project.technique_projet}
                     isAdmin={true}

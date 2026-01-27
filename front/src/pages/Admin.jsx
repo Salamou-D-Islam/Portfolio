@@ -55,7 +55,7 @@ function Admin() {
 
   return (
     <>
-      <section className="flex flex-col items-center justify-center!">
+      <section className="flex flex-col items-center justify-center">
         <div className="buttonLink mt-0! text-center">
           <ButtonHome to="/admin/profilform">
             Page de profil (Administrateur)

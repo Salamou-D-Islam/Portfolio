@@ -24,6 +24,7 @@ function TableProject({
   const [isEditing, setIsEditing] = useState(false);
   const [tempDataProject, setTempDataProject] = useState({
     nom_projet,
+    desc_projet,
     techno,
 
     lien_img,
@@ -50,6 +51,7 @@ function TableProject({
   function handleCancel() {
     setTempDataProject({
       nom_projet,
+      desc_projet,
       techno,
 
       lien_img,
@@ -122,6 +124,7 @@ function TableProject({
                   onClick={() => {
                     setTempDataProject({
                       nom_projet,
+                      desc_projet,
                       techno,
 
                       lien_img,
@@ -175,19 +178,6 @@ function TableProject({
 
                 <FormText
                   type="text"
-                  value={tempDataProject.desc_projet}
-                  onChange={(e) =>
-                    setTempDataProject({
-                      ...tempDataProject,
-                      desc_projet: e.target.value,
-                    })
-                  }
-                >
-                  Description du projet
-                </FormText>
-
-                <FormText
-                  type="text"
                   value={tempDataProject.techno}
                   onChange={(e) =>
                     setTempDataProject({
@@ -237,6 +227,18 @@ function TableProject({
                 >
                   GitHub
                 </FormText>
+
+                <FormTextrea
+                  value={tempDataProject.desc_projet}
+                  onChange={(e) =>
+                    setTempDataProject({
+                      ...tempDataProject,
+                      desc_projet: e.target.value,
+                    })
+                  }
+                >
+                  Description du projet
+                </FormTextrea>
 
                 <FormTextrea
                   value={tempDataProject.presentation_projet}

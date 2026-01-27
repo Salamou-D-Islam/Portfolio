@@ -86,7 +86,9 @@ function InputProfil({ section, onAdd }) {
                   Titre de la section
                 </FormTextrea>
 
-                <ButtonForm type="submit"> Ajouter la section</ButtonForm>
+                <button type="submit" className="btn-primary mt-4">
+                  Ajouter la section
+                </button>
               </div>
             </form>
           </div>

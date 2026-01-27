@@ -94,17 +94,6 @@ function InputProject({ onAdd }) {
                 </FormText>
 
                 <FormText
-                  htmlFor="desc_projet"
-                  type="text"
-                  id="desc_projet"
-                  name="desc_projet"
-                  value={inputText.desc_projet}
-                  onChange={handleChange}
-                >
-                  Description du projet
-                </FormText>
-
-                <FormText
                   htmlFor="techno"
                   type="text"
                   id="techno"
@@ -157,6 +146,16 @@ function InputProject({ onAdd }) {
                 >
                   Lien de la vidéo
                 </FormText>
+
+                <FormTextrea
+                  htmlFor="desc_projet"
+                  id="desc_projet"
+                  name="desc_projet"
+                  value={inputText.desc_projet}
+                  onChange={handleChange}
+                >
+                  Description du projet
+                </FormTextrea>
 
                 <FormTextrea
                   htmlFor="presentation_projet"
