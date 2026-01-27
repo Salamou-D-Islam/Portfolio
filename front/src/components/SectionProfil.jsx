@@ -168,9 +168,17 @@ function TabSectionProfil({}) {
               value={section.id.toString()}
               sx={{ whiteSpace: "pre-wrap" }}
             >
-              <pre style={{ whiteSpace: "pre-wrap", margin: 0 }}>
-                {section.description_section}
-              </pre>
+              {section.description_section
+                // normalise tous les types de retours à la ligne
+                .replace(/\r\n/g, "\n") // Windows
+                .replace(/\r/g, "\n") // Mac ancien
+                .split("\n") // split par ligne
+                .map((line, idx) => (
+                  <span key={idx}>
+                    {line.replace(/\t/g, "\u00A0\u00A0\u00A0\u00A0")}
+                    <br />
+                  </span>
+                ))}
             </TabPanel>
           ))}
         </TabContext>
