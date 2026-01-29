@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
-import FormText, { ButtonForm } from "../components/Form";
+import FormText from "../components/Form";
 import { useForm } from "react-hook-form";
 
 function Login() {

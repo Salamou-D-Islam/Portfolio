@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import { useState, useEffect } from "react";
 import { getAllProjets } from "../services/projectApi.js";
 import ContactLink from "../components/ContactLink.jsx";
 import AllProjects from "../components/AllProjectCard.jsx";

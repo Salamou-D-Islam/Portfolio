@@ -1,11 +1,6 @@
-import React, { useState } from "react";
+import { useState } from "react";
 import FormText from "../components/Form.jsx";
-import { FormTextrea, ButtonForm } from "../components/Form.jsx";
-import ContactLink from "../components/ContactLink.jsx";
-import WhatsAppIcon from "@mui/icons-material/WhatsApp";
-import AlternateEmailIcon from "@mui/icons-material/AlternateEmail";
-import InstagramIcon from "@mui/icons-material/Instagram";
-import LinkedInIcon from "@mui/icons-material/LinkedIn";
+import { FormTextrea } from "../components/Form.jsx";
 
 import { Mail, MapPin, Phone, Send } from "lucide-react";
 

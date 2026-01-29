@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import { useState, useEffect } from "react";
 import ButtonHome from "../components/ButtonLink.jsx";
 import Reveal from "../components/Reveal.jsx";
 import ContactLink from "../components/ContactLink.jsx";

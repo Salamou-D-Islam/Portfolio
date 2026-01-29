@@ -1,20 +1,14 @@
-import React, { useState, useEffect } from "react";
+import { useState, useEffect } from "react";
 import { useLocation, useParams } from "react-router-dom";
-import AccordionSection from "../components/AccordionSection";
-import AccordionPresentation, {
-  getEmbedLink,
-} from "../components/AccordionComponent";
+import { getEmbedLink } from "../components/AccordionComponent";
 import { getOneProjet } from "../services/projectApi.js";
-import CircularProgress from "@mui/material/CircularProgress";
-
 import { Allproject } from "../services/dataProjectTest.js";
-import TabSectionProfil from "../components/SectionProfil.jsx";
 
+import CircularProgress from "@mui/material/CircularProgress";
 import TabContext from "@mui/lab/TabContext";
 import Tab from "@mui/material/Tab";
 import Tabs, { tabsClasses } from "@mui/material/Tabs";
 import TabPanel from "@mui/lab/TabPanel";
-
 import Box from "@mui/material/Box";
 
 function ProjectDetail() {
@@ -25,6 +19,7 @@ function ProjectDetail() {
   const handleChange = (event, newValue) => {
     setValue(newValue);
   };
+
   const oneproject = Allproject.find((p) => p.id === Number(id));
 
   useEffect(() => {
@@ -73,62 +68,7 @@ function ProjectDetail() {
           </div>
         </div>
       </section>
-      <div>
-        {/* {oneproject && oneproject.length > 0 ? (
-        oneproject.map((section) => ( */}
 
-        {/* <TabSectionProfil
-              key={section.id}
-              id={section.id}
-              nom_projet={section.nom_projet}
-              desc_projet={section.desc_projet}
-              techno={section.techno}
-              lien_img={section.lien_img}
-              lien_url={section.lien_url}
-              lien_gh={section.lien_gh}
-              presentation_projet={section.presentation_projet}
-              technique_projet={section.technique_projet}
-              lien_vdo={section.lien_vdo}
-              isAdmin={false}
-            /> */}
-        {/*            
-          </>
-        ))
-      ) : ( */}
-        {/* <p className="text-white text-center bg-">
-          Aucune section disponible pour le moment .
-        </p> */}
-        {/* )} */}
-
-        {/* <AccordionSection content={<AccordionPresentation />} className=" mb-0!">
-        Présentation du projet
-      </AccordionSection>
-
-      <AccordionSection
-        content={oneproject.technique_projet}
-        className=" mb-0!"
-      >
-        Techniques / Compétences utilisées
-      </AccordionSection>
-
-      <AccordionSection
-        content={
-          <iframe
-            width="600"
-            height="400"
-            src={getEmbedLink(oneproject.lien_vdo)}
-            title="YouTube video player"
-            frameBorder="0"
-            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-            allowFullScreen
-            className="mx-auto max-md:w-full"
-          ></iframe>
-        }
-        className=" mb-20!"
-      >
-        Autre
-      </AccordionSection> */}
-      </div>
       <div className="container bg-(--color-background) mx-auto mb-10">
         <Box sx={{ width: "100%", typography: "body1" }}>
           <TabContext value={value}>

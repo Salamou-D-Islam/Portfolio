@@ -1,5 +1,4 @@
 import React, { useState, useEffect } from "react";
-import { TabSectionProfil } from "../components/SectionProfil.jsx";
 import { getAllSections } from "../services/profilApi.js";
 import CircularProgress from "@mui/material/CircularProgress";
 import Photo from "../assets/Photo.png";
@@ -11,7 +10,6 @@ import Tab from "@mui/material/Tab";
 import Tabs, { tabsClasses } from "@mui/material/Tabs";
 
 import TabContext from "@mui/lab/TabContext";
-import TabList from "@mui/lab/TabList";
 import TabPanel from "@mui/lab/TabPanel";
 
 function Profi({ nom_section, description_section, isAdmin }) {
@@ -78,21 +76,6 @@ function Profi({ nom_section, description_section, isAdmin }) {
 
       <Reveal>
         <div className="container bg-(--color-background) mx-auto mb-10">
-          {/* {sections && sections.length > 0 ? (
-            sections.map((section) => (
-              <TabSectionProfil
-                key={section.id}
-                id={section.id}
-                title={section.nom_section}
-                desc={section.description_section}
-                isAdmin={false}
-              />
-            ))
-          ) : (
-            <p className="text-white text-center bg-">
-              Aucune section disponible pour le moment .
-            </p>
-          )} */}
           <>
             <Box sx={{ width: "100%", typography: "body1" }}>
               <TabContext value={value.toString()}>
@@ -150,22 +133,3 @@ function Profi({ nom_section, description_section, isAdmin }) {
 }
 
 export default Profi;
-
-{
-  /* <section className="sectionApply text-white p-10 contactHoverDiv hover:bg-gray-800">
-        <div className="mb-6 text-3xl">
-          <h1>{props.title}</h1>
-        </div>
-        <div className="text-lg">
-          <p>{props.desc}</p>
-           <p>
-            Je suis Islam Derrouiche, un jeune développeur web fullstack junior.
-            Passionné par la technologie et le développement web, je développe
-            des applications web en frontend avec du HTML/CSS et JavaScript avec
-            React en framwork, et backend avec NodeJS et Python(FastAPI /
-            Flask). Mon objectif est de créer des applications web innovantes et
-            performantes qui répondent aux besoins des utilisateurs.
-          </p> 
-        </div>
-      </section> */
-}

@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import InputProfil from "../components/InputProfil.jsx";
 import SectionProfil from "../components/SectionProfil.jsx";
