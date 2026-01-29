@@ -1,11 +1,11 @@
-# Salamou JS - Projet Portfolio
+# Islam DERROUICHE - Projet Portfolio
 
 Cette application est mon projet personnel. Elle a pour objectif de permettre aux visiteurs de mieux me connaître à travers une page de profil, de découvrir mes réalisations via la page des projets, et de me contacter facilement.
 Il s’agit à la fois de mon projet personnel et de mon tout premier projet React abouti. L’application intègre également un backend permettant la gestion dynamique des pages Profil et Projets, ainsi qu’une fonctionnalité d’envoi de mails via le formulaire de contact.
 Ce projet marque une étape importante dans mon apprentissage de React et du développement full stack.
 
 lien de l'application hébérgé:
-[Salamou JS](https://islam-derrouiche-salamou.netlify.app/)
+[islam DERROUICHE](https://islam-derrouiche.netlify.app/)
 ---
 ## Fonctionnalités
 
