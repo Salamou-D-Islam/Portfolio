@@ -1,7 +1,6 @@
-import React, { useState, useEffect } from "react";
+import { useState, useEffect } from "react";
 import DarkModeIcon from "@mui/icons-material/DarkMode";
 import SunnyIcon from "@mui/icons-material/Sunny";
-import { yellow } from "@mui/material/colors";
 
 function DarkMode() {
   const [darkMode, setDarkMode] = useState(() => {

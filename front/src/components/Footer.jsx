@@ -1,7 +1,6 @@
-import React, { useState } from "react";
+import { useState } from "react";
 import GitHubIcon from "@mui/icons-material/GitHub";
 import LinkedInIcon from "@mui/icons-material/LinkedIn";
-import ContactsIcon from "@mui/icons-material/Contacts";
 import ContactLink from "./ContactLink.jsx";
 import { Link } from "react-router-dom";
 function Footer() {

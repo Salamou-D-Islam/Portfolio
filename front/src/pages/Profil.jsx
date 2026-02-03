@@ -63,7 +63,7 @@ function Profi({ nom_section, description_section, isAdmin }) {
               </p>
             </div>
 
-            <div className="group ">
+            <div className="group">
               <img
                 src={Photo}
                 alt="Illustration de moi"

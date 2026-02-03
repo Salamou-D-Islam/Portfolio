@@ -1,7 +1,3 @@
-import React, { useState } from "react";
-import MenuIcon from "@mui/icons-material/Menu";
-import { Link } from "react-router-dom";
-
 function CardAbout({ title_card, desc_card, img }) {
   return (
     <>

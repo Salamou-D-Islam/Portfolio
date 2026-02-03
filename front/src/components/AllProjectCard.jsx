@@ -1,6 +1,5 @@
 import { ExternalLink, Github } from "lucide-react";
 import ButtonHome from "../components/ButtonLink.jsx";
-import ArrowDownwardIcon from "@mui/icons-material/ArrowDownward";
 
 function AllProjects({
   id,
@@ -22,7 +21,7 @@ function AllProjects({
           alt={`Illustration du projet ${nom_projet}`}
           className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
         />
-        <div className="absolute inset-0 bg-linear-to-t from-black/60 to-transparent opacity-0 group-hover:opacity-100 transition-opacity">
+        <div className="absolute inset-0 bg-linear-to-t from-black/60 to-transparent lg:opacity-0 group-hover:opacity-100  transition-opacity">
           <div className="absolute bottom-4 left-4 right-4 flex gap-3">
             <a
               href={lien_gh}
