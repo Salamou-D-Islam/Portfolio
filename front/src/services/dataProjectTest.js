@@ -2,7 +2,8 @@ export const Allproject = [
   {
     id: 1,
     nom_projet: "Portfolio",
-    desc_projet: "Mon site perso",
+    desc_projet:
+      "Cette application est mon projet personnel. Elle a pour objectif de permettre aux visiteurs de mieux me connaître à travers une page de profil, de découvrir mes réalisations via la page des projets, et de me contacter facilement.",
     techno: ["React", "Tailwind", "FastAPI"],
     lien_img:
       "https://img.freepik.com/vecteurs-libre/modele-portfolio-entretien-degrade_23-2149220443.jpg?semt=ais_user_personalization&w=740&q=80",

@@ -48,13 +48,29 @@ function ProjectDetail() {
 
   return (
     <>
-      <section className="bg-fuchsia-700 border-b-2 border-(--color-foreground) p-5 mb-10 -translate-y-20 pt-20 md:pt-30">
+      <section className="bg-linear-to-l from-blue-700 to-blue-800 border-b-2 border-(--color-foreground) p-5 mb-10 -translate-y-20 pt-20 md:pt-30">
         <div className="flex flex-col-reverse md:flex-row text-center container p-4 mx-auto gap-20 justify-center">
           <div className="flex flex-col ">
             <h1 className="text-white!">{projet.nom_projet}</h1>
             <p className="items-center flex p-10 max-w-200 text-white!">
               {projet.desc_projet}
             </p>
+            <div className="flex  justify-center gap-5 p-3 rounded-3xl max-w-250 mx-auto mb-5">
+              <a
+                href={projet.lien_gh}
+                target="_blank"
+                className="items-center justify-center gap-2 px-4 py-2 bg-white text-gray-900 rounded-lg hover:bg-gray-100 transition-colors"
+              >
+                Lien du GitHub
+              </a>
+              <a
+                href={projet.lien_url}
+                target="_blank"
+                className="items-center justify-center gap-2 px-4 py-2 bg-white text-gray-900 rounded-lg hover:bg-gray-100 transition-colors"
+              >
+                Lien du projet
+              </a>
+            </div>
           </div>
 
           <div className="group ">
