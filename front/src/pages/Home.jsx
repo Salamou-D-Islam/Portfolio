@@ -1,4 +1,5 @@
 import { useState, useEffect } from "react";
+import { useLocation } from "react-router-dom";
 import ButtonHome from "../components/ButtonLink.jsx";
 import Reveal from "../components/Reveal.jsx";
 import ContactLink from "../components/ContactLink.jsx";
@@ -15,7 +16,23 @@ import { Code, Database, Layout } from "lucide-react";
 function Home() {
   const [isSmall, setIsSmall] = useState(window.innerWidth < 1023);
   const [animation, setAnimation] = useState(false);
+  const location = useLocation();
 
+  // Scroll to section if URL contains a hash
+  useEffect(() => {
+    if (location.hash) {
+      const id = location.hash.replace("#", "");
+      const element = document.getElementById(id);
+
+      if (element) {
+        setTimeout(() => {
+          element.scrollIntoView({ behavior: "smooth" });
+        }, 100);
+      }
+    }
+  }, [location]);
+
+  // Handle window resize
   useEffect(() => {
     const handleResize = () => setIsSmall(window.innerWidth < 1023);
     window.addEventListener("resize", handleResize);

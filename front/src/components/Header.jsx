@@ -1,4 +1,5 @@
 import { useState, useEffect } from "react";
+import { useNavigate, useLocation } from "react-router-dom";
 import { MobileNav, NavSection } from "./HeaderNav.jsx";
 import DarkMode from "../components/DarkMode.jsx";
 import { Link } from "react-router-dom";
@@ -6,6 +7,9 @@ import { Link } from "react-router-dom";
 function Header() {
   const [isOpen, setIsOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
+
+  const navigate = useNavigate();
+  const location = useLocation();
 
   const navItems = [
     {
@@ -63,11 +67,15 @@ function Header() {
               <button
                 key={nav.id}
                 className="p-3 mb:hover:bg-neutral-300/50 hover:text-(--color-primary)! underline-left relative pb-1 border-b-2 border-transparent hover:after:scale-x-100"
-                onClick={() =>
-                  document
-                    .getElementById(nav.id)
-                    ?.scrollIntoView({ behavior: "smooth" })
-                }
+                onClick={() => {
+                  if (location.pathname !== "/") {
+                    navigate(`/#${nav.id}`);
+                  } else {
+                    document
+                      .getElementById(nav.id)
+                      ?.scrollIntoView({ behavior: "smooth" });
+                  }
+                }}
               >
                 {nav.title}
               </button>
