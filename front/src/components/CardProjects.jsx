@@ -7,7 +7,7 @@ function CardProjects() {
       description:
         "Application d'achat (simulation) en ligne des tickets pour les Jeux-Olympiques (non officiel)",
       image:
-        "https://www.visiterlyon.com/var/site/storage/images/1/7/5/7/887571-1-fre-FR/2d31a632ff4b-Clbration-athltes-Club-2024-1-.webp",
+        "https://mir-s3-cdn-cf.behance.net/project_modules/fs/554f56243534653.69837761d5889.jpg",
       tags: ["Python", "Flask", "PostgresSQL", "REST API"],
       github: "https://github.com/Salamou-D-Islam/J-O",
       demo: "https://jeux-olympique.fly.dev/",
@@ -17,7 +17,7 @@ function CardProjects() {
       description:
         "Cette application est mon projet personnel. Elle a pour objectif de permettre aux visiteurs de mieux me connaître à travers une page de profil, de découvrir mes réalisations via la page des projets, et de me contacter facilement.",
       image:
-        "https://wiztoonz.com/wp-content/uploads/2022/04/Blog-Post-Portfolio-1170x658.jpg",
+        "https://mir-s3-cdn-cf.behance.net/project_modules/fs/38ded2243124515.697b0dfcba0d3.jpg",
       tags: [
         "React",
         "Python",
@@ -43,7 +43,8 @@ function CardProjects() {
       title: "Nova Capital",
       description:
         "Nova Capital est un site vitrine moderne développé avec HTML, CSS et JavaScript. Il présente les services financiers de manière professionnelle et responsive, avec un design moderne et épuré.",
-      image: "NovaCapitl.jpg",
+      image:
+        "https://mir-s3-cdn-cf.behance.net/project_modules/fs/604db2243126121.697b11624637e.jpg",
       tags: ["HTML", "CSS"],
       github: "https://github.com/Salamou-D-Islam/Nova-Capital",
       demo: "https://nova-capital-salamou.netlify.app/",
